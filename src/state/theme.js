@@ -14,6 +14,7 @@ export const themeSelector = selector({
   key: key + '-selector',
   get: ({ get }) => get(themeState),
   set: ({ set }, value) => {
+    console.log('SET', value);
     window.localStorage.setItem(key, value)
     set(themeState, value)
   }
