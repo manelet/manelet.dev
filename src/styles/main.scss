@@ -1,0 +1,56 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import './mediaqueries.scss';
+@import './fonts.scss';
+@import './variables.scss';
+
+body {
+  background-color: var(--color-bg);
+  font-family: var(--font-family);
+  font-weight: normal;
+  color: var(--color-text-default);
+}
+
+.cont {
+  @apply flex w-full;
+
+  .cont-inner {
+    @apply flex flex-col w-full mx-8;
+
+    @include md {
+      @apply mx-32;
+    }
+  
+    @include lg {
+      @apply mx-40;
+    }
+  }
+}
+
+nav {
+  @apply flex w-full;
+
+  &.home {
+    @apply hidden;
+  }
+}
+
+.splash {
+  @apply flex w-screen h-screen relative max-w-full items-center;
+  background: rgb(17,17,17);
+  background: linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(77,77,77,1) 100%);  
+
+  h1 {
+    @apply text-6xl;
+  }
+
+  .cont-inner {
+    @apply -mt-48;
+  }
+
+  .wave {
+    @apply absolute bottom-0 left-0 right-0;
+  }
+}

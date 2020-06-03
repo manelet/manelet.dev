@@ -1,0 +1,10 @@
+:root {
+  --color-bg: #fff;
+  --color-text-default: #111;
+  --font-family: 'Jost', sans-serif;
+
+  @include dark {
+    --color-bg: #111;
+    --color-text-default: #fff;
+  }
+}
