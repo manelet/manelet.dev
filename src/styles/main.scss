@@ -30,20 +30,24 @@ body {
 }
 
 nav {
-  @apply flex w-full;
+  @apply flex w-full sticky top-0 z-50;
 
-  &.home {
-    @apply hidden;
-  }
+  // &.home {
+  //   @apply hidden;
+  // }
 }
 
 .splash {
   @apply flex w-screen h-screen relative max-w-full items-center;
-  background: rgb(17,17,17);
-  background: linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(77,77,77,1) 100%);  
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+
+  @include dark {
+    background: rgb(17,17,17);
+    background: linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(77,77,77,1) 100%);  
+  }
 
   h1 {
-    @apply text-6xl;
+    @apply text-6xl text-white;
   }
 
   .cont-inner {
@@ -52,5 +56,13 @@ nav {
 
   .wave {
     @apply absolute bottom-0 left-0 right-0;
+
+    svg {
+      fill: white;
+
+      @include dark {
+        fill: #111111;
+      }
+    }
   }
 }
