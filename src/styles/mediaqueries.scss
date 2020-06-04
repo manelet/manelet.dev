@@ -4,9 +4,12 @@ $screen-lg: 1024px;
 $screen-xl: 1280px;
 
 @mixin dark {
-  @media (prefers-color-scheme: dark) {
+  html.dark & {
     @content;
   }
+  // @media (prefers-color-scheme: dark) {
+  //   @content;
+  // }
 }
 
 @mixin light {

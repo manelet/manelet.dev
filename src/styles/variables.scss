@@ -1,10 +1,23 @@
-:root {
+@mixin lightColors {
   --color-bg: #fff;
   --color-text-default: #111;
+}
+
+@mixin darkColors {
+  --color-bg: #111;
+  --color-text-default: #fff;
+}
+
+html {
+  @include lightColors;
   --font-family: 'Jost', sans-serif;
 
-  @include dark {
-    --color-bg: #111;
-    --color-text-default: #fff;
+  // @media (prefers-color-scheme: dark) {
+  //   @include darkColors;
+  // }
+
+  &.dark {
+    @include darkColors;
   }
 }
+
