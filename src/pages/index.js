@@ -1,22 +1,22 @@
-import React, { useCallback } from "react"
-import { useRecoilState } from 'recoil'
-import { themeSelector } from '../state/theme'
+import React from "react"
+
+import ThemeToggle from '../components/ThemeToggle'
+
+import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 import '../styles/main.scss'
 
 export default function Home() {
-  const [theme, toggleTheme] = useRecoilState(themeSelector)
-  const updateTheme = useCallback(() => toggleTheme(theme === 'dark' ? 'light' : 'dark'), [toggleTheme, theme])
 
   return (
     <div>
-      <nav className='home cont bg-red dark:bg-purple'>
+      <nav className='home cont'>
         <div className='cont-inner'>
           <div className='flex w-full justify-between'>
             <div className="left">
               left
             </div>
-            <div className="right" onClick={updateTheme}>
-              {theme}
+            <div className="right">
+              <ThemeToggle />
             </div>
           </div>
         </div>
