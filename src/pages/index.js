@@ -26,22 +26,53 @@ export default function Home() {
         <div className="cont-inner">
           <div>
             <h1>Manel Escuer</h1>
-            <p>JavaScript</p>
+            <p>Frontend developer for wefox focused on React</p>
           </div>
         </div>
 
         <div className="wave">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">           
-            <path fillOpacity="1" d="M0,128L48,128C96,128,192,128,288,138.7C384,149,480,171,576,165.3C672,160,768,128,864,122.7C960,117,1056,139,1152,122.7C1248,107,1344,53,1392,26.7L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
-          </svg>              
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fillOpacity="1" d="M0,128L48,138.7C96,149,192,171,288,170.7C384,171,480,149,576,144C672,139,768,149,864,170.7C960,192,1056,224,1152,208C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+          </svg>          
         </div>
       </div>
 
       <div className="cont">
-        <div className="cont-inner">
-          <h2>contingut</h2>
+        <div className="cont-inner items-center flex-col md:flex-row">
+          <div className='flex w-full md:max-w-xs'>
+            projects
+          </div>
+          <div className='flex w-full bg-gray-900 rounded p-5'>
+            <div className='w-full'>
+              <ul>
+                <li>bocado</li>
+                <li>nyora</li>
+              </ul>
+            </div>
+            <div className='w-full'>
+              <ul>
+                <li>str</li>
+                <li>dropdown</li>
+              </ul>              
+            </div>
+          </div>
         </div>
       </div>
+
+      <div className="cont">
+        <div className="cont-inner flex-col">
+          <h2>posts</h2>
+
+          <div>
+            <h3>title post</h3>
+            <p>desc</p>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        footer
+      </footer>
     </div>
   )
 }

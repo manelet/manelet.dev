@@ -7,9 +7,6 @@ $screen-xl: 1280px;
   html.dark & {
     @content;
   }
-  // @media (prefers-color-scheme: dark) {
-  //   @content;
-  // }
 }
 
 @mixin light {

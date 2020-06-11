@@ -17,7 +17,7 @@ body {
   @apply flex w-full;
 
   .cont-inner {
-    @apply flex flex-col w-full mx-8;
+    @apply flex w-full mx-8;
 
     @include md {
       @apply mx-32;
@@ -42,8 +42,9 @@ nav {
   background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 
   @include dark {
-    background: rgb(17,17,17);
-    background: linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(77,77,77,1) 100%);  
+    background-color: #2d3748;
+    background-image: none;
+    // background: linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(77,77,77,1) 100%);
   }
 
   h1 {
@@ -61,7 +62,7 @@ nav {
       fill: white;
 
       @include dark {
-        fill: #111111;
+        fill: #1a202c;
       }
     }
   }
