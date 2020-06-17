@@ -1,0 +1,11 @@
+html {
+  --color-bg: #fff;
+  --color-text-default: #1a202c;
+  --font-family: 'Jost', sans-serif;
+}
+
+html.dark {
+  --color-bg: #1a202c;
+  --color-text-default: #fff;  
+}
+

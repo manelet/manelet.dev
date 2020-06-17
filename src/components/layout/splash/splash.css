@@ -1,0 +1,64 @@
+.splash {
+  @apply
+    flex
+    w-screen
+    h-screen
+    relative
+    max-w-full
+    items-center
+    text-white
+    overflow-hidden;
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+html.dark .splash {
+  background-color: #2d3748;
+  background-image: none;
+  /* background: linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(77,77,77,1) 100%); */
+}
+
+.splash .cont-inner {
+  @apply -mt-48;
+}
+
+.splash h1 {
+  @apply text-5xl text-white;
+}
+
+.splash .wave {
+  @apply absolute bottom-0 left-0 right-0 flex items-end justify-center;
+}
+
+.splash .wave svg {
+  @apply w-full;
+  fill: white;
+}
+
+.splash .wave .arrow-scroll {
+  @apply absolute text-gray-400 text-2xl cursor-pointer;  
+  bottom: .5em;
+}
+
+html.dark .splash .wave .arrow-scroll {
+  @apply text-gray-700;
+}
+
+html.dark .splash .wave svg {
+  fill: #1a202c;
+}
+
+@screen md {
+  .splash .wave .arrow-scroll {
+    bottom: 1em;
+  }
+}
+
+@screen lg {
+  .splash {
+    @apply items-center;
+  } 
+
+  .splash h1 {
+    @apply text-6xl text-white;
+  }  
+}

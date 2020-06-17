@@ -1,0 +1,3 @@
+nav {
+  @apply bg-transparent flex w-full fixed top-0 z-50;
+}

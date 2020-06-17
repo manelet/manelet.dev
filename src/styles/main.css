@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import './mediaqueries.css'; */
+@import './fonts.css';
+@import './variables.css';
+@import '../components/layout/splash/splash.css';
+@import '../components/layout/nav/nav.css';
+
+body {
+  background-color: var(--color-bg);
+  font-family: var(--font-family);
+  font-weight: normal;
+  color: var(--color-text-default);
+}
+
+.cont {
+  @apply flex w-full justify-center;
+}
+
+.cont .cont-inner {
+  @apply flex w-full mx-8;
+  max-width: 1100px;
+}
+
+.projects {
+  @apply flex w-full bg-gray-100 rounded p-5;
+}
+
+html.dark .projects {
+  @apply bg-gray-800;
+}
+
+.home-posts {
+  @apply rounded-lg bg-gray-100 p-5;
+}
+
+.home-pic {
+ @apply hidden max-w-xl relative; 
+}
+
+@screen md {
+  .cont .cont-inner {
+    @apply mx-32;    
+  }
+}
+
+@screen lg {
+  .cont .cont-inner {
+    @apply mx-40;
+  }
+
+  .home-pic {
+    @apply block mr-5;
+  }
+
+  .splash {
+    @apply items-center;
+  }  
+}
+
+@media (min-width: 1024px) and (max-width: 1160px) {
+  .home-pic{
+    margin-bottom: -5em;
+  } 
+}
