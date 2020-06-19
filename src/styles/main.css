@@ -5,8 +5,13 @@
 /* @import './mediaqueries.css'; */
 @import './fonts.css';
 @import './variables.css';
+
 @import '../components/layout/splash/splash.css';
 @import '../components/layout/nav/nav.css';
+@import '../components/layout/footer/footer.css';
+
+@import '../components/posts-list/posts-list.css';
+@import '../components/home-projects/home-projects.css';
 
 body {
   background-color: var(--color-bg);
@@ -24,22 +29,6 @@ body {
   max-width: 1100px;
 }
 
-.projects {
-  @apply flex w-full bg-gray-100 rounded p-5;
-}
-
-html.dark .projects {
-  @apply bg-gray-800;
-}
-
-.home-posts {
-  @apply rounded-lg bg-gray-100 p-5;
-}
-
-.home-pic {
- @apply hidden max-w-xl relative; 
-}
-
 @screen md {
   .cont .cont-inner {
     @apply mx-32;    
@@ -50,14 +39,6 @@ html.dark .projects {
   .cont .cont-inner {
     @apply mx-40;
   }
-
-  .home-pic {
-    @apply block mr-5;
-  }
-
-  .splash {
-    @apply items-center;
-  }  
 }
 
 @media (min-width: 1024px) and (max-width: 1160px) {

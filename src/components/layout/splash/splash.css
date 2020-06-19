@@ -55,7 +55,7 @@ html.dark .splash .wave svg {
 
 @screen lg {
   .splash {
-    @apply items-center;
+    @apply items-center;  
   } 
 
   .splash h1 {

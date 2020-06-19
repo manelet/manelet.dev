@@ -1,0 +1,21 @@
+.posts-list .posts-wrapper {
+  @apply flex flex-wrap;
+}
+
+.posts-list .post {
+  @apply w-full p-5 px-0 cursor-pointer;
+}
+
+.posts-list .post .post-inner {
+  @apply rounded-lg bg-gray-100 p-5;
+}
+
+html.dark .posts-list .post .post-inner {
+  @apply bg-gray-800;
+}
+
+@screen lg {
+  .posts-list .post {
+    @apply w-1/2 pr-5;
+  }
+}

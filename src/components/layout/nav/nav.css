@@ -6,7 +6,12 @@ nav {
     fixed
     top-0
     z-50
-    border
-    border-red-500
-    py-5;
+    h-16
+    text-white;
+}
+
+nav::before {
+  @apply absolute py-5 w-full h-full bg-transparent;
+  content: '';
+  backdrop-filter: blur(3px);
 }

@@ -1,0 +1,29 @@
+.projects {
+  @apply flex w-full bg-gray-100 rounded p-5;
+}
+
+html.dark .projects {
+  @apply bg-gray-800;
+}
+
+.projects li {
+  @apply flex w-full flex-shrink-0 p-4 cursor-pointer rounded;
+}
+
+.projects li:hover {
+    @apply bg-gray-200;
+}
+
+html.dark .projects li:hover {
+  @apply bg-gray-700;
+}
+
+@screen lg {
+  .projects {
+    @apply ml-10;
+  }
+
+  .projects li {
+    @apply w-1/2;
+  }
+}

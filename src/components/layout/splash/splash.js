@@ -4,23 +4,25 @@ import { motion } from 'framer-motion'
 
 import smoothScroll from '../../../lib/smoothScroll'
 import { themeSelector } from '../../../state/theme'
+import { useLayout } from '../../../context/layout'
 
 import manelet from '../../../manelet.png'
 import maneletDark from '../../../manelet-dark.png'
 
 const Splash = () => {
+  const refs = useLayout() 
   const [theme, toggleTheme] = useRecoilState(themeSelector)
   const isDark = theme === 'dark'
   
   return (
-    <div className="splash cont">
+    <div ref={refs.splash} className="splash cont">
       <div className="cont-inner">
         <div className='flex flex-col lg:flex-row items-center w-full'>
           <div className='w-full text-center lg:text-left'>
             <h1>Manel Escuer</h1>
             <p className='text-2xl'>Frontend developer for wefox focused on React</p>
           </div>
-          <div className='home-pic'>
+          <div className='hidden max-w-xl relative lg:block lg:mr-5'>
             <img src={isDark ? manelet : maneletDark} alt="" />
           </div>
         </div>
