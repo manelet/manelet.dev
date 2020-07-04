@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'
 import { Link, navigate, useStaticQuery, graphql } from "gatsby"
+import cn from 'classnames'
 
 const HomeProjects = () => {
   const { homeProjects: { projects = [] } } = useStaticQuery(graphql`
@@ -14,6 +15,7 @@ const HomeProjects = () => {
               github
               stack
               description
+              bg_color
             }
           }
         }
@@ -31,22 +33,23 @@ const HomeProjects = () => {
   return (
     <div className="cont pt-8 pb-20" id='home-projects'>
       <div className="cont-inner items-center flex-col lg:flex-row">
-        <div className='flex flex-col w-full md:max-w-xs'>
+        <div className='flex flex-col w-full lg:max-w-xs mb-4 md:my-auto'>
           <p className='font-bold text-3xl'>
             Projects
           </p>
           <p>
-            ♥️ bootsrapping side projects, toy with new techs and experiment
+            <span role='img' aria-label='heart'>♥️</span> bootsrapping side projects, toy with new techs and experiment
           </p>
         </div>
         <div className='projects'>
-          <div className='w-full'>
-            <ul className='flex flex-wrap'>
+          {/* <div className='w-full'> */}
+            <ul>
               {projects.map(({ project: { frontmatter } }) => (
                 <li
                   onClick={goToProject}
                   data-path={frontmatter.path}
                   key={frontmatter.path}
+                  className={cn(`${frontmatter.bg_color}-600`)}
                 >
                   <div>
                     <h2>
@@ -59,7 +62,7 @@ const HomeProjects = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>

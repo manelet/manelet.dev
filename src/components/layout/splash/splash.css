@@ -8,13 +8,8 @@
     items-center
     text-white
     overflow-hidden;
-  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-}
-
-html.dark .splash {
-  background-color: #2d3748;
-  background-image: none;
-  /* background: linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(77,77,77,1) 100%); */
+  background-color: var(--splash-bg);
+  background-image: var(--splash-bg-image);
 }
 
 .splash .cont-inner {
@@ -31,20 +26,13 @@ html.dark .splash {
 
 .splash .wave svg {
   @apply w-full;
-  fill: white;
+  fill: var(--splash-wave);
 }
 
 .splash .wave .arrow-scroll {
-  @apply absolute text-gray-400 text-2xl cursor-pointer;  
+  @apply absolute text-2xl cursor-pointer;  
   bottom: .5em;
-}
-
-html.dark .splash .wave .arrow-scroll {
-  @apply text-gray-700;
-}
-
-html.dark .splash .wave svg {
-  fill: #1a202c;
+  color: var(--splash-arrow);
 }
 
 @screen md {

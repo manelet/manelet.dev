@@ -37,7 +37,7 @@ body {
 
 @screen lg {
   .cont .cont-inner {
-    @apply mx-40;
+    @apply mx-12;
   }
 }
 

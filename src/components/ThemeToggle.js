@@ -2,8 +2,7 @@ import React, { useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import cn from 'classnames'
 
-import { useRecoilState } from 'recoil'
-import { themeSelector } from '../state/theme'
+import { useLayout } from '../context/layout'
 
 const variants = {
   hide: {
@@ -27,9 +26,9 @@ const variants = {
 }
 
 const ThemeToggle = () => {
-  const [theme, toggleTheme] = useRecoilState(themeSelector)
+  const [{ theme }, { toggleTheme }] = useLayout()
   const isDark = theme === 'dark'
-  const updateTheme = useCallback(() => toggleTheme(isDark ? 'light' : 'dark'), [toggleTheme, isDark])
+  const updateTheme = useCallback(() => toggleTheme(isDark ? 'light' : 'dark'), [toggleTheme, isDark])  
 
   return (
     <div onClick={updateTheme} className='cursor-pointer'>

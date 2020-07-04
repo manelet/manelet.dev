@@ -30,7 +30,7 @@ export default function Home () {
     <>
       <Splash />
       <HomeProjects />
-      <PostsList posts={posts} />
+      <PostsList title='Recently published' posts={posts} />
     </>
   )
 }

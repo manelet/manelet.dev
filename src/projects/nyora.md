@@ -4,6 +4,7 @@ path: "/projects/nyora"
 description: "AI set of tools for food metadata extraction and classification"
 github: "https://github.com/bocadoapp/nyora"
 url: "https://nyora.ai"
+bg_color: bg-green
 stack:
  - "python"
 ---

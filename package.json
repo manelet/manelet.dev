@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --host=0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -24,12 +24,14 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "recoil": "0.0.7"
+    "react-three-fiber": "^4.2.10",
+    "three": "^0.117.1"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "autoprefixer": "^9.8.0",
     "cssnano": "^4.1.10",
+    "eslint-config-react-app": "^5.2.1",
     "prettier": "2.0.5",
     "tailwindcss": "^1.4.6"
   },

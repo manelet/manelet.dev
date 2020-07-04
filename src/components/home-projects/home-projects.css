@@ -1,29 +1,38 @@
 .projects {
-  @apply flex w-full bg-gray-100 rounded p-5;
+  --gap: 1rem;
+  @apply flex w-full bg-transparent rounded;
 }
 
-html.dark .projects {
-  @apply bg-gray-800;
+.projects ul {
+  @apply flex flex-wrap;
 }
 
 .projects li {
-  @apply flex w-full flex-shrink-0 p-4 cursor-pointer rounded;
+  @apply mb-4 flex items-center w-full p-4 cursor-pointer rounded h-48 text-white;
 }
 
-.projects li:hover {
-    @apply bg-gray-200;
+.projects li h2 {
+  @apply text-3xl;
 }
 
-html.dark .projects li:hover {
-  @apply bg-gray-700;
+@screen md {
+
 }
 
 @screen lg {
   .projects {
-    @apply ml-10;
+    @apply p-5;
+  }
+ 
+  .projects ul li {
+    max-width: calc(50% - var(--gap) * 2);    
   }
 
-  .projects li {
-    @apply w-1/2;
+  .projects ul li:nth-child(odd) {
+    @apply mr-2;
   }
+  
+  .projects ul li:nth-child(even) {
+    @apply ml-2;
+  } 
 }

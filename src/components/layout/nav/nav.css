@@ -1,13 +1,20 @@
 nav {
   @apply
-    bg-transparent
     flex
     w-full
     fixed
     top-0
     z-50
-    h-16
-    text-white;
+    h-16;
+}
+
+nav.home .logo {
+  @apply hidden;
+}
+
+nav.home {
+  @apply bg-transparent;
+  background-image: none;  
 }
 
 nav::before {

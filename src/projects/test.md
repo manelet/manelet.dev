@@ -2,6 +2,7 @@
 name: "test"
 path: "/projects/test"
 description: "A test"
+bg_color: bg-green
 stack:
  - "JavaScript"
 ---

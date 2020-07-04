@@ -3,7 +3,7 @@ import { Link, navigate } from 'gatsby'
 
 const createMarkup = __html => ({ __html })
 
-const PostsList = ({ posts = [] }) => {
+const PostsList = ({ title, posts = [] }) => {
   const goTo = useCallback(e => {
     e.preventDefault()
     e.stopPropagation()
@@ -14,7 +14,9 @@ const PostsList = ({ posts = [] }) => {
   return (
     <div className="posts-list cont">
       <div className="cont-inner flex-col">
-        <h2>posts</h2>
+        {title && (
+          <h2 className='font-bold text-3xl'>{title}</h2>
+        )}
 
         <div className='posts-wrapper'>
           {posts.length && posts.map(({ post }) => (

@@ -3,6 +3,7 @@ name: "🥑 bocado"
 path: "/projects/bocado"
 description: "A mobile app to empower your cooking creativity and meal planification"
 url: "https://bocadoapp.com"
+bg_color: bg-purple
 stack:
  - "javascript"
 ---

@@ -4,6 +4,7 @@ path: "/projects/str"
 description: "A JavaScript string manipulation library"
 github: "https://github.com/manelet/str"
 url: "https://str.js.org"
+bg_color: bg-red
 stack:
  - "JavaScript"
 ---
