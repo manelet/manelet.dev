@@ -1,4 +1,9 @@
 # To-Do
 - [ ] debounce scroll
 - [ ] logo
-- [ ] footer 
+- [ ] footer
+
+## Pages
+- [x] home
+- [ ] post
+- [ ] projects

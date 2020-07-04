@@ -26,7 +26,7 @@ const Nav = ({ path }) => {
       setMounted(true)
     }
 
-    if (theme && mounted) {      
+    if (theme && mounted) {
       window.addEventListener('scroll', handleScroll)
       handleScroll()
       return () => window.removeEventListener('scroll', handleScroll)
