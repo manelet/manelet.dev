@@ -1,4 +1,4 @@
-import React, { Suspense, useLayoutEffect, useCallback, useEffect } from 'react'
+import React, { useState, useLayoutEffect, useCallback, useEffect } from 'react'
 import cn from 'classnames'
 
 import { useLayout } from '../../../context/layout'
@@ -6,6 +6,7 @@ import ThemeToggle from '../../ThemeToggle'
 import handleNavScroll from '../../../lib/navScroll'
 
 const Nav = ({ path }) => {
+  const [mounted, setMounted] = useState(false)
   const [{ theme, refs }] = useLayout()  
   const isHome = path === '/'
   const isDark = theme === 'dark'
@@ -21,16 +22,17 @@ const Nav = ({ path }) => {
   )
 
   useEffect(() => {
-    if (theme) {
+    if (!mounted) {
+      setMounted(true)
+    }
+
+    if (theme && mounted) {      
       window.addEventListener('scroll', handleScroll)
       handleScroll()
       return () => window.removeEventListener('scroll', handleScroll)
     }
-  }, [handleScroll, theme])
-
-  if (!theme) {
-    return null
-  }
+    // eslint-disable-next-line
+  }, [mounted, theme])
 
   return (
       <nav ref={refs.nav} className={cn(
