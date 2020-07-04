@@ -1,3 +1,5 @@
 footer {
-  @apply bg-gray-600 text-white py-5;
+  @apply text-white py-5;
+  background-color: var(--bg-post);
+  color: var(--color-text-default);
 }

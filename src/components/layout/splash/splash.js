@@ -12,7 +12,7 @@ const Splash = () => {
   return (
     <Suspense fallback={<h1>Loading logo!</h1>}>
       <div ref={refs.splash} className="splash cont">
-        <div className="cont-inner">
+        <div className="cont-inner z-10">
           <div className='flex flex-col lg:flex-row items-center w-full'>
             <div className='w-full text-center lg:text-left'>
               <h1>Manel Escuer</h1>
