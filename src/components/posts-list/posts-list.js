@@ -20,10 +20,10 @@ const PostsList = ({ title, posts = [] }) => {
 
         <div className='posts-wrapper'>
           {posts.length && posts.map(({ post }) => (
-            <div key={post.frontmatter.path} className="post" data-path={post.frontmatter.path} onClick={goTo}>
+            <div key={post.fields.slug} className="post" data-path={post.fields.slug} onClick={goTo}>
               <div className='post-inner'>
                 <h3 className='text-2xl'>
-                  <Link to={post.frontmatter.path}>
+                  <Link to={post.fields.slug}>
                     {post.frontmatter.title}
                   </Link>
                 </h3>

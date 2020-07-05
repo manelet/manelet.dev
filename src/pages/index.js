@@ -8,16 +8,18 @@ import PostsList from "../components/posts-list/posts-list"
 export default function Home () {
   const { latestPosts: { posts } } = useStaticQuery(graphql`
     query {
-      latestPosts: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/articles/" } }
+      latestPosts: allMdx(
+        filter: { fileAbsolutePath: { regex : "\/articles/" } }
       ) {
         posts: edges {
           post: node {
             id
-            excerpt(pruneLength: 280, format: HTML)
+            excerpt(pruneLength: 280)
+            fields {
+              slug
+            }
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
-              path
               title
             }
           }

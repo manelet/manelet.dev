@@ -5,18 +5,20 @@ import cn from 'classnames'
 const HomeProjects = () => {
   const { homeProjects: { projects = [] } } = useStaticQuery(graphql`
     query HomeProjects {
-      homeProjects: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
+      homeProjects: allMdx(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
         projects: edges {
           project: node {
             frontmatter {
               name
-              path
               url
               github
               stack
               description
               bg_color
             }
+            fields {
+              slug
+            }            
           }
         }
       }
@@ -44,23 +46,25 @@ const HomeProjects = () => {
         <div className='projects'>
           {/* <div className='w-full'> */}
             <ul>
-              {projects.map(({ project: { frontmatter } }) => (
-                <li
-                  onClick={goToProject}
-                  data-path={frontmatter.path}
-                  key={frontmatter.path}
-                  className={cn(`${frontmatter.bg_color}-600`)}
-                >
-                  <div>
-                    <h2>
-                      <Link to={frontmatter.path}>
-                        {frontmatter.name}
-                      </Link>
-                    </h2>
-                    {frontmatter.description}
-                  </div>
-                </li>
-              ))}
+              {projects.map(({ project: { fields: { slug }, frontmatter } }) => {                
+                return (
+                  <li
+                    onClick={goToProject}
+                    data-path={slug}
+                    key={slug}
+                    className={cn(`${frontmatter.bg_color}-600`)}
+                  >
+                    <div>
+                      <h2>
+                        <Link to={slug}>
+                          {frontmatter.name}
+                        </Link>
+                      </h2>
+                      {frontmatter.description}
+                    </div>
+                  </li>
+                )
+              })}
             </ul>
           {/* </div> */}
         </div>

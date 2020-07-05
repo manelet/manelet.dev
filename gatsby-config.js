@@ -4,22 +4,29 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/articles`,
+        path: `${__dirname}/content/articles`,
         name: `articles`,
       },      
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/projects`,
+        path: `${__dirname}/content/projects`,
         name: `projects`,
       },      
-    },    
+    },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        "excerpt_separator": `<!--more-->`
+        extensions: ['.mdx', '.md']
       }
-    }
+    },
+    // 'gatsby-remark-source-name'
+    // {
+    //   resolve: 'gatsby-transformer-remark',
+    //   options: {
+    //     "excerpt_separator": `<!--more-->`
+    //   }
+    // }
   ]
 }   

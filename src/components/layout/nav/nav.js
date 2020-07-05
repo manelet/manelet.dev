@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useCallback, useEffect } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import cn from 'classnames'
 
 import { useLayout } from '../../../context/layout'
@@ -15,8 +15,8 @@ const Nav = ({ path }) => {
       refs.nav.current,
       refs.navMenu.current,
       refs.splash.current,
-      isHome,
-      isDark
+      isDark,
+      isHome
     ),
     [isDark, isHome, refs.nav, refs.navMenu, refs.splash]
   )
@@ -26,29 +26,20 @@ const Nav = ({ path }) => {
       setMounted(true)
     }
 
-    if (theme && mounted) {
+    if (theme && mounted && isHome) {
       window.addEventListener('scroll', handleScroll)
       handleScroll()
       return () => window.removeEventListener('scroll', handleScroll)
     }
     // eslint-disable-next-line
-  }, [mounted, theme])
+  }, [mounted, theme, isHome])
 
   return (
-      <nav ref={refs.nav} className={cn(
-        'cont',
-        isHome && 'home',
-        // isHome ? 'text-white' : 
-      )}>
+      <nav ref={refs.nav} className={cn('cont', isHome && 'home', isHome ? 'fixed': 'relative')}>
         <div className='cont-inner py-3'>
           <div className='flex w-full justify-between relative'>
-            <div
-              className='logo'
-              ref={refs.navMenu} 
-              // className={cn(path === '/' && 'hidden', 'left')}
-            >
+            <div className='logo' ref={refs.navMenu}>
               Manel
-
               {/* <ul>
                 <li>Articles</li>
                 <li>Projects</li>

@@ -1,3 +1,7 @@
+.text-subtext {
+  color: var(--subtext);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

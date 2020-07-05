@@ -2,10 +2,10 @@ nav {
   @apply
     flex
     w-full
-    fixed
     top-0
     z-50
     h-16;
+  background-color: var(--nav-bg);
 }
 
 nav.home .logo {
