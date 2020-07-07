@@ -1,9 +1,38 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import cn from 'classnames'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { useLayout } from '../../../context/layout'
 import ThemeToggle from '../../ThemeToggle'
 import handleNavScroll from '../../../lib/navScroll'
+
+const logoVariants = {
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: .5,
+      staggerChildren: .5
+    }
+  },
+  hidden: {
+    opacity: 0
+  }
+}
+
+const letterVariants = {
+  show: {
+    // y: 0,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: .5
+    }
+  },
+  hidden: {
+    y: -50,
+    opacity: 0
+  }
+}
 
 const Nav = ({ path }) => {
   const [mounted, setMounted] = useState(false)
@@ -39,13 +68,24 @@ const Nav = ({ path }) => {
         <div className='cont-inner py-3'>
           <div className='flex w-full justify-between relative'>
             <div className='logo' ref={refs.navMenu}>
-              Manel
-              {/* <ul>
+              <motion.span className="logo" variants={logoVariants} animate='show' initial='hidden'>
+                <motion.span variants={letterVariants}>M</motion.span>
+                <motion.span variants={letterVariants}>a</motion.span>
+                <motion.span variants={letterVariants}>n</motion.span>
+                <motion.span variants={letterVariants}>e</motion.span>
+                <motion.span variants={letterVariants}>l</motion.span>
+              </motion.span>
+              <motion.ul
+                transition={{ delay: 3 }}
+                variants={{ show: { opacity: 1 }, hidden: { opacity: 0 }}}
+                animate='show'
+                initial='hidden'
+              >
                 <li>Articles</li>
                 <li>Projects</li>
                 <li>About</li>
                 <li>Contact</li>
-              </ul> */}
+              </motion.ul>
             </div>
             <div className="right flex ml-auto">
               <div className='relative mr-3 cursor-pointer'>

@@ -12,6 +12,14 @@ nav.home .logo {
   @apply hidden;
 }
 
+nav div.logo ul {
+  @apply flex text-lg;
+}
+
+nav div.logo ul li:not(:last-child) {
+  @apply mr-4;
+}
+
 nav.home {
   @apply bg-transparent;
   background-image: none;  
@@ -21,4 +29,48 @@ nav::before {
   @apply absolute py-5 w-full h-full bg-transparent;
   content: '';
   backdrop-filter: blur(3px);
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo span.logo {
+  font-family: 'Rammetto One';
+  position: relative;
+  display: flex;
+}
+
+nav .logo span.logo span {
+  display: flex;
+  align-items: center;
+  transform: translateY(-150px);
+  position: relative;
+}
+
+nav .logo span.logo span:nth-child(1) {
+  font-size: 24px;
+}
+
+nav .logo span.logo span:nth-child(2) {
+  font-size: 26px;
+}
+
+nav .logo span.logo span:nth-child(3) {
+  font-size: 34px;
+}
+
+nav .logo span.logo span:nth-child(4) {
+  font-size: 24px;
+}
+
+nav .logo span.logo span:nth-child(5) {
+  font-size: 22px;
+}
+
+@screen md {
+  nav div.logo ul {
+    @apply ml-10;
+  }
 }
