@@ -4,7 +4,12 @@ export default () => ({
   refs: {
     nav: createRef(null),
     splash: createRef(null),
-    navMenu: createRef(null)
+    burger: createRef(null),
+    navInner: createRef(null),
+    navMenu: createRef(null),
+    logoWrapper: createRef(null),
+    logoLetters: [createRef(null), createRef(null), createRef(null), createRef(null), createRef(null)]
   },
-  theme: undefined
+  theme: undefined,
+  mobileMenuOpened: false
 })

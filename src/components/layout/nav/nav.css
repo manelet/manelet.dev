@@ -1,3 +1,6 @@
+/**
+ * Nav
+ */
 nav {
   @apply
     flex
@@ -8,69 +11,187 @@ nav {
   background-color: var(--nav-bg);
 }
 
-nav.home .logo {
-  @apply hidden;
+nav::before {
+  @apply absolute py-5 w-full h-full bg-transparent;
+  content: '';
+  backdrop-filter: blur(3px);
+  /* filter: blur(5px); */
 }
 
-nav div.logo ul {
-  @apply flex text-lg;
+/**
+ * Nav inner
+ */
+nav div.nav-inner {
+  @apply flex items-center py-3 z-10 justify-between;  
+}
+
+/**
+ * Nav burger
+ */
+/* nav .nav-inner .burger {
+  @apply relative;
+} */
+
+/* nav .nav-inner.menu-mobile-opened .burger {
+  @apply hidden;
+} */
+
+/**
+ * Nav menu
+ */
+nav .menu {
+  @apply
+    items-center
+    hidden;
+}
+
+nav .menu.menu-mobile-opened {
+  @apply
+    flex
+    justify-around
+    absolute
+    flex-col
+    w-screen
+    h-screen
+    top-0
+    left-0
+    right-0
+    items-start
+    pl-10;
+  background-color: var(--color-bg);
+}
+
+nav .menu .close {
+  @apply
+    absolute
+    top-0
+    right-0;
+}
+
+nav .menu ul {
+  @apply flex flex-col text-4xl text-left;
+  /* font-weight: lighter; */
+}
+
+/**
+ * Nav logo
+ */
+ nav .logo {
+  display: flex;
+  align-items: center;
+  transform: translateX(50%);
 }
 
 nav div.logo ul li:not(:last-child) {
   @apply mr-4;
 }
 
-nav.home {
-  @apply bg-transparent;
-  background-image: none;  
-}
-
-nav::before {
-  @apply absolute py-5 w-full h-full bg-transparent;
-  content: '';
-  backdrop-filter: blur(3px);
-}
-
-nav .logo {
-  display: flex;
-  align-items: center;
-}
-
 nav .logo span.logo {
-  font-family: 'Rammetto One';
+  font-family: 'Cartoon';
   position: relative;
   display: flex;
+  font-size: 42px;
+  /* background-image: none; */
+  background-image: linear-gradient(to right top, #d16ba5 33%, #8aa7ec 33%, #5ffbf1 33%);  
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  transition: all 1s linear;
+  /* text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; */
 }
 
 nav .logo span.logo span {
   display: flex;
   align-items: center;
-  transform: translateY(-150px);
+  /* transform: translateY(-150px); */
   position: relative;
+  /* background: -webkit-linear-gradient(#ff0000, #333); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;    */
 }
 
-nav .logo span.logo span:nth-child(1) {
-  font-size: 24px;
+/* nav div.nav-inner.menu-mobile-opened .logo {
+  @apply flex;
+}  */
+
+/**
+ * Nav homepage specifics
+ */
+nav.home {
+  @apply bg-transparent;
+  background-image: none;  
 }
 
-nav .logo span.logo span:nth-child(2) {
-  font-size: 26px;
+nav.home .logo {
+  @apply hidden;
 }
 
-nav .logo span.logo span:nth-child(3) {
-  font-size: 34px;
+/**
+ * Nav Mobile Menu Opened
+ */
+nav div.nav-inner.menu-mobile-opened {
+  @apply
+    relative
+    justify-center
+    mx-0;
+} 
+
+nav div.nav-inner.menu-mobile-opened div.logo{
+  @apply z-10 absolute;
+  left: 1rem;
+} 
+
+/**
+ * Nav Icons
+ */
+nav .icons {
+  @apply flex;
 }
 
-nav .logo span.logo span:nth-child(4) {
-  font-size: 24px;
+nav .icons .icon {
+  @apply relative mr-3 cursor-pointer text-xl;
 }
 
-nav .logo span.logo span:nth-child(5) {
-  font-size: 22px;
-}
-
+/**
+ * Nav Media Queries
+ */
 @screen md {
-  nav div.logo ul {
-    @apply ml-10;
+  nav .logo {
+    transform: none;
   }
+
+  nav .menu {
+    @apply flex w-full justify-between;
+  }
+
+  nav.home .menu ul {
+    @apply hidden;
+  }
+
+  nav.home .menu > div {
+    @apply ml-auto;
+  }  
+
+  /* nav .menu .close {
+    @apply hidden;
+  } */
+  
+  nav .menu ul {
+    @apply flex-row ml-10 text-lg;
+    /* font-weight: lighter; */
+  }
+
+  nav .menu ul li:not(:last-child) {
+    @apply mr-4;
+  }
+
+  /* nav .burger {
+    @apply hidden;
+  }   */
+
+  nav .icons .icon {
+    @apply text-lg;
+  }  
 }

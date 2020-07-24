@@ -10,12 +10,16 @@
 @import './fonts.css';
 @import './variables.css';
 
+@import '../templates/post/post.css';
+
 @import '../components/layout/splash/splash.css';
 @import '../components/layout/nav/nav.css';
 @import '../components/layout/footer/footer.css';
+@import '../components/layout/nav/logo/logo.css';
 
 @import '../components/posts-list/posts-list.css';
 @import '../components/home-projects/home-projects.css';
+@import '../components/burger/burger.css';
 
 body {
   background-color: var(--color-bg);
@@ -24,24 +28,28 @@ body {
   color: var(--color-text-default);
 }
 
+body.locked {
+  @apply overflow-hidden;
+}
+
 .cont {
   @apply flex w-full justify-center;
 }
 
 .cont .cont-inner {
-  @apply flex w-full mx-8;
+  @apply flex w-full px-4;
   max-width: 1100px;
 }
 
 @screen md {
   .cont .cont-inner {
-    @apply mx-32;    
+    @apply px-32;    
   }
 }
 
 @screen lg {
   .cont .cont-inner {
-    @apply mx-12;
+    @apply px-12;
   }
 }
 

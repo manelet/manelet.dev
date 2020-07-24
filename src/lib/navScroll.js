@@ -1,9 +1,9 @@
-export default (nav, navMenu, splash, isDark, isHome) => {
+export default (nav, navInner, splash, isDark, isHome) => {
   const { height: navHeight } = nav.getBoundingClientRect()
   const { height: splashHeight } = splash.getBoundingClientRect()
 
   if (window.scrollY > (splashHeight - navHeight)) {
-    navMenu.style.display = 'flex'
+    // navInner.style.display = 'flex'
 
     if (!isDark) {
       nav.classList.add('text-gray-800')
@@ -15,7 +15,7 @@ export default (nav, navMenu, splash, isDark, isHome) => {
 
     nav.classList.remove('home')
   } else {
-    navMenu.style.display = 'none'
+    // navInner.style.display = 'none'
     nav.classList.add('home')
 
     if (!isDark) {

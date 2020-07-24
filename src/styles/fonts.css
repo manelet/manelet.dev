@@ -1,4 +1,18 @@
 @font-face {
+  font-family: 'Cartoon';
+  src: url('/fonts/CARTOON.ttf') format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rainball';
+  src: url('./fonts/rainball/Rainball.ttf') format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Rammetto One';
   src: url('./fonts/Rammetto_One/RammettoOne-Regular.ttf') format("truetype");
   font-weight: 300;

@@ -8,7 +8,7 @@ export const generateCssVariables = (theme, root) => {
     ).join('\n')
   }
 
-  return Object.keys(COLORS[theme]).map(
+  Object.keys(COLORS[theme]).map(
     varName => root.style.setProperty(`--${varName}`, `${COLORS[theme][varName]}`)
   ) 
 }

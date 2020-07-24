@@ -3,7 +3,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
+  const blogPostTemplate = path.resolve(`src/templates/post/post.js`)
   const result = await graphql(`
     {
       allMdx (
