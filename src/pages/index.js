@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { motion } from 'framer-motion'
 
 import Splash from '../components/layout/splash/splash'
 import HomeProjects from "../components/home-projects/home-projects"
@@ -29,10 +30,10 @@ export default function Home () {
   `)
   
   return (
-    <>
+    <motion.div style={{ border: '3px solid green' }} magicId='wrapper' magic>
       <Splash />
       <HomeProjects />
       <PostsList title='Recently published' posts={posts} />
-    </>
+    </motion.div>
   )
 }

@@ -1,0 +1,46 @@
+.post, .page {
+  @apply py-24;
+}
+
+.post .cont-inner, .page .cont-inner {
+  @apply flex w-full px-4;
+  max-width: 1100px;
+}
+
+.post h2, .page h2 {
+  @apply text-4xl;
+}
+
+.post p, .page p {
+  @apply text-lg;
+}
+
+.post figure, .post div.code, .page figure, .page div.code {
+  @apply my-10 -mx-4;
+}
+
+@screen md {
+  .post .cont-inner, .page .cont-inner {
+    @apply px-48;
+  }
+}
+
+@screen lg {
+  .post, .page {
+    @apply py-32;
+  }
+  
+  .post .cont-inner, .page .cont-inner {
+    @apply px-64;
+  }
+
+  .post figure, .post div.code, .page figure, .page div.code {
+    margin: 2rem -3rem;
+  }
+
+  .post div.code, .page div.code {
+    max-width: auto;
+    overflow-x: auto;
+    @apply rounded-lg;
+  }
+}

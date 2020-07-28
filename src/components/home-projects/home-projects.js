@@ -1,6 +1,7 @@
-import React, { useCallback } from 'react'
-import { Link, navigate, useStaticQuery, graphql } from "gatsby"
-import cn from 'classnames'
+import React from 'react'
+import { useStaticQuery, graphql } from "gatsby"
+
+import List from '../list/list'
 
 const HomeProjects = () => {
   const { homeProjects: { projects = [] } } = useStaticQuery(graphql`
@@ -24,13 +25,6 @@ const HomeProjects = () => {
       }
     }
   `)
-  
-  const goToProject = useCallback(e => {
-    e.preventDefault()
-    e.stopPropagation()
-    const url = e.currentTarget.getAttribute('data-path')
-    navigate(url)
-  }, [])
 
   return (
     <div className="cont pt-8 pb-20" id='home-projects'>
@@ -44,29 +38,7 @@ const HomeProjects = () => {
           </p>
         </div>
         <div className='projects'>
-          {/* <div className='w-full'> */}
-            <ul>
-              {projects.map(({ project: { fields: { slug }, frontmatter } }) => {                
-                return (
-                  <li
-                    onClick={goToProject}
-                    data-path={slug}
-                    key={slug}
-                    className={cn(`${frontmatter.bg_color}-600`)}
-                  >
-                    <div>
-                      <h2>
-                        <Link to={slug}>
-                          {frontmatter.name}
-                        </Link>
-                      </h2>
-                      {frontmatter.description}
-                    </div>
-                  </li>
-                )
-              })}
-            </ul>
-          {/* </div> */}
+          <List items={projects} />
         </div>
       </div>
     </div>

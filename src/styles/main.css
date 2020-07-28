@@ -10,7 +10,7 @@
 @import './fonts.css';
 @import './variables.css';
 
-@import '../templates/post/post.css';
+@import '../templates/article/article.css';
 
 @import '../components/layout/splash/splash.css';
 @import '../components/layout/nav/nav.css';
@@ -20,6 +20,7 @@
 @import '../components/posts-list/posts-list.css';
 @import '../components/home-projects/home-projects.css';
 @import '../components/burger/burger.css';
+@import '../components/project-layout/project-layout.css';
 
 body {
   background-color: var(--color-bg);

@@ -1,5 +1,5 @@
-import wrapRoot from './wrap-root-element'
-import wrapPage from './wrap-page-element'
+import wrapRoot from './gatsby/wrap-root-element'
+import wrapPage from './gatsby/wrap-page-element'
 
 import './node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 import './src/styles/main.css'

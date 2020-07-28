@@ -2,13 +2,14 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { TwitterIcon, TwitterShareButton, LinkedinShareButton, LinkedinIcon } from 'react-share'
+import { motion } from 'framer-motion'
 
 export default function Template(props) {
   const { data: { mdx: { body, frontmatter } } } = props
   console.log('asdasd', props);
 
   return (
-    <div className="post cont">
+    <motion.div magic magicId='wrapper' className="post cont" style={{ border: '3px solid red' }}>
       <div className="cont-inner items-start flex-col">
         <h1 className='text-5xl font-bold'>{frontmatter.title}</h1>
         <p className='text-subtext'>{frontmatter.date}</p>
@@ -26,7 +27,7 @@ export default function Template(props) {
           </TwitterShareButton>          
         </div>
       </div>    
-    </div>
+    </motion.div>
   )
 }
 

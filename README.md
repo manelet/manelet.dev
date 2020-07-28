@@ -1,20 +1,14 @@
 # To-Do
-- [x] debounce scroll
-- [x] logo
 - [ ] footer
-- [x] mobile nav
+- [ ] animacions: menu, transicions de pagines, post...
 
 ## Pages
-- [x] home
+- [ ] posts
 - [ ] post
 - [ ] projects
+- [ ] posts by category
 
 ## Post
-- [x] Remark per animar elements per separat
-- [ ] animar contingut on load
-- [x] Share on twitter
 - [ ] table of contents
-- [x] post amb snippets de codi
-- [x] post amb components de react
 - [ ] diferents plantilles depenent de la categoria/tag
 - [ ] style: data, share ...

@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useRef, cloneElement } from 'react'
 
 import Nav from './nav/nav'
 import Footer from './footer/footer'
+import Transition from '../page-transition'
 
-const Layout = ({ children, ...props }) => {  
+const Layout = ({ children, path }) => {
   return (
     <div>
-      <Nav path={props.path} />
-      {children}
+      <Nav path={path} />
+      <Transition>
+        {children}
+      </Transition>      
       <Footer />
     </div>
   )

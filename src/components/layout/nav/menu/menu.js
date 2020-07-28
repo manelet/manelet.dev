@@ -31,11 +31,11 @@ const Menu = () => {
             About
           </Link>
         </li>
-        <li>
-          <Link to='/contact'>
-            Contact
-          </Link>
-        </li>
+          {/* <li>
+            <Link to='/contact'>
+              Contact
+            </Link>
+          </li> */}
       </motion.ul>
       <div className="icons">
         <div className='icon'>

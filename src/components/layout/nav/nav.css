@@ -3,6 +3,7 @@
  */
 nav {
   @apply
+    relative
     flex
     w-full
     top-0
@@ -15,7 +16,6 @@ nav::before {
   @apply absolute py-5 w-full h-full bg-transparent;
   content: '';
   backdrop-filter: blur(3px);
-  /* filter: blur(5px); */
 }
 
 /**
