@@ -98,8 +98,8 @@ module.exports = {
     //         // optional configuration to specify external rss feed, such as feedburner
     //         link: "https://feeds.feedburner.com/gatsby/blog",
     //       },
-        ],
-      },
-    }    
+    //     ],
+    //   },
+    // }    
   ]
 }   
