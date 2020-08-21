@@ -23,7 +23,7 @@ const titleVariants = {
   }
 }
 
-export default ({ data: { mdx }, ...props }) => console.log('adsasd', mdx) || (
+export default ({ data: { mdx }, ...props }) => (
   <Layout {...props}>
       <motion.div
         transition={{ duration: 1 }}
