@@ -1,7 +1,7 @@
 ---
 name: "test"
 description: "A test"
-bg_color: bg-green
+bg_color: "#FFC75F"
 slug: "test"
 stack:
  - "JavaScript"

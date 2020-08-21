@@ -5,12 +5,8 @@
 - [ ] seo
 - [ ] schema.org
 - [ ] lighthouse 
-
-## Pages
-- [ ] posts
-- [x] post
-- [x] projects
-- [ ] posts by category
+- [ ] analytics
+- [ ] real content
 
 ## Post
 - [ ] table of contents

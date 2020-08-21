@@ -20,7 +20,7 @@ const List = ({ items }) => {
               data-path={slug}
               key={slug}
             >
-              <div className={cn(`${frontmatter.bg_color}-600`)}>
+              <div style={{ backgroundColor: frontmatter.bg_color }}>
                 <h2>
                   <Link to={slug}>
                     {frontmatter.name}

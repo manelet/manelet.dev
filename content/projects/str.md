@@ -3,7 +3,7 @@ name: "🌍 str"
 description: "A JavaScript string manipulation library"
 github: "https://github.com/manelet/str"
 url: "https://str.js.org"
-bg_color: bg-red
+bg_color: "#FF9671"
 slug: "str"
 stack:
  - "JavaScript"

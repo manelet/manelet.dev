@@ -2,7 +2,7 @@
 name: "🥑 bocado"
 description: "A mobile app to empower your cooking creativity and meal planification"
 url: "https://bocadoapp.com"
-bg_color: bg-purple
+bg_color: "#D65DB1"
 slug: "bocado"
 stack:
  - "javascript"

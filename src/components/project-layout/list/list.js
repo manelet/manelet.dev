@@ -81,12 +81,13 @@ const ProjectsList = props => {
               initial='idle'
               animate={isActive ? 'highlighted' : 'idle'}
               key={`proj-${project.fields.slug}`}
-              className={cn('project-list-item', `${project.frontmatter.bg_color}-500`, isActive && 'active')}
+              className={cn('project-list-item', isActive && 'active')}
               onClick={handleNavigate}
               data-project-slug={project.fields.slug}
               data-active={isActive}
               ref={refs.projects[i]}
               variants={variants}
+              style={{ backgroundColor: project.frontmatter.bg_color }}
             >
               <Link to={project.fields.slug} className='text-xl'>
                 {project.frontmatter.name}
