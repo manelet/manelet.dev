@@ -1,14 +1,18 @@
 # To-Do
-- [ ] footer
+- [x] footer
 - [ ] animacions: menu, transicions de pagines, post...
+- [ ] favicon
+- [ ] seo
+- [ ] schema.org
+- [ ] lighthouse 
 
 ## Pages
 - [ ] posts
-- [ ] post
-- [ ] projects
+- [x] post
+- [x] projects
 - [ ] posts by category
 
 ## Post
 - [ ] table of contents
 - [ ] diferents plantilles depenent de la categoria/tag
-- [ ] style: data, share ...
+- [x] style: data, share ...

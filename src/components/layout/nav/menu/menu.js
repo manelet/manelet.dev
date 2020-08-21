@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'gatsby'
+import { navigate, Link } from 'gatsby'
 
 import ThemeToggle from '../../../ThemeToggle'
 import { useLayout } from '../../../../context/layout'
+import useWindow from '../../../../hooks/useWindow'
 
-const Menu = () => {
+const Menu = ({ handleToggleMenu }) => {
+  const { isMobile } = useWindow()
   const [{ refs }] = useLayout()  
+
+  const handleOnClick = useCallback(
+    e => {
+      e.preventDefault()
+      const slug = e.currentTarget.dataset.slug
+
+      if (isMobile) {
+        handleToggleMenu()
+      }
+
+      navigate(slug)
+    },
+    [isMobile]
+  )
 
   return (
     <div ref={refs.navMenu} className="menu">
@@ -16,17 +32,17 @@ const Menu = () => {
         // animate='show'
         // initial='hidden'
       >
-        <li>
+        <li data-slug='/articles' onClick={handleOnClick}>
           <Link to='/articles'>
             Articles
           </Link>
         </li>
-        <li>
+        <li data-slug='/projects' onClick={handleOnClick}>
           <Link to='/projects'>
             Projects
           </Link>
         </li>
-        <li>
+        <li data-slug='/about' onClick={handleOnClick}>
           <Link to='/about'>
             About
           </Link>
@@ -50,11 +66,11 @@ const Menu = () => {
           </a>
         </div>
 
-        <div className='icon'>
+        {/* <div className='icon'>
           <a href='/rss.xml' target='_blank'>
             <i className="fas fa-rss" />
           </a>
-        </div>
+        </div> */}
 
         <ThemeToggle />
       </div>

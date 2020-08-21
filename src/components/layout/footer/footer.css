@@ -1,5 +1,13 @@
 footer {
   @apply text-white py-5;
   background-color: var(--bg-post);
-  color: var(--color-text-default);
+  color: var(--footer-text);
+}
+
+footer svg {
+  width: 80px;
+}
+
+footer svg g {
+  fill: var(--footer-text);
 }

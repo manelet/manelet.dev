@@ -19,9 +19,8 @@ const List = ({ items }) => {
               onClick={goToProject}
               data-path={slug}
               key={slug}
-              className={cn(`${frontmatter.bg_color}-600`)}
             >
-              <div>
+              <div className={cn(`${frontmatter.bg_color}-600`)}>
                 <h2>
                   <Link to={slug}>
                     {frontmatter.name}

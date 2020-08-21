@@ -10,7 +10,10 @@
 @import './fonts.css';
 @import './variables.css';
 
+@import '../pages/articles/articles.css';
+
 @import '../templates/article/article.css';
+@import '../templates/project/project.css';
 
 @import '../components/layout/splash/splash.css';
 @import '../components/layout/nav/nav.css';

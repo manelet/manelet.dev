@@ -12,6 +12,10 @@ nav {
   background-color: var(--nav-bg);
 }
 
+nav.home::before {
+  backdrop-filter: none;
+}
+
 nav::before {
   @apply absolute py-5 w-full h-full bg-transparent;
   content: '';
@@ -122,6 +126,8 @@ nav .logo span.logo span {
 nav.home {
   @apply bg-transparent;
   background-image: none;  
+
+  
 }
 
 nav.home .logo {

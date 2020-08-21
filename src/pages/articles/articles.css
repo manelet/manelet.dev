@@ -1,0 +1,30 @@
+.articles-item {
+  @apply flex flex-col mb-12 w-full;
+}
+
+.articles-item .read-more {
+  @apply inline-flex cursor-pointer;
+}
+
+.articles-item .read-more span.arr {
+  @apply inline-block relative;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+.articles-item .read-more span.text {
+  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;    
+}
+
+.articles-item:hover .read-more span.arr {
+  @apply inline-block opacity-100;
+  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;    
+}
+
+.articles-item:hover .read-more span.arr:last-child {
+  transition-delay: .25s;
+}

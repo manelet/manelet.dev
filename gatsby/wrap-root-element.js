@@ -1,30 +1,21 @@
 import React, { Children } from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { LayoutProvider } from '../src/context/layout'
+
 import Code from '../src/components/code'
+import H1 from '../src/components/articles/h1'
+import P from '../src/components/articles/p'
+import Pre from '../src/components/articles/pre'
+import Img from '../src/components/articles/img'
+import Wrapper  from '../src/components/articles/wrapper'
 
 const components = {
-  pre: props => <div {...props} className='code' />,
+  pre: Pre,
   code: Code,
-  img: props => (
-    <figure>
-      <img {...props} />
-    </figure>
-  ),
-  wrapper: props => (
-    <>
-      {Children.toArray(props.children).map(child => {
-        if (child.props.children && child.props.children.props) {
-          const childEl = child.props.children.props
-        
-          if (childEl && childEl.originalType === 'img') {
-            return child.props.children
-          }
-        }
-        return child
-      })}
-    </>
-  )
+  h1: H1,
+  p: P,
+  img: Img,
+  wrapper: Wrapper
 }
 
 export default ({ element }) => (

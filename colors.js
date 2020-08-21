@@ -8,7 +8,9 @@ export default {
     'splash-wave': '#1a202c',
     'splash-arrow': '#4a5568',
     'bg-post': '#2d3748',
-    'nav-bg': 'rgba(45, 55, 72,.5)'
+    'nav-bg': 'rgba(45, 55, 72,.5)',
+    'footer-text': '#718096',
+    'bg-inline-code': '#2d3748'
   },
   light: {
     'color-bg': '#ffffff',
@@ -19,6 +21,8 @@ export default {
     'splash-wave': 'white',
     'splash-arrow': '#cbd5e0',
     'bg-post': '#f7fafc',
-    'nav-bg': 'rgba(255, 255, 255,.5)'
+    'nav-bg': 'rgba(255, 255, 255,.5)',
+    'footer-text': '#a0aec0',
+    'bg-inline-code': '#e2e8f0'
   }
 }

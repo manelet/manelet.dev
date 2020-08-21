@@ -1,19 +1,10 @@
 import React from 'react'
 import { MagicMotion } from 'framer-motion'
 
-const Transition = ({ children }) => {
-  if (typeof window === 'undefined') {
-    return (
-      <div>
-        {children}
-      </div>
-    )
-  }
+const Transition = ({ children, location }) => {
   return (
     <MagicMotion>
-      <div>
-        {children}
-      </div>
+      {children}
     </MagicMotion>
   )
 }

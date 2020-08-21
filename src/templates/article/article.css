@@ -19,9 +19,25 @@
   @apply my-10 -mx-4;
 }
 
+.post p code {
+  @apply p-2 rounded text-sm;
+  background-color: var(--bg-inline-code);
+}
+
+.post .share {
+  @apply hidden sticky z-50 mt-0 mb-auto px-3;
+  top: 200px;
+  left: 1em;
+  /* margin-left: -100px; */
+}
+
 @screen md {
   .post .cont-inner, .page .cont-inner {
     @apply px-48;
+  }
+
+  .post .share {
+    @apply block;
   }
 }
 

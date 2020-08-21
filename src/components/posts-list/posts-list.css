@@ -3,16 +3,28 @@
 }
 
 .posts-list .post {
-  @apply w-full p-5 px-0 cursor-pointer;
-}
-
-.posts-list .post .post-inner {
-  @apply rounded-lg p-5;
+  @apply
+    rounded-lg
+    w-full
+    flex
+    p-5
+    mb-5
+    cursor-pointer
+    h-56;
   background-color: var(--bg-post);
+  /* border: 1px solid red; */
 }
 
 @screen lg {
   .posts-list .post {
-    @apply w-1/2 pr-5;
+    max-width: calc(50% - 4em);
   }
+
+  .posts-list .post:nth-child(odd) {
+    @apply ml-0 mr-3;
+  }
+  
+  .posts-list .post:nth-child(even) {
+    @apply mr-0 ml-3;
+  }  
 }

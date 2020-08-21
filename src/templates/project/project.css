@@ -1,0 +1,19 @@
+.project {
+  @apply flex flex-col;
+}
+
+.project .header {
+  @apply rounded-lg p-5;
+  background-color: var(--bg-post);
+  color: var(--color-text-default);
+}
+
+.project .tagged {
+  @apply text-xs rounded-lg p-2 cursor-pointer;
+  background-color: var(--bg-post);
+  color: var(--color-text-default);
+}
+
+.project .tagged:not(:last-child) {
+  @apply mr-2;
+}

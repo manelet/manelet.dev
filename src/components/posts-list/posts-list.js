@@ -1,16 +1,23 @@
 import React, { useCallback } from 'react'
 import { Link, navigate } from 'gatsby'
+import { motion } from 'framer-motion'
+
+import useWindow from '../../hooks/useWindow'
 
 const createMarkup = __html => ({ __html })
+const boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
 
 const PostsList = ({ title, posts = [] }) => {
+  const { isMobile } = useWindow()
   const goTo = useCallback(e => {
     e.preventDefault()
     e.stopPropagation()
     const url = e.currentTarget.getAttribute('data-path')
     navigate(url)
   }, [])
-  
+
+  const hoverAnimation = !isMobile ? { scale: 1.1, boxShadow }: null
+
   return (
     <div className="posts-list cont">
       <div className="cont-inner flex-col">
@@ -20,7 +27,13 @@ const PostsList = ({ title, posts = [] }) => {
 
         <div className='posts-wrapper'>
           {posts.length && posts.map(({ post }) => (
-            <div key={post.fields.slug} className="post" data-path={post.fields.slug} onClick={goTo}>
+            <motion.div
+              whileHover={hoverAnimation}
+              key={post.fields.slug}
+              className="post"
+              data-path={post.fields.slug}
+              onClick={goTo}
+            >
               <div className='post-inner'>
                 <h3 className='text-2xl'>
                   <Link to={post.fields.slug}>
@@ -29,7 +42,7 @@ const PostsList = ({ title, posts = [] }) => {
                 </h3>
                 <div dangerouslySetInnerHTML={createMarkup(post.excerpt)} />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

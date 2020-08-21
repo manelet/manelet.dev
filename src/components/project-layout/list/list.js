@@ -1,6 +1,16 @@
 import React, { useRef, useCallback, useLayoutEffect, useEffect } from 'react'
 import { useStaticQuery, graphql, Link, navigate } from 'gatsby'
 import cn from 'classnames'
+import { motion } from 'framer-motion'
+
+const variants = {
+  highlighted: {
+    scale: 1.1
+  },
+  idle: {
+    scale: 1
+  }
+}
 
 const ProjectsList = props => {
   const { allProjects: { projects } } = useStaticQuery(graphql`
@@ -66,13 +76,17 @@ const ProjectsList = props => {
           const isActive = project.frontmatter.name === props.pageContext.name
 
           return (
-            <li
+            <motion.li
+              whileHover='highlighted'
+              initial='idle'
+              animate={isActive ? 'highlighted' : 'idle'}
               key={`proj-${project.fields.slug}`}
               className={cn('project-list-item', `${project.frontmatter.bg_color}-500`, isActive && 'active')}
               onClick={handleNavigate}
               data-project-slug={project.fields.slug}
               data-active={isActive}
               ref={refs.projects[i]}
+              variants={variants}
             >
               <Link to={project.fields.slug} className='text-xl'>
                 {project.frontmatter.name}
@@ -80,7 +94,7 @@ const ProjectsList = props => {
               <p className="text-sm">
                 {project.frontmatter.description}
               </p>
-            </li>
+            </motion.li>
           )
         })}
       </ul>

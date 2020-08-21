@@ -8,11 +8,21 @@
 }
 
 .projects li {
-  @apply mb-4 flex items-center w-full p-4 cursor-pointer rounded h-48 text-white;
+  @apply mb-4 flex items-center w-full cursor-pointer h-48;
+  perspective: 1000px;
 }
 
 .projects li h2 {
   @apply text-3xl;
+}
+
+.projects li > div {
+  @apply flex flex-col h-full w-full p-4 rounded text-white;
+  transition: .4s;
+}
+
+.projects li:hover div {
+  transform: rotateY(20deg) scale(1.03);
 }
 
 @screen md {
