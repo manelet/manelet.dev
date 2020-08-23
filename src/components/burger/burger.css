@@ -57,6 +57,12 @@ nav .nav-inner.menu-mobile-opened .hamburglar {
   background: var(--color-text-default);
 }
 
+/* nav.home .nav-inner.menu-mobile-opened .path-rotation:before {
+  background: red;
+  color: red;
+} */
+
+
 @keyframes rotate-out {
   0% {
     transform: rotate(0deg);
@@ -151,6 +157,17 @@ nav .nav-inner.menu-mobile-opened .hamburglar {
   width: 36px;
   border-radius: 2px;
   background: var(--color-text-default);
+}
+
+nav.home .burger-bun-top,
+nav.home .burger-bun-bot,
+nav.home .burger-filling {
+  background: white;
+}
+nav .nav-inner.menu-mobile-opened .burger-bun-top,
+nav .nav-inner.menu-mobile-opened .burger-bun-bot,
+nav .nav-inner.menu-mobile-opened .burger-bun-top {
+  background: var(--color-text-default); 
 }
 
 .burger-bun-top {

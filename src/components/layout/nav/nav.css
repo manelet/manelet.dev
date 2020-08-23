@@ -60,6 +60,7 @@ nav .menu.menu-mobile-opened {
     right-0
     items-start
     pl-10;
+  color: var(--color-text-default);
   background-color: var(--color-bg);
 }
 
