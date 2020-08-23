@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 
 const Burger = forwardRef(({ onClick }, ref) => {
   return (
-    <div onClick={onClick} ref={ref} className="hamburglar is-closed">
+    <div onClick={onClick} ref={ref} className="hamburglar">
       <div className="burger-icon">
         <div className="burger-container">
           <span className="burger-bun-top"></span>
