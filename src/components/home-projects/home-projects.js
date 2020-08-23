@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import List from '../list/list'
 
+import './home-projects.css'
+
 const HomeProjects = () => {
   const { homeProjects: { projects = [] } } = useStaticQuery(graphql`
     query HomeProjects {

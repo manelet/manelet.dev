@@ -1,11 +1,8 @@
 # To-Do
-- [x] footer
-- [ ] animacions: menu, transicions de pagines, post...
-- [ ] favicon
+- [ ] animacions menu + bug mobile menu home splash no es veuen links
 - [ ] seo
 - [ ] schema.org
 - [ ] lighthouse 
-- [ ] analytics
 - [ ] real content
 
 ## Post

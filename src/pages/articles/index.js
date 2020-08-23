@@ -1,15 +1,7 @@
 import React, { useCallback } from 'react'
 import { Link, navigate, useStaticQuery, graphql } from "gatsby"
-import { motion } from 'framer-motion'
 
-const variants = {
-  hidden: {
-    opacity: 0
-  },
-  visible: {
-    opacity: 1
-  }
-}
+import './articles.css'
 
 const Articles = () => {
   const { allPosts: { posts } } = useStaticQuery(graphql`

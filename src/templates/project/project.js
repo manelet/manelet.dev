@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 
 import Layout from '../../components/project-layout'
 
+import './project.css'
+
 const titleVariants = {
   initial: {
     opacity: 0,

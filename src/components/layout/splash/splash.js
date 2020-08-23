@@ -6,6 +6,8 @@ import { useLayout } from '../../../context/layout'
 import useWindow from '../../../hooks/useWindow'
 // import manelet from '../../../manelet-dark2.png'
 
+import './splash.css'
+
 const Splash = () => {
   const { width } = useWindow()
   const [{ refs }] = useLayout() 

@@ -7,6 +7,8 @@ import { motion } from 'framer-motion'
 import H1 from '../../components/articles/h1'
 import P from '../../components/articles/h1'
 
+import './article.css'
+
 const variants = {
   initial: {},
   animate: { 

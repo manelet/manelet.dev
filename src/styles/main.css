@@ -10,20 +10,10 @@
 @import './fonts.css';
 @import './variables.css';
 
-@import '../pages/articles/articles.css';
-
-@import '../templates/article/article.css';
-@import '../templates/project/project.css';
-
-@import '../components/layout/splash/splash.css';
 @import '../components/layout/nav/nav.css';
 @import '../components/layout/footer/footer.css';
 @import '../components/layout/nav/logo/logo.css';
-
-@import '../components/posts-list/posts-list.css';
-@import '../components/home-projects/home-projects.css';
 @import '../components/burger/burger.css';
-@import '../components/project-layout/project-layout.css';
 
 body {
   background-color: var(--color-bg);
