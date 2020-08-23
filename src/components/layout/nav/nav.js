@@ -3,7 +3,7 @@ import cn from 'classnames'
 import { motion } from 'framer-motion'
 // import { Link } from 'gatsby'
 
-// import useWindow from '../../../hooks/useWindow'
+import useWindow from '../../../hooks/useWindow'
 import Burger from '../../burger/burger'
 import { useLayout } from '../../../context/layout'
 import handleNavScroll from '../../../lib/navScroll'
@@ -12,18 +12,24 @@ import Menu from './menu/menu'
 import toggleMenu from './toggle-menu'
 
 const Nav = ({ path }) => {
-  // const { isMobile, width, height } = useWindow()
+  const { isMobile } = useWindow()
   const [mounted, setMounted] = useState(true)
-  const [{ theme, refs }] = useLayout()  
+  const [{ theme, refs }, { toggleMobileMenu }] = useLayout() 
   const isHome = path === '/'
   const isDark = theme === 'dark'
 
   const handleToggleMenu = useCallback(
-    () => toggleMenu({
-      burger: refs.burger.current,
-      navInner: refs.navInner.current,
-      navMenu: refs.navMenu.current
-    }),
+    () => {
+      if (isMobile) {
+        toggleMobileMenu()
+      }
+
+      toggleMenu({
+        burger: refs.burger.current,
+        navInner: refs.navInner.current,
+        navMenu: refs.navMenu.current
+      })
+    },
     [refs.burger, refs.navInner, refs.navMenu]
   )
 

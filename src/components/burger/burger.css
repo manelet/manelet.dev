@@ -164,6 +164,7 @@ nav.home .burger-bun-bot,
 nav.home .burger-filling {
   background: white;
 }
+
 nav .nav-inner.menu-mobile-opened .burger-bun-top,
 nav .nav-inner.menu-mobile-opened .burger-bun-bot,
 nav .nav-inner.menu-mobile-opened .burger-bun-top {
@@ -200,11 +201,13 @@ nav .nav-inner.menu-mobile-opened .burger-bun-top {
 .hamburglar.is-open .burger-bun-top {
   animation: bun-top-out 0.6s linear normal;
   animation-fill-mode:forwards;
+  background: var(--color-text-default); 
 }
 
 .hamburglar.is-open .burger-bun-bot {
   animation: bun-bot-out 0.6s linear normal;
   animation-fill-mode:forwards;
+  background: var(--color-text-default); 
 }
 
 .hamburglar.is-closed .burger-bun-top {

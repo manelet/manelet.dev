@@ -1,14 +1,56 @@
 import React, { useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { navigate, Link } from 'gatsby'
+import cn from 'classnames'
 
 import ThemeToggle from '../../../ThemeToggle'
 import { useLayout } from '../../../../context/layout'
 import useWindow from '../../../../hooks/useWindow'
 
+const wrapperVariants = {
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: 'afterChildren',
+      // delay: 2,
+      staggerChildren: .2
+    },
+    transitionEnd: {
+      display: 'none'
+    }    
+  },
+  show: {
+    display: 'flex',
+    opacity: 1,
+    transition: {
+      staggerChildren: .2,
+      when: 'beforeChildren'
+    }    
+  },
+}
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    x: -100,
+    scale: .1,
+    transition: {
+      duration: .75
+    }
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: .75
+    },    
+  }
+}
+
 const Menu = ({ handleToggleMenu }) => {
   const { isMobile } = useWindow()
-  const [{ refs }] = useLayout()  
+  const [{ refs, mobileMenuOpened }] = useLayout()  
 
   const handleOnClick = useCallback(
     e => {
@@ -24,35 +66,52 @@ const Menu = ({ handleToggleMenu }) => {
     [isMobile]
   )
 
+  console.log('asd', mobileMenuOpened, mobileMenuOpened ? 'show' : 'hidden');
+
   return (
-    <div ref={refs.navMenu} className="menu">
-      <motion.ul
-        // transition={{ delay: 3 }}
-        // variants={{ show: { opacity: 1 }, hidden: { opacity: 0 }}}
-        // animate='show'
-        // initial='hidden'
-      >
-        <li data-slug='/articles' onClick={handleOnClick}>
+    <motion.div
+      ref={refs.navMenu}
+      className={cn("menu", mobileMenuOpened && 'menu-mobile-opened')}
+      variants={isMobile && wrapperVariants}
+      animate={mobileMenuOpened ? 'show' : 'hidden'}
+      initial='hidden'
+      style={{ display: isMobile ? 'none' : 'flex' }}
+      onTransitionEnd={() => !mobileMenuOpened && refs.navMenu.current.classList.remove('menu-mobile-opened')}
+    >
+      <ul>
+        <motion.li
+          data-slug='/articles'
+          onClick={handleOnClick}
+          variants={isMobile && itemVariants}
+        >
           <Link to='/articles'>
             Articles
           </Link>
-        </li>
-        <li data-slug='/projects' onClick={handleOnClick}>
+        </motion.li>
+        <motion.li
+          data-slug='/projects'
+          onClick={handleOnClick}
+          variants={isMobile && itemVariants}
+        >
           <Link to='/projects'>
             Projects
           </Link>
-        </li>
-        <li data-slug='/about' onClick={handleOnClick}>
+        </motion.li>
+        <motion.li
+          data-slug='/about'
+          onClick={handleOnClick}
+          variants={isMobile && itemVariants}
+        >
           <Link to='/about'>
             About
           </Link>
-        </li>
+        </motion.li>
           {/* <li>
             <Link to='/contact'>
               Contact
             </Link>
           </li> */}
-      </motion.ul>
+      </ul>
       <div className="icons">
         <div className='icon'>
           <a href='https://twitter.com/manelescuer' target='_blank'>
@@ -74,7 +133,7 @@ const Menu = ({ handleToggleMenu }) => {
 
         <ThemeToggle />
       </div>
-    </div>
+    </motion.div>
   )
 }
 

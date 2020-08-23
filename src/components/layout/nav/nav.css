@@ -44,12 +44,23 @@ nav div.nav-inner {
  * Nav menu
  */
 nav .menu {
-  @apply hidden items-center;
+  @apply
+    items-start
+    justify-around
+    absolute
+    flex-col
+    w-screen
+    h-screen
+    top-0
+    left-0
+    right-0
+    pl-10;
+  color: var(--color-text-default);
+  background-color: var(--color-bg);  
 }
 
-nav .menu.menu-mobile-opened {
+/* nav .menu.menu-mobile-opened {
   @apply
-    flex
     justify-around
     absolute
     flex-col
@@ -62,7 +73,7 @@ nav .menu.menu-mobile-opened {
     pl-10;
   color: var(--color-text-default);
   background-color: var(--color-bg);
-}
+} */
 
 nav .menu .close {
   @apply
@@ -83,6 +94,7 @@ nav .menu ul {
   display: flex;
   align-items: center;
   transform: translateX(50%);
+  z-index: 10;
 }
 
 nav div.logo ul li:not(:last-child) {
@@ -168,7 +180,16 @@ nav .icons .icon {
   }
 
   nav .menu {
-    @apply flex w-full justify-between;
+    @apply
+      flex-row
+      items-start
+      justify-between
+      flex
+      w-full
+      h-auto
+      relative;
+    background-color: inherit;
+    color: inherit;
   }
 
   /* nav.home .menu ul {
