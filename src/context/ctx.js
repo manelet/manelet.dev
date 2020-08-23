@@ -1,5 +1,7 @@
 import { createRef } from 'react'
 
+
+
 export default () => ({
   refs: {
     nav: createRef(null),
@@ -10,6 +12,10 @@ export default () => ({
     logoWrapper: createRef(null),
     logoLetters: [createRef(null), createRef(null), createRef(null), createRef(null), createRef(null)]
   },
-  theme: undefined,
+  theme: typeof window !== 'undefined'
+    ? window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : (window.localStorage.getItem('color-mode') || 'light')
+    : 'light',
   mobileMenuOpened: false
 })
