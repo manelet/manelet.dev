@@ -6,6 +6,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-svgr',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -100,6 +101,14 @@ module.exports = {
     //       },
     //     ],
     //   },
-    // }    
+    // }
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-176053058-1",
+        head: false,
+        // exclude: ["/preview/**", "/do-not-track/me/too/"],
+      }  
+    }   
   ]
 }   
