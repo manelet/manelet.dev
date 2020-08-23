@@ -2,6 +2,7 @@ const IMAGE_WIDTH = 300
 
 module.exports = {
   plugins: [
+    'gatsby-plugin-offline',
     'gatsby-plugin-postcss',
     'gatsby-plugin-sharp',
     'gatsby-plugin-svgr',
