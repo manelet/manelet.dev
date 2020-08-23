@@ -57,7 +57,7 @@ export default ({ data: { mdx }, ...props }) => (
           {mdx.frontmatter.tags && mdx.frontmatter.tags.length && (
             <div className="flex">
               {mdx.frontmatter.tags.map(tag => (
-                <div className='tagged'>
+                <div key={`tag-${tag}`} className='tagged'>
                   {tag}
                 </div>
               ))}

@@ -13,9 +13,11 @@ export default () => ({
     logoLetters: [createRef(null), createRef(null), createRef(null), createRef(null), createRef(null)]
   },
   theme: typeof window !== 'undefined'
-    ? window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : (window.localStorage.getItem('color-mode') || 'light')
-    : 'light',
+    ? window.localStorage.getItem('color-mode')
+      ? window.localStorage.getItem('color-mode')
+      : window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light'
+    : undefined,
   mobileMenuOpened: false
 })

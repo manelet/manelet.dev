@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import cn from 'classnames'
 
@@ -27,21 +27,41 @@ const variants = {
 
 const ThemeToggle = () => {
   const [{ theme }, { toggleTheme }] = useLayout()
+
+  if (!theme) {
+    return null
+  }
+
   const isDark = theme === 'dark'
-  const updateTheme = useCallback(() => toggleTheme(isDark ? 'light' : 'dark'), [toggleTheme, isDark])  
+  const updateTheme = useCallback(() => {
+    toggleTheme(isDark ? 'light' : 'dark')
+  }, [toggleTheme, isDark])
 
   return (
     <div onClick={updateTheme} className='cursor-pointer'>
       <AnimatePresence exitBeforeEnter initial={false}>
-        <motion.i
-          variants={variants}
-          key={`toggle-${theme}`}
-          initial='hide'
-          exit='hide'
-          animate='show'
-          className={cn(isDark ? 'far fa-moon' : 'fas fa-sun')}
-        />
+        {isDark && (
+          <motion.i
+            variants={variants}
+            key='toggle-dark'
+            initial='hide'
+            animate='show'
+            exit='hide'
+            className='far fa-moon'
+          />
+        )}
+        {!isDark && (
+          <motion.i
+            variants={variants}
+            key='toggle-light'
+            initial='hide'
+            animate='show'
+            exit='hide'
+            className='fas fa-sun'
+          />
+        )}        
       </AnimatePresence>
+      
     </div>
   )
 }
