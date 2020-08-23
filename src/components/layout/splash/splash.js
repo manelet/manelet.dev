@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import smoothScroll from '../../../lib/smoothScroll'
 import { useLayout } from '../../../context/layout'
 
-import manelet from '../../../manelet-dark.png'
+import manelet from '../../../manelet-dark2.png'
 
 const Splash = () => {
   const [{ refs }] = useLayout() 
