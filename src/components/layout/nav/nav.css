@@ -44,9 +44,7 @@ nav div.nav-inner {
  * Nav menu
  */
 nav .menu {
-  @apply
-    items-center
-    hidden;
+  @apply hidden items-center;
 }
 
 nav .menu.menu-mobile-opened {
@@ -130,9 +128,9 @@ nav.home {
   
 }
 
-nav.home .logo {
+/* nav.home .logo {
   @apply hidden;
-}
+} */
 
 /**
  * Nav Mobile Menu Opened
@@ -172,9 +170,9 @@ nav .icons .icon {
     @apply flex w-full justify-between;
   }
 
-  nav.home .menu ul {
+  /* nav.home .menu ul {
     @apply hidden;
-  }
+  } */
 
   nav.home .menu > div {
     @apply ml-auto;
