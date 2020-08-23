@@ -3,10 +3,11 @@ import { motion } from 'framer-motion'
 
 import smoothScroll from '../../../lib/smoothScroll'
 import { useLayout } from '../../../context/layout'
-
-import manelet from '../../../manelet-dark2.png'
+import useWindow from '../../../hooks/useWindow'
+// import manelet from '../../../manelet-dark2.png'
 
 const Splash = () => {
+  const { width } = useWindow()
   const [{ refs }] = useLayout() 
   
   return (
@@ -17,9 +18,11 @@ const Splash = () => {
             <h1>Manel Escuer</h1>
             <p className='text-2xl'>Frontend developer for wefox focused on React</p>
           </div>
-          <div className='hidden max-w-xl relative lg:block lg:mr-5'>
-            <img src={manelet} alt="" />
-          </div>
+          {width > 1024 && (
+            <div className='hidden max-w-xl relative lg:block lg:mr-5'>
+              <img src='/images/manelet-dark2.png' alt="" />
+            </div>
+          )}
         </div>
       </div>
 
