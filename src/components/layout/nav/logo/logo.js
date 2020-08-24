@@ -14,22 +14,22 @@ const Logo = () => (
       >
         <defs>
           <linearGradient gradientUnits="objectBoundingBox" id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor='rgb(95, 251, 241)' stopOpacity='1'>
+            <stop offset="0%" stopColor='#845EC2' stopOpacity='1'>
               <animate
                 attributeName="stop-color"
-                values="rgb(95, 251, 241); rgb(138, 167, 236); rgb(95, 251, 241);"
+                values="#845EC2; #D65DB1; #845EC2"
                 dur="4s"
                 repeatCount="indefinite" 
               />
             </stop>
             <stop
               offset="50%"
-              stopColor='rgb(138, 167, 236)'
+              stopColor='#FF6F91'
               stopOpacity='1'
             >
               <animate
                 attributeName="stop-color"
-                values="rgb(138, 167, 236); rgb(95, 251, 241); rgb(138, 167, 236)"
+                values="#FF6F91; #FFC75F; #FF6F91"
                 dur="4s"
                 repeatCount="indefinite" 
               />                  

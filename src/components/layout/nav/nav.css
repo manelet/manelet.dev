@@ -221,7 +221,7 @@ nav .icons .icon {
   }
 
   nav .menu ul li:hover a {
-    background: linear-gradient(to right, #845EC2 16%, #D65DB1, #FF6F91, #FFC75F, #F9F871);
+    background: linear-gradient(to right, #845EC2, #D65DB1, #FF6F91, #FFC75F, #F9F871);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;       
   }
