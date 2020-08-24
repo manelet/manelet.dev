@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 const SEO = ({ url, description, title }) => {
   const { site: { siteMetadata } } = useStaticQuery(query)
-  console.log('seo', location)
 
   return (
     <Helmet titleTemplate={ siteMetadata.titleTemplate}>

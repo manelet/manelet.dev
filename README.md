@@ -1,7 +1,7 @@
 # To-Do
 - [x] animacions menu + bug mobile menu home splash no es veuen links
 - [x] seo
-- [ ] schema.org
+- [x] schema.org
 - [ ] lighthouse mobile performance
 - [ ] real content
 
