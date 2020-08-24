@@ -2,10 +2,14 @@ backend:
   name: git-gateway
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
+publish_mode: editorial_workflow
+# local_backend: true
 collections:
   - name: "articles"
     label: "Articles"
-    folder: "content/articles"
+    folder: "/content/articles"
+    extension: mdx
+    format: frontmatter    
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
