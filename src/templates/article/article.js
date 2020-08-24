@@ -35,16 +35,19 @@ export default function Template(props) {
         animate='animate'
         initial='initial'
         exit='exit'
+        itemscope
+        itemtype="http://schema.org/Article"
       >
         <div className="cont-inner items-start flex-col">
           <div className="w-full flex">
             
             <div className="flex flex-col w-full">
               <div className="text-center w-full">
-                <H1 className='text-5xl font-bold'>
+                <H1 className='text-5xl font-bold' itemprop="name">
                   {frontmatter.title}
                 </H1>
                 <P className='text-subtext'>{frontmatter.date}</P>
+                <time datetime={frontmatter.date} itemprop="datePublished">{frontmatter.date}</time>
               </div>
               
               <div className="mt-5 w-full">
