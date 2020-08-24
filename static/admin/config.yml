@@ -15,3 +15,18 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "projects"
+    create: true
+    label: "Projects"
+    label_singular: "Project"
+    folder: "content/projects"
+    extension: mdx
+    format: frontmatter
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Bg color", name: "bg_color", widget: "string"}
+      - {label: "Url", name: "url", widget: "string"}            
+      - {label: "Stack", name: "stack", widget: "list"}  
+      - {label: "Tags", name: "tags", widget: "list"}                                        
