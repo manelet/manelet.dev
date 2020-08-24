@@ -1,0 +1,11 @@
+backend:
+  name: git-gateway
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "articles"
+    label: "Articles"
+    folder: "content/articles"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
