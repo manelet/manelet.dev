@@ -6,8 +6,11 @@ publish_mode: editorial_workflow
 # local_backend: true
 collections:
   - name: "articles"
+    create: true
     label: "Articles"
+    label_singular: "Article"
     folder: "../content/articles"
+    path: '{{slug}}/index'
     extension: mdx
     format: frontmatter    
     fields:
