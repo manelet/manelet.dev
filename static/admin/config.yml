@@ -7,7 +7,7 @@ publish_mode: editorial_workflow
 collections:
   - name: "articles"
     label: "Articles"
-    folder: "/content/articles"
+    folder: "../content/articles"
     extension: mdx
     format: frontmatter    
     fields:
