@@ -21,7 +21,7 @@ const Splash = () => {
             <p className='text-2xl'>Frontend developer for wefox focused on React</p>
           </div>
           {width > 1024 && (
-            <div className='hidden max-w-xl relative lg:block lg:mr-5'>
+            <div className='hidden max-w-xl relative lg:block lg:mr-5 lg:-mt-24'>
               <img src='/images/manelet-dark2.png' alt="" />
             </div>
           )}

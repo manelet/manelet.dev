@@ -17,7 +17,12 @@ const useWindow = () => {
     return () => window.removeEventListener('resize', handleOnResize, false)
   }, [handleOnResize])
 
-  return { ...size, isMobile: size.width <= 480 }
+  const flags = isSsr ? {} : { isMobile: size.width <= 480, isTablet: size.width < 768 }
+
+  return {
+    ...size,
+    ...flags
+  }
 }
 
 export default useWindow

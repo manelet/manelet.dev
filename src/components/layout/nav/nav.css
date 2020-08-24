@@ -45,6 +45,7 @@ nav div.nav-inner {
  */
 nav .menu {
   @apply
+    hidden
     items-start
     justify-around
     absolute

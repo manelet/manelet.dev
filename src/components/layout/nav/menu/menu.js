@@ -49,25 +49,25 @@ const itemVariants = {
 }
 
 const Menu = ({ handleToggleMenu }) => {
-  const { width, isMobile } = useWindow()
-  const [{ refs, mobileMenuOpened }] = useLayout()  
-
+  const { width, isTablet } = useWindow()
+  const [{ refs, mobileMenuOpened }] = useLayout()
   const handleOnClick = useCallback(
     e => {
       e.preventDefault()
       const slug = e.currentTarget.dataset.slug
 
-      if (isMobile) {
+      if (isTablet) {
         handleToggleMenu()
       }
 
       navigate(slug)
     },
-    [isMobile]
+    [isTablet]
   )
 
-  const isTablet = width <= 768
-  const display = isTablet ? mobileMenuOpened ? 'flex' : 'none' : 'flex'
+  // const display = isTablet ? mobileMenuOpened ? 'flex' : 'none' : 'flex'
+
+  console.log('render menu', width, isTablet, mobileMenuOpened);
 
   return (
     <motion.div
@@ -75,8 +75,8 @@ const Menu = ({ handleToggleMenu }) => {
       className={cn("menu", mobileMenuOpened && 'menu-mobile-opened')}
       variants={isTablet && wrapperVariants}
       animate={!isTablet ? 'show' : mobileMenuOpened ? 'show' : 'hidden'}
-      initial={isTablet ? 'hidden' : 'show'}
-      style={{ display }}
+      initial={!isTablet ? 'show' : 'hidden'}
+      // style={{ display }}
       onTransitionEnd={() => isTablet && !mobileMenuOpened && refs.navMenu.current.classList.remove('menu-mobile-opened')}
     >
       <ul>
