@@ -49,7 +49,7 @@ const itemVariants = {
 }
 
 const Menu = ({ handleToggleMenu }) => {
-  const { isMobile } = useWindow()
+  const { width, isMobile } = useWindow()
   const [{ refs, mobileMenuOpened }] = useLayout()  
 
   const handleOnClick = useCallback(
@@ -66,23 +66,24 @@ const Menu = ({ handleToggleMenu }) => {
     [isMobile]
   )
 
-  console.log('asd', mobileMenuOpened, mobileMenuOpened ? 'show' : 'hidden');
+  const isTablet = width <= 768
+  const display = isTablet ? mobileMenuOpened ? 'flex' : 'none' : 'flex'
 
   return (
     <motion.div
       ref={refs.navMenu}
       className={cn("menu", mobileMenuOpened && 'menu-mobile-opened')}
-      variants={isMobile && wrapperVariants}
-      animate={mobileMenuOpened ? 'show' : 'hidden'}
-      initial='hidden'
-      style={{ display: isMobile ? 'none' : 'flex' }}
-      onTransitionEnd={() => !mobileMenuOpened && refs.navMenu.current.classList.remove('menu-mobile-opened')}
+      variants={isTablet && wrapperVariants}
+      animate={!isTablet ? 'show' : mobileMenuOpened ? 'show' : 'hidden'}
+      initial={isTablet ? 'hidden' : 'show'}
+      style={{ display }}
+      onTransitionEnd={() => isTablet && !mobileMenuOpened && refs.navMenu.current.classList.remove('menu-mobile-opened')}
     >
       <ul>
         <motion.li
           data-slug='/articles'
           onClick={handleOnClick}
-          variants={isMobile && itemVariants}
+          variants={isTablet && itemVariants}
         >
           <Link to='/articles'>
             Articles
@@ -91,7 +92,7 @@ const Menu = ({ handleToggleMenu }) => {
         <motion.li
           data-slug='/projects'
           onClick={handleOnClick}
-          variants={isMobile && itemVariants}
+          variants={isTablet && itemVariants}
         >
           <Link to='/projects'>
             Projects
@@ -100,7 +101,7 @@ const Menu = ({ handleToggleMenu }) => {
         <motion.li
           data-slug='/about'
           onClick={handleOnClick}
-          variants={isMobile && itemVariants}
+          variants={isTablet && itemVariants}
         >
           <Link to='/about'>
             About

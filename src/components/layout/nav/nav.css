@@ -183,7 +183,7 @@ nav .icons .icon {
     @apply
       flex-row
       items-start
-      justify-between
+      justify-between 
       flex
       w-full
       h-auto
@@ -195,6 +195,12 @@ nav .icons .icon {
   /* nav.home .menu ul {
     @apply hidden;
   } */
+
+  nav div.menu ul li {
+    display: flex;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 
   nav.home .menu > div {
     @apply ml-auto;

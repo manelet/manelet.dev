@@ -12,15 +12,16 @@ import Menu from './menu/menu'
 import toggleMenu from './toggle-menu'
 
 const Nav = ({ path }) => {
-  const { isMobile } = useWindow()
+  const { width } = useWindow()
   const [mounted, setMounted] = useState(true)
   const [{ theme, refs }, { toggleMobileMenu }] = useLayout() 
   const isHome = path === '/'
   const isDark = theme === 'dark'
+  const isTablet = width < 768
 
   const handleToggleMenu = useCallback(
     () => {
-      if (isMobile) {
+      if (isTablet) {
         toggleMobileMenu()
       }
 
@@ -30,7 +31,7 @@ const Nav = ({ path }) => {
         navMenu: refs.navMenu.current
       })
     },
-    [refs.burger, refs.navInner, refs.navMenu]
+    [isTablet, refs.burger, refs.navInner, refs.navMenu]
   )
 
   const handleScroll = useCallback(() =>
