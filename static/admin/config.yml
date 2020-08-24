@@ -9,7 +9,7 @@ collections:
     create: true
     label: "Articles"
     label_singular: "Article"
-    folder: "../content/articles"
+    folder: "content/articles"
     extension: mdx
     format: frontmatter    
     fields:
