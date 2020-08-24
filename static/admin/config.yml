@@ -10,7 +10,6 @@ collections:
     label: "Articles"
     label_singular: "Article"
     folder: "../content/articles"
-    path: '{{slug}}/index'
     extension: mdx
     format: frontmatter    
     fields:
