@@ -1,6 +1,13 @@
 const IMAGE_WIDTH = 300
 
 module.exports = {
+  siteMetadata: {
+    title: 'Manel Escuer - Frontend developer',
+    titleTemplate: "%s - Manel Escuer",
+    siteUrl: 'https://manelet.dev',
+    twitterUsername: '@manelescuer',
+    description: 'Manel Escuer is a Frontend developer based in Barcelona specialized in development of user interfaces with React'
+  },
   plugins: [
     'gatsby-plugin-offline',
     'gatsby-plugin-postcss',

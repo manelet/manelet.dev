@@ -4,6 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { motion } from 'framer-motion'
 
 import Layout from '../../components/project-layout'
+import SEO from '../../components/SEO'
 
 import './project.css'
 
@@ -26,7 +27,9 @@ const titleVariants = {
 }
 
 export default ({ data: { mdx }, ...props }) => (
-  <Layout {...props}>
+  <>
+    <SEO title={mdx.frontmatter.name} derscription={mdx.frontmatter.description} />
+    <Layout {...props}>
       <motion.div
         transition={{ duration: 1 }}
         className="project"
@@ -69,7 +72,8 @@ export default ({ data: { mdx }, ...props }) => (
           {mdx.body}
         </MDXRenderer>  
       </motion.div>   
-  </Layout>
+    </Layout>    
+  </>
 )
 
 export const pageQuery = graphql`

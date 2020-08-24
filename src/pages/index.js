@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { motion } from 'framer-motion'
 
+import SEO from '../components/SEO'
 import Splash from '../components/layout/splash/splash'
 import HomeProjects from "../components/home-projects/home-projects"
 import PostsList from "../components/posts-list/posts-list"
@@ -18,7 +19,7 @@ const variants = {
   }
 }
 
-export default function Home () {
+export default function Home ({ location }) {
   const { latestPosts: { posts } } = useStaticQuery(graphql`
     query {
       latestPosts: allMdx(
@@ -42,10 +43,13 @@ export default function Home () {
   `)
   
   return (
-    <motion.div variants={variants} animate='animate' initial='initial' exit='exit'>
-      <Splash />
-      <HomeProjects />
-      <PostsList title='Recently published' posts={posts} />
-    </motion.div>
+    <>
+      <SEO url={location.href} />
+      <motion.div variants={variants} animate='animate' initial='initial' exit='exit'>
+        <Splash />
+        <HomeProjects />
+        <PostsList title='Recently published' posts={posts} />
+      </motion.div>
+    </>
   )
 }
