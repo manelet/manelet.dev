@@ -65,10 +65,6 @@ const Menu = ({ handleToggleMenu }) => {
     [isTablet]
   )
 
-  // const display = isTablet ? mobileMenuOpened ? 'flex' : 'none' : 'flex'
-
-  console.log('render menu', width, isTablet, mobileMenuOpened);
-
   return (
     <motion.div
       ref={refs.navMenu}

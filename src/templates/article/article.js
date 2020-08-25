@@ -21,7 +21,7 @@ const variants = {
 
 export default function Template(props) {
   const { data: { mdx: { headings, excerpt, body, frontmatter } } } = props
-  console.log('PROPS', props.data.mdx);
+
   return (
     <>
       <SEO
