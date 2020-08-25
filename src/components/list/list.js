@@ -22,7 +22,7 @@ const List = ({ items }) => {
             >
               <div style={{
                 backgroundColor: frontmatter.bg_color,
-                backgroundImage: `url('/images${slug.slice(0, -1)}2.png')`,
+                backgroundImage: `url('/images${slug.slice(0, -1)}.png')`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover'
               }}>
