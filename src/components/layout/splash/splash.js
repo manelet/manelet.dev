@@ -18,7 +18,7 @@ const Splash = () => {
         <div className='flex flex-col lg:flex-row items-center w-full'>
           <div className='w-full text-center lg:text-left'>
             <h1>Manel Escuer</h1>
-            <p className='text-2xl'>Frontend developer for wefox focused on React</p>
+            <p className='text-xl'>Frontend developer specialized on ⚛️ React trying to bootstrap projects that at some point, will retire me 💆🏻‍♂️</p>
           </div>
           {width > 1024 && (
             <div className='hidden max-w-xl relative lg:block lg:mr-5 lg:mt-24'>
