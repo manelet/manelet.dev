@@ -87,7 +87,12 @@ const ProjectsList = props => {
               data-active={isActive}
               ref={refs.projects[i]}
               variants={variants}
-              style={{ backgroundColor: project.frontmatter.bg_color }}
+              style={{
+                backgroundColor: project.frontmatter.bg_color,
+                backgroundImage: `url('/images${project.fields.slug.slice(0, -1)}.png')`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover'                
+              }}
             >
               <Link to={project.fields.slug} className='text-xl'>
                 {project.frontmatter.name}
