@@ -1,8 +1,9 @@
 # To-Do
 - [ ] real content
+- [ ] repas bugs tontos, links, alts, titles, 404s ....
+- [ ] categories
 
 ## Post
-- [ ] table of contents
+- [-] table of contents
 - [ ] diferents plantilles depenent de la categoria/tag
-- [x] style: data, share ...
 - [ ] una imatge per post i fer layout

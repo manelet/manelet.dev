@@ -107,11 +107,11 @@ const Menu = ({ handleToggleMenu }) => {
             About
           </Link>
         </motion.li>
-          {/* <li>
-            <Link to='/contact'>
-              Contact
-            </Link>
-          </li> */}
+          <li>
+            <a href='https://instagram.com/maneleat' target='_blank'>
+              Cooking
+            </a>
+          </li>
       </ul>
       <div className="icons">
         <div className='icon'>
