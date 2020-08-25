@@ -18,7 +18,7 @@ const PostsList = ({ title, posts = [] }) => {
     navigate(url)
   }, [])
 
-  const hoverAnimation = !isMobile ? { scale: 1.1, boxShadow }: null
+  const hoverAnimation = !isMobile ? { scale: 1.05, boxShadow }: null
 
   return (
     <div className="posts-list cont">

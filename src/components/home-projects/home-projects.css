@@ -9,7 +9,7 @@
 
 .projects li {
   @apply mb-4 flex items-center w-full cursor-pointer h-48;
-  perspective: 1000px;
+  /* perspective: 1000px; */
 }
 
 .projects li h2 {
@@ -22,7 +22,7 @@
 }
 
 .projects li:hover div {
-  transform: rotateY(20deg) scale(1.03);
+  transform: scale(1.03);
 }
 
 @screen md {

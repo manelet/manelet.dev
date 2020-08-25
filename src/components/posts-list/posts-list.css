@@ -8,7 +8,7 @@
     w-full
     flex
     p-5
-    mb-5
+    mb-6
     cursor-pointer
     h-56;
   background-color: var(--bg-post);
@@ -17,7 +17,8 @@
 
 @screen lg {
   .posts-list .post {
-    max-width: calc(50% - 4em);
+    /* max-width: calc(50% - 4em); */
+    flex: 0 calc(50% - 1.5rem);
   }
 
   .posts-list .post:nth-child(odd) {
