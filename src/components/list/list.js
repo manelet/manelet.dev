@@ -13,14 +13,19 @@ const List = ({ items }) => {
   return (
     <div>
       <ul>
-        {items.map(({ project: { fields: { slug }, frontmatter } }) => {                
+        {items.map(({ project: { fields: { slug }, frontmatter } }) => {    
           return (
             <li
               onClick={goToProject}
               data-path={slug}
               key={slug}
             >
-              <div style={{ backgroundColor: frontmatter.bg_color }}>
+              <div style={{
+                backgroundColor: frontmatter.bg_color,
+                backgroundImage: `url('/images${slug.slice(0, -1)}2.png')`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover'
+              }}>
                 <h2>
                   <Link to={slug}>
                     {frontmatter.name}
