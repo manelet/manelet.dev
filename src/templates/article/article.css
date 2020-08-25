@@ -33,7 +33,7 @@
 
 @screen md {
   .post .cont-inner, .page .cont-inner {
-    @apply px-48;
+    @apply px-32;
   }
 
   .post .share {
@@ -47,7 +47,7 @@
   }
   
   .post .cont-inner, .page .cont-inner {
-    @apply px-64;
+    @apply px-32;
   }
 
   .post figure, .post div.code, .page figure, .page div.code {

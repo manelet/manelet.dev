@@ -18,9 +18,9 @@ const variants = {
   }
 }
 
-const H1 = props => (
+const H2 = props => (
   <a href={`#${slugify(props.children)}`}>
-    <motion.h1
+    <motion.h2
       variants={variants}
       // initial='initial'
       // animate='animate'
@@ -30,4 +30,4 @@ const H1 = props => (
   </a>
 )
 
-export default H1
+export default H2

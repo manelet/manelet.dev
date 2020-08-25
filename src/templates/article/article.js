@@ -6,7 +6,6 @@ import { motion } from 'framer-motion'
 
 import SEO from '../../components/SEO'
 import H1 from '../../components/articles/h1'
-import P from '../../components/articles/h1'
 
 import './article.css'
 
@@ -21,8 +20,8 @@ const variants = {
 }
 
 export default function Template(props) {
-  const { data: { mdx: { excerpt, body, frontmatter } } } = props
-
+  const { data: { mdx: { headings, excerpt, body, frontmatter } } } = props
+  console.log('PROPS', props.data.mdx);
   return (
     <>
       <SEO
@@ -43,15 +42,21 @@ export default function Template(props) {
             
             <div className="flex flex-col w-full">
               <div className="text-center w-full">
-                <H1 className='text-5xl font-bold' itemprop="name">
+                <H1 className='text-5xl font-bold' itemProp="name">
                   {frontmatter.title}
                 </H1>
-                <P className='text-subtext'>{frontmatter.date}</P>
-                <time datetime={frontmatter.date} itemprop="datePublished">{frontmatter.date}</time>
+                <motion.time
+                  className='text-subtext'
+                  dateTime={frontmatter.date}
+                  itemProp="datePublished"
+                  variants={{ initial: { opacity: 0, scale: .7 }, animate: { opacity: 1, scale: 1 }, exit: { opacity: 0, scale: .7 }}}
+                >
+                  {frontmatter.date}
+                </motion.time>
               </div>
               
               <div className="mt-5 w-full">
-                <MDXRenderer>
+                <MDXRenderer headings={headings}>
                   {body}
                 </MDXRenderer>
               </div>
@@ -79,6 +84,10 @@ export const pageQuery = graphql`
     mdx(fields: { slug: { eq: $slug } }) {
       body
       excerpt
+      headings {
+        depth
+        value
+      }      
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         slug
