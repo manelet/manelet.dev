@@ -18,7 +18,7 @@ const List = ({ items }) => {
             <li
               onClick={goToProject}
               data-path={slug}
-              key={slug}
+              key={`post-${slug}`}
             >
               <div style={{
                 backgroundColor: frontmatter.bg_color,

@@ -31,7 +31,7 @@ const PostsList = ({ title, posts = [] }) => {
           {posts.length && posts.map(({ post }) => (
             <motion.div
               whileHover={hoverAnimation}
-              key={post.fields.slug}
+              key={`postlist-${post.fields.slug}`}
               className="post"
               data-path={post.fields.slug}
               onClick={goTo}
