@@ -31,11 +31,11 @@
 
 @screen lg {
   .projects {
-    @apply p-5;
+    @apply;
   }
  
   .projects ul li {
-    max-width: calc(50% - var(--gap) * 2);    
+    max-width: calc(50% - var(--gap) / 2);    
   }
 
   .projects ul li:nth-child(odd) {
