@@ -14,6 +14,7 @@ exports.getAllArticles = `
           }
           frontmatter {
             title
+            categories
           }
         }
       }
@@ -42,6 +43,24 @@ exports.getAllProjects = `
             stack
             description
             bg_color
+          }
+        }
+      }
+    }
+  }
+`
+
+exports.getAllCategories = `
+  {
+    allMdx (
+      limit: 1000
+      filter: { fileAbsolutePath: { regex : "/articles/" } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            categories
           }
         }
       }
