@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Img from "gatsby-image"
 
 import smoothScroll from '../../../lib/smoothScroll'
 import { useLayout } from '../../../context/layout'
@@ -8,7 +9,7 @@ import useWindow from '../../../hooks/useWindow'
 
 import './splash.css'
 
-const Splash = () => {
+const Splash = ({ image }) => {
   const { width } = useWindow()
   const [{ refs }] = useLayout() 
   
@@ -20,11 +21,10 @@ const Splash = () => {
             <h1>Manel Escuer</h1>
             <p className='text-xl'>Frontend developer focused on ⚛️ React who loves to cook and tries to bootstrap projects that at some point, will retire me 💆🏻‍♂️</p>
           </div>
-          {width > 1024 && (
-            <div className='hidden max-w-xl relative lg:block lg:mr-5 lg:mt-24'>
-              <img src='/images/manelet-dark2.png' alt="" />
-            </div>
-          )}
+          <div className='hidden max-w-xl relative lg:block lg:mr-5 lg:mt-24 w-full'>
+            {/* <img src='/images/manelet-dark2.png' alt="" /> */}
+            <Img fluid={image.fluid} />
+          </div>
         </div>
       </div>
 
