@@ -19,7 +19,7 @@ const Splash = ({ image }) => {
         <div className='flex flex-col lg:flex-row items-center w-full'>
           <div className='w-full text-center lg:text-left'>
             <h1>Manel Escuer</h1>
-            <p className='text-xl'>Frontend developer focused on ⚛️ React who loves to cook and tries to bootstrap projects that at some point, will retire me 💆🏻‍♂️</p>
+            <p className='text-xl'>Frontend developer focused on ⚛️ React who loves to 🥘 cook and tries to bootstrap projects that at some point, will retire me 💆🏻‍♂️</p>
           </div>
           <div className='hidden max-w-xl relative lg:block lg:mt-24'>
             {/* <img src='/images/manelet-dark2.png' alt="" /> */}
