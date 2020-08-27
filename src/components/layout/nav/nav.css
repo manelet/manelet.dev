@@ -176,6 +176,9 @@ nav .icons .icon {
  * Nav Media Queries
  */
 @screen md {
+  nav {
+    @apply h-24;
+  }
   nav .logo {
     transform: none;
   }
