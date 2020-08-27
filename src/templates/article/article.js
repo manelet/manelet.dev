@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { TwitterIcon, TwitterShareButton, LinkedinShareButton, LinkedinIcon } from 'react-share'
 import { motion } from 'framer-motion'
+import slugify from 'slugify'
 
 import SEO from '../../components/SEO'
 import H1 from '../../components/articles/h1'
@@ -39,9 +40,8 @@ export default function Template(props) {
       >
         <div className="cont-inner items-start flex-col">
           <div className="w-full flex">
-            
             <div className="flex flex-col w-full">
-              <div className="text-center w-full">
+              <div className="w-full">
                 <H1 className='text-5xl font-bold' itemProp="name">
                   {frontmatter.title}
                 </H1>
@@ -62,16 +62,35 @@ export default function Template(props) {
               </div>
             </div>
 
-            <div className="share">
-              <div className="flex flex-col">
-                <LinkedinShareButton quote={frontmatter.title} url={'http://localhost:3000'} className='mb-3'>
-                  <LinkedinIcon size='42' round />
-                </LinkedinShareButton>
-                <TwitterShareButton quote={frontmatter.title} url={'http://localhost:3000'}>
-                  <TwitterIcon size='42' round />
-                </TwitterShareButton>          
-              </div>
-            </div>          
+            <div
+              className="hidden lg:sticky mb-auto lg:flex flex-col w-auto ml-20 flex-shrink-0"
+              style={{ top: '130px' }}
+            >
+              {headings && !!headings.length && (
+                <div className='toc'>
+                  <div className='text-xl font-bold'>Table Of Contents</div>
+                  <ul>
+                    {headings.map(({ value, depth }) => (
+                      <li key={`heading-${value}`}>
+                        <a href={`#${slugify(value, { lower: true })}`} style={{ paddingLeft: `${4 * (depth - 1)}px`}}>
+                          {value}                        
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}              
+              <div className="share">
+                <div className="flex flex-row">
+                  <LinkedinShareButton quote={frontmatter.title} url={'http://localhost:3000'} className='mr-3'>
+                    <LinkedinIcon size='42' round />
+                  </LinkedinShareButton>
+                  <TwitterShareButton quote={frontmatter.title} url={'http://localhost:3000'}>
+                    <TwitterIcon size='42' round />
+                  </TwitterShareButton>          
+                </div>
+              </div>          
+            </div>            
           </div>
         </div>  
       </motion.div>

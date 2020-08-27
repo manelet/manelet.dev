@@ -25,10 +25,11 @@
 }
 
 .post .share {
-  @apply hidden sticky z-50 mt-0 mb-auto px-3;
-  top: 200px;
-  left: 1em;
-  /* margin-left: -100px; */
+  @apply block;
+}
+
+.post .toc {
+  @apply w-full mb-12;
 }
 
 @screen md {
@@ -39,10 +40,6 @@
   .page .cont-inner {
     @apply px-12;
   }
-
-  .post .share {
-    @apply block;
-  }
 }
 
 @screen lg {
@@ -51,7 +48,7 @@
   }
   
   .post .cont-inner {
-    @apply px-32;
+    @apply px-12;
   }
 
   .page .cont-inner {

@@ -3,6 +3,7 @@
 - [ ] repas bugs tontos, links, alts, titles, 404s ....
 - [ ] categories
 - [ ] rss feed
+- [ ] excerpt
 
 
 ## Post
