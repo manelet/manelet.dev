@@ -40,7 +40,8 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-live": "^2.2.2",
-    "react-share": "^4.2.1"
+    "react-share": "^4.2.1",
+    "slugify": "^1.4.5"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import slugify from '../../lib/slugify'
+import slugify from 'slugify'
 
 const variants = {
   initial: {
