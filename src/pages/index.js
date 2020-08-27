@@ -44,8 +44,8 @@ export default function Home ({ location }) {
         relativePath: { eq: "manelet-dark2.png" }
       ) {
         splashImage: childImageSharp {
-          fluid(maxWidth: 600) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          fixed(width: 430) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
           }
         }
       }      

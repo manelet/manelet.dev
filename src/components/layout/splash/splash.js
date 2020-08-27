@@ -21,9 +21,9 @@ const Splash = ({ image }) => {
             <h1>Manel Escuer</h1>
             <p className='text-xl'>Frontend developer focused on ⚛️ React who loves to cook and tries to bootstrap projects that at some point, will retire me 💆🏻‍♂️</p>
           </div>
-          <div className='hidden max-w-xl relative lg:block lg:mr-5 lg:mt-24 w-full'>
+          <div className='hidden max-w-xl relative lg:block lg:mt-24'>
             {/* <img src='/images/manelet-dark2.png' alt="" /> */}
-            <Img fluid={image.fluid} />
+            <Img fixed={image.fixed} />
           </div>
         </div>
       </div>

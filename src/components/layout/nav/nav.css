@@ -193,6 +193,10 @@ nav .icons .icon {
     color: inherit;
   }
 
+  nav div.nav-inner {
+    @apply py-10;
+  }
+
   /* nav.home .menu ul {
     @apply hidden;
   } */
