@@ -33,17 +33,17 @@ const itemVariants = {
   hidden: {
     opacity: 0,
     x: -100,
-    scale: .1,
+    // scale: .1,
     transition: {
-      duration: .75
+      duration: .5
     }
   },
   show: {
     opacity: 1,
     x: 0,
-    scale: 1,
+    // scale: 1,
     transition: {
-      duration: .75
+      duration: .5
     },    
   }
 }
@@ -65,6 +65,14 @@ const Menu = ({ handleToggleMenu }) => {
     [isTablet]
   )
 
+  const onTransitionEnd = useCallback(() => {
+    if (isTablet && !mobileMenuOpened) {
+      refs.navMenu.current.classList.remove('menu-mobile-opened')
+    }
+  }, [isTablet, mobileMenuOpened])
+
+  console.log('render nav', isTablet, mobileMenuOpened);
+
   return (
     <motion.div
       ref={refs.navMenu}
@@ -72,8 +80,7 @@ const Menu = ({ handleToggleMenu }) => {
       variants={isTablet && wrapperVariants}
       animate={!isTablet ? 'show' : mobileMenuOpened ? 'show' : 'hidden'}
       initial={!isTablet ? 'show' : 'hidden'}
-      // style={{ display }}
-      onTransitionEnd={() => isTablet && !mobileMenuOpened && refs.navMenu.current.classList.remove('menu-mobile-opened')}
+      onTransitionEnd={onTransitionEnd}
     >
       <ul>
         <motion.li

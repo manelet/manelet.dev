@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import smoothScroll from '../../../lib/smoothScroll'
 import { useLayout } from '../../../context/layout'
 import useWindow from '../../../hooks/useWindow'
-// import manelet from '../../../manelet-dark2.png'
 
 import './splash.css'
 

@@ -41,10 +41,10 @@ export default function Home ({ location }) {
       }
 
       images: file(
-        relativePath: { eq: "manelet-dark2.png" }
+        relativePath: { eq: "manelet-dark3.png" }
       ) {
         splashImage: childImageSharp {
-          fixed(width: 430) {
+          fixed(width: 300) {
             ...GatsbyImageSharpFixed_withWebp_tracedSVG
           }
         }
