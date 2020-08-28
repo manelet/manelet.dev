@@ -7,7 +7,7 @@
 - [x] bug on resize menu desktop disappears
 - [x] bug css projects
 - [ ] lightscore best practices
-
+- [ ] menu dropdown
 
 ## Post
 - [x] table of contents

@@ -12,9 +12,9 @@
   background-image: var(--splash-bg-image);
 }
 
-.splash .cont-inner {
+/* .splash .cont-inner {
   @apply -mt-48;
-}
+} */
 
 .splash h1 {
   @apply text-5xl text-white font-bold;
