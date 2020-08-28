@@ -20,7 +20,7 @@ function Wrapper ({ onlyExcerpt = false, ...props }) {
       return null
     }
 
-    if (child.props.children && child.props.children.props) {
+    if (child.props && child.props.children && child.props.children.props) {
       const childEl = child.props.children.props
     
       if (childEl && childEl.originalType === 'img') {
