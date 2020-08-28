@@ -15,12 +15,12 @@ const Splash = ({ image }) => {
   return (
     <div ref={refs.splash} className="splash cont">
       <div className="cont-inner h-full">
-        <div className='flex flex-col lg:flex-row items-center w-full'>
+        <div className='flex flex-col lg:flex-row justify-center items-center w-full'>
           <div className='w-full text-center lg:text-left'>
             <h1>Manel Escuer</h1>
             <p className='text-xl'>Frontend developer focused on ⚛️ React who loves to 🥘 cook and tries to bootstrap projects that at some point, will retire me 💆🏻‍♂️</p>
           </div>
-          <div className='hidden max-w-xl relative lg:flex lg:self-end'>
+          <div className='me'>
             {/* <img src='/images/manelet-dark2.png' alt="" /> */}
             <Img fixed={image.fixed} />
           </div>

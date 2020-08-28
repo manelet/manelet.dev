@@ -35,6 +35,10 @@
   color: var(--splash-arrow);
 }
 
+.splash .me {
+  @apply hidden max-w-xl relative;
+}
+
 @screen md {
   .splash .wave .arrow-scroll {
     bottom: 1em;
@@ -49,4 +53,14 @@
   .splash h1 {
     @apply text-6xl text-white;
   }  
+
+  .splash .me {
+    @apply flex self-center mt-24;
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .splash .me {
+    @apply mt-48;
+  }
 }
