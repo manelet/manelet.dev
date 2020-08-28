@@ -3,6 +3,8 @@ import { useStaticQuery, graphql, Link, navigate } from 'gatsby'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
 
+import useWindow from '../../../hooks/useWindow'
+
 const variants = {
   highlighted: {
     scale: 1.1
@@ -13,6 +15,7 @@ const variants = {
 }
 
 const ProjectsList = props => {
+  const { isTablet } = useWindow()
   const { allProjects: { projects } } = useStaticQuery(graphql`
     query {
       allProjects: allMdx(
@@ -79,7 +82,7 @@ const ProjectsList = props => {
             <motion.li
               whileHover='highlighted'
               initial='idle'
-              animate={isActive ? 'highlighted' : 'idle'}
+              animate={isTablet ? 'idle' : isActive ? 'highlighted' : 'idle'}
               key={`proj-${project.fields.slug}`}
               className={cn('project-list-item', isActive && 'active')}
               onClick={handleNavigate}

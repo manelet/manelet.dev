@@ -4,7 +4,7 @@
 - [ ] categories
 - [ ] rss feed
 - [ ] excerpt
-- [ ] bug on resize menu desktop disappears
+- [x] bug on resize menu desktop disappears
 
 
 ## Post

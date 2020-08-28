@@ -50,12 +50,14 @@ export default ({ data: { mdx }, ...props }) => (
         </div>
       
         <div className="flex justify-between my-5">
-          <div className="flex">
-            <div className='tagged'>
-              <i className="fas fa-link text-gray-400 mr-2" />
-              {mdx.frontmatter.url}
+          {mdx.frontmatter.url && (
+            <div className="flex">
+              <div className='tagged'>
+                <i className="fas fa-link text-gray-400 mr-2" />
+                {mdx.frontmatter.url}
+              </div>
             </div>
-          </div>
+          )}
           
           {mdx.frontmatter.tags && mdx.frontmatter.tags.length && (
             <div className="flex">

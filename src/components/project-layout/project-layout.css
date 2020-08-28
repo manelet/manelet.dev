@@ -7,7 +7,7 @@
 }
 
 .project-list-item {
-  @apply flex flex-col w-full max-w-xs flex-shrink-0 rounded-lg m-3 p-3 text-white h-32 justify-center cursor-pointer;
+  @apply flex flex-col w-full max-w-xs flex-shrink-0 rounded-lg mr-3 p-3 text-white h-32 justify-center cursor-pointer;
   /* background-color: var(--bg-post);   */
 }
 
