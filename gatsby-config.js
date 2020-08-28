@@ -35,7 +35,7 @@ module.exports = {
         path: `${__dirname}/content/projects`,
         name: `projects`,
       },      
-    },
+    },    
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -49,7 +49,7 @@ module.exports = {
             maxWidth: IMAGE_WIDTH,
             sizeByPixelDensity: true
           }
-        }
+        }       
       ]      
     },
     // {

@@ -24,7 +24,7 @@ const ProjectsList = props => {
         projects: edges {
           project: node {
             id
-            excerpt(pruneLength: 280)
+            excerpt
             fields {
               slug
             }

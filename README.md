@@ -5,6 +5,7 @@
 - [ ] rss feed
 - [ ] excerpt
 - [x] bug on resize menu desktop disappears
+- [x] bug css projects
 
 
 ## Post

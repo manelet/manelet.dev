@@ -28,7 +28,8 @@ export default function Home ({ location }) {
         posts: edges {
           post: node {
             id
-            excerpt(pruneLength: 280)
+            body
+            excerpt
             fields {
               slug
             }
