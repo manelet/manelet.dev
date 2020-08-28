@@ -33,17 +33,17 @@ const itemVariants = {
   hidden: {
     opacity: 0,
     x: -100,
-    scale: .1,
+    // scale: .1,
     transition: {
-      duration: .75
+      duration: .5
     }
   },
   show: {
     opacity: 1,
     x: 0,
-    scale: 1,
+    // scale: 1,
     transition: {
-      duration: .75
+      duration: .5
     },    
   }
 }
@@ -65,6 +65,12 @@ const Menu = ({ handleToggleMenu }) => {
     [isTablet]
   )
 
+  const onTransitionEnd = useCallback(() => {
+    if (isTablet && !mobileMenuOpened) {
+      refs.navMenu.current.classList.remove('menu-mobile-opened')
+    }
+  }, [isTablet, mobileMenuOpened])
+
   return (
     <motion.div
       ref={refs.navMenu}
@@ -72,8 +78,7 @@ const Menu = ({ handleToggleMenu }) => {
       variants={isTablet && wrapperVariants}
       animate={!isTablet ? 'show' : mobileMenuOpened ? 'show' : 'hidden'}
       initial={!isTablet ? 'show' : 'hidden'}
-      // style={{ display }}
-      onTransitionEnd={() => isTablet && !mobileMenuOpened && refs.navMenu.current.classList.remove('menu-mobile-opened')}
+      onTransitionEnd={onTransitionEnd}
     >
       <ul>
         <motion.li
@@ -103,21 +108,21 @@ const Menu = ({ handleToggleMenu }) => {
             About
           </Link>
         </motion.li>
-          <li>
-            <a href='https://instagram.com/maneleat' target='_blank'>
+          <motion.li variants={isTablet && itemVariants}>
+            <a rel="noopener" rel="noreferrer" href='https://instagram.com/maneleat' target='_blank'>
               Cooking
             </a>
-          </li>
+          </motion.li>
       </ul>
       <div className="icons">
         <div className='icon'>
-          <a href='https://twitter.com/manelescuer' target='_blank'>
+          <a rel="noopener" rel="noreferrer" href='https://twitter.com/manelescuer' target='_blank'>
             <i className="fab fa-twitter" />
           </a>
         </div>
 
         <div className='icon'>
-          <a href='https://github.com/manelet' target='_blank'>
+          <a rel="noopener"rel="noreferrer" href='https://github.com/manelet' target='_blank'>
             <i className="fab fa-github" />
           </a>
         </div>

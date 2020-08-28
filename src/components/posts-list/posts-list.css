@@ -18,7 +18,7 @@
 @screen lg {
   .posts-list .post {
     /* max-width: calc(50% - 4em); */
-    flex: 0 calc(50% - 1.5rem);
+    flex: 0 calc(50% - .75rem);
   }
 
   .posts-list .post:nth-child(odd) {

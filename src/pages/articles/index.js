@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'
 import { Link, navigate, useStaticQuery, graphql } from "gatsby"
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import SEO from '../../components/SEO'
 
@@ -44,13 +45,17 @@ const Articles = () => {
           {posts.map(({ post }) => (
             <div
               className='articles-item'
-              key={post.fields.slug}
+              key={`posts-${post.fields.slug}`}
             >
               <Link to={post.fields.slug} className='text-4xl'>
                 {post.frontmatter.title}
               </Link>
 
-              <p className='my-3'>{post.excerpt}</p>
+              <p className='my-3'>
+                <MDXRenderer onlyExcerpt={true}>
+                  {post.body}
+                </MDXRenderer>
+              </p>
 
               <div
                 className='read-more'

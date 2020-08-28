@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react'
 import { Link, navigate } from 'gatsby'
 import { motion } from 'framer-motion'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import useWindow from '../../hooks/useWindow'
 
@@ -31,7 +32,7 @@ const PostsList = ({ title, posts = [] }) => {
           {posts.length && posts.map(({ post }) => (
             <motion.div
               whileHover={hoverAnimation}
-              key={post.fields.slug}
+              key={`postlist-${post.fields.slug}`}
               className="post"
               data-path={post.fields.slug}
               onClick={goTo}
@@ -42,7 +43,10 @@ const PostsList = ({ title, posts = [] }) => {
                     {post.frontmatter.title}
                   </Link>
                 </h3>
-                <div dangerouslySetInnerHTML={createMarkup(post.excerpt)} />
+                <MDXRenderer onlyExcerpt={true}>
+                  {post.body}
+                </MDXRenderer>                
+                {/* <div dangerouslySetInnerHTML={createMarkup(post.excerpt)} /> */}
               </div>
             </motion.div>
           ))}

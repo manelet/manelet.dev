@@ -4,8 +4,13 @@
 - [ ] categories
 - [ ] rss feed
 - [ ] instagram cooking widgetn: https://www.instagram.com/maneleat/?__a=1 
+- [x] excerpt
+- [x] bug on resize menu desktop disappears
+- [x] bug css projects
+- [ ] lightscore best practices
+
 
 ## Post
-- [-] table of contents
+- [x] table of contents
 - [ ] diferents plantilles depenent de la categoria/tag
 - [ ] una imatge per post i fer layout

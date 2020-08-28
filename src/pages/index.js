@@ -20,7 +20,7 @@ const variants = {
 }
 
 export default function Home ({ location }) {
-  const { latestPosts: { posts } } = useStaticQuery(graphql`
+  const { latestPosts: { posts }, images: { splashImage } } = useStaticQuery(graphql`
     query {
       latestPosts: allMdx(
         filter: { fileAbsolutePath: { regex : "\/articles/" } }
@@ -28,7 +28,8 @@ export default function Home ({ location }) {
         posts: edges {
           post: node {
             id
-            excerpt(pruneLength: 280)
+            body
+            excerpt
             fields {
               slug
             }
@@ -39,6 +40,16 @@ export default function Home ({ location }) {
           }
         }
       }
+
+      images: file(
+        relativePath: { eq: "manelet-dark3.png" }
+      ) {
+        splashImage: childImageSharp {
+          fixed(width: 300) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }      
     }
   `)
   
@@ -46,7 +57,7 @@ export default function Home ({ location }) {
     <>
       <SEO url={location.href} />
       <motion.div variants={variants} animate='animate' initial='initial' exit='exit'>
-        <Splash />
+        <Splash image={splashImage} />
         <HomeProjects />
         <PostsList title='Recently published' posts={posts} />
       </motion.div>

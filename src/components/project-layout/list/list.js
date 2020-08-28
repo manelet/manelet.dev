@@ -3,6 +3,8 @@ import { useStaticQuery, graphql, Link, navigate } from 'gatsby'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
 
+import useWindow from '../../../hooks/useWindow'
+
 const variants = {
   highlighted: {
     scale: 1.1
@@ -13,6 +15,7 @@ const variants = {
 }
 
 const ProjectsList = props => {
+  const { isTablet } = useWindow()
   const { allProjects: { projects } } = useStaticQuery(graphql`
     query {
       allProjects: allMdx(
@@ -21,7 +24,7 @@ const ProjectsList = props => {
         projects: edges {
           project: node {
             id
-            excerpt(pruneLength: 280)
+            excerpt
             fields {
               slug
             }
@@ -32,6 +35,7 @@ const ProjectsList = props => {
               stack
               description
               bg_color
+              has_image
             }
           }
         }
@@ -74,12 +78,22 @@ const ProjectsList = props => {
       <ul className='project-list-inner'>
         {projects.map(({ project }, i) => {
           const isActive = project.frontmatter.name === props.pageContext.name
+          let style = { backgroundColor: project.frontmatter.bg_color }
+
+          if (project.frontmatter.has_image) {
+            style = {
+              ...style,
+              backgroundImage: `url('/images${project.fields.slug.slice(0, -1)}.png')`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover'
+            }
+          }
 
           return (
             <motion.li
               whileHover='highlighted'
               initial='idle'
-              animate={isActive ? 'highlighted' : 'idle'}
+              animate={isTablet ? 'idle' : isActive ? 'highlighted' : 'idle'}
               key={`proj-${project.fields.slug}`}
               className={cn('project-list-item', isActive && 'active')}
               onClick={handleNavigate}
@@ -87,12 +101,7 @@ const ProjectsList = props => {
               data-active={isActive}
               ref={refs.projects[i]}
               variants={variants}
-              style={{
-                backgroundColor: project.frontmatter.bg_color,
-                backgroundImage: `url('/images${project.fields.slug.slice(0, -1)}.png')`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover'                
-              }}
+              style={style}
             >
               <Link to={project.fields.slug} className='text-xl'>
                 {project.frontmatter.name}

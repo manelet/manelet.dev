@@ -45,9 +45,9 @@ export default ({children, className, live, render}) => {
         <div style={{...style, padding: '20px', overflow: 'auto' }}>
           <pre className={className}>
             {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({line, key: i})}>
+              <div key={`line-${i}`} {...getLineProps({line, key: i})}>
                 {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({token, key})} />
+                  <span key={`line--${key}`} {...getTokenProps({token, key})} />
                 ))}
               </div>
             ))}

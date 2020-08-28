@@ -32,7 +32,7 @@ exports.getAllProjects = `
         node {
           id
           body
-          excerpt(pruneLength: 280)
+          excerpt
           fields {
             slug
           }

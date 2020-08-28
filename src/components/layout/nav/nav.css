@@ -176,6 +176,9 @@ nav .icons .icon {
  * Nav Media Queries
  */
 @screen md {
+  nav {
+    @apply h-24;
+  }
   nav .logo {
     transform: none;
   }
@@ -191,6 +194,10 @@ nav .icons .icon {
       relative;
     background-color: inherit;
     color: inherit;
+  }
+
+  nav div.nav-inner {
+    @apply py-10;
   }
 
   /* nav.home .menu ul {

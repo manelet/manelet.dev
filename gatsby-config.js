@@ -18,6 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `images`,
+        path: `${__dirname}/static/images`,
+      }
+    },    
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/content/articles`,
         name: `articles`,
       },      
@@ -28,7 +35,7 @@ module.exports = {
         path: `${__dirname}/content/projects`,
         name: `projects`,
       },      
-    },
+    },    
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -42,7 +49,7 @@ module.exports = {
             maxWidth: IMAGE_WIDTH,
             sizeByPixelDensity: true
           }
-        }
+        }       
       ]      
     },
     // {
