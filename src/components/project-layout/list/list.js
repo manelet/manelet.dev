@@ -35,6 +35,7 @@ const ProjectsList = props => {
               stack
               description
               bg_color
+              has_image
             }
           }
         }
@@ -77,6 +78,16 @@ const ProjectsList = props => {
       <ul className='project-list-inner'>
         {projects.map(({ project }, i) => {
           const isActive = project.frontmatter.name === props.pageContext.name
+          let style = { backgroundColor: project.frontmatter.bg_color }
+
+          if (project.frontmatter.has_image) {
+            style = {
+              ...style,
+              backgroundImage: `url('/images${project.fields.slug.slice(0, -1)}.png')`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover'
+            }
+          }
 
           return (
             <motion.li
@@ -90,12 +101,7 @@ const ProjectsList = props => {
               data-active={isActive}
               ref={refs.projects[i]}
               variants={variants}
-              style={{
-                backgroundColor: project.frontmatter.bg_color,
-                backgroundImage: `url('/images${project.fields.slug.slice(0, -1)}.png')`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover'                
-              }}
+              style={style}
             >
               <Link to={project.fields.slug} className='text-xl'>
                 {project.frontmatter.name}

@@ -13,19 +13,25 @@ const List = ({ items }) => {
   return (
     <div>
       <ul>
-        {items.map(({ project: { fields: { slug }, frontmatter } }) => {    
+        {items.map(({ project: { fields: { slug }, frontmatter } }) => {
+          let styles = { backgroundColor: frontmatter.bg_color }
+
+          if (frontmatter.has_image) {
+            styles = {
+              ...styles,
+              backgroundImage: `url('/images${slug.slice(0, -1)}.png')`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover'
+            }
+          }
+
           return (
             <li
               onClick={goToProject}
               data-path={slug}
               key={`post-${slug}`}
             >
-              <div style={{
-                backgroundColor: frontmatter.bg_color,
-                backgroundImage: `url('/images${slug.slice(0, -1)}.png')`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover'
-              }}>
+              <div style={styles}>
                 <h2>
                   <Link to={slug}>
                     {frontmatter.name}

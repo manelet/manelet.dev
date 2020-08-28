@@ -18,6 +18,7 @@ const HomeProjects = () => {
               stack
               description
               bg_color
+              has_image
             }
             fields {
               slug
