@@ -3,9 +3,10 @@
 - [ ] repas bugs tontos, links, alts, titles, 404s ....
 - [ ] categories
 - [ ] rss feed
-- [ ] excerpt
+- [x] excerpt
 - [x] bug on resize menu desktop disappears
 - [x] bug css projects
+- [ ] lightscore best practices
 
 
 ## Post

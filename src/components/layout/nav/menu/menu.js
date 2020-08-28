@@ -109,20 +109,20 @@ const Menu = ({ handleToggleMenu }) => {
           </Link>
         </motion.li>
           <motion.li variants={isTablet && itemVariants}>
-            <a href='https://instagram.com/maneleat' target='_blank'>
+            <a rel="noopener" rel="noreferrer" href='https://instagram.com/maneleat' target='_blank'>
               Cooking
             </a>
           </motion.li>
       </ul>
       <div className="icons">
         <div className='icon'>
-          <a href='https://twitter.com/manelescuer' target='_blank'>
+          <a rel="noopener" rel="noreferrer" href='https://twitter.com/manelescuer' target='_blank'>
             <i className="fab fa-twitter" />
           </a>
         </div>
 
         <div className='icon'>
-          <a href='https://github.com/manelet' target='_blank'>
+          <a rel="noopener"rel="noreferrer" href='https://github.com/manelet' target='_blank'>
             <i className="fab fa-github" />
           </a>
         </div>
