@@ -16,7 +16,7 @@ function Wrapper ({ onlyExcerpt = false, ...props }) {
   }
 
   const components = Children.toArray(props.children).map(child => {
-    if (child.props['data-excerpt']) {
+    if (child && child.props && child.props['data-excerpt']) {
       return null
     }
 
