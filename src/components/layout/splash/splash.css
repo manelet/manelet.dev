@@ -35,6 +35,11 @@
   color: var(--splash-arrow);
 }
 
+.splash .wave .arrow-scroll svg {
+  fill: var(--splash-arrow);
+}
+
+
 .splash .me {
   @apply hidden max-w-xl relative;
 }

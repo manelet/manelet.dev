@@ -6,7 +6,7 @@
 - [x] excerpt
 - [x] bug on resize menu desktop disappears
 - [x] bug css projects
-- [ ] imatges projects desde gatsby
+- [x] imatges projects desde gatsby
 - [ ] menu dropdown
 
 ## Post
