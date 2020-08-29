@@ -72,7 +72,12 @@ export default function Template(props) {
                   <ul>
                     {headings.map(({ value, depth }) => (
                       <li key={`heading-${value}`}>
-                        <a href={`#${slugify(value, { lower: true })}`} style={{ paddingLeft: `${4 * (depth - 1)}px`}}>
+                        <a
+                          name={value}
+                          title={value}
+                          href={`#${slugify(value, { lower: true })}`}
+                          style={{ paddingLeft: `${4 * (depth - 1)}px`}}
+                        >
                           {value}                        
                         </a>
                       </li>

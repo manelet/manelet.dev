@@ -109,14 +109,25 @@ const Menu = ({ handleToggleMenu }) => {
           </Link>
         </motion.li>
           <motion.li variants={isTablet && itemVariants}>
-            <a rel="noopener" rel="noreferrer" href='https://instagram.com/maneleat' target='_blank'>
+            <a
+              name='Cooking instagram profile @maneleat'
+              title='Cooking instagram profile @manelet'
+              rel="noopener"
+              rel="noreferrer"
+              href='https://instagram.com/maneleat'
+              target='_blank'
+            >
               Cooking
             </a>
           </motion.li>
       </ul>
       <div className="icons">
         <div className='icon'>
-          <a rel="noopener" rel="noreferrer" href='https://twitter.com/manelescuer' target='_blank'>
+          <a
+            title='twitter profile @manelescuer'
+            name='twitter profile @manelescuer'
+            rel="noopener"
+            rel="noreferrer" href='https://twitter.com/manelescuer' target='_blank'>
             <svg
               viewBox="0 0 512 512"
               width="18"
@@ -129,7 +140,14 @@ const Menu = ({ handleToggleMenu }) => {
         </div>
 
         <div className='icon'>
-          <a rel="noopener"rel="noreferrer" href='https://github.com/manelet' target='_blank'>
+          <a
+            title='github profile @manelet'
+            name='github profile @manelet'
+            rel="noopener"
+            rel="noreferrer"
+            href='https://github.com/manelet'
+            target='_blank'
+          >
             <svg
               height="18"
               width="18"
