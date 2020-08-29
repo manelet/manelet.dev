@@ -59,7 +59,7 @@
   }
 }
 
-@media screen and (min-height: 800px) {
+@media screen and (min-height: 800px and min-width: 1280px) {
   .splash .me {
     @apply mt-48;
   }

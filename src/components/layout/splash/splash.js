@@ -21,7 +21,6 @@ const Splash = ({ image }) => {
             <p className='text-xl'>Frontend developer focused on ⚛️ React who loves to 🥘 cook and tries to bootstrap projects that at some point, will retire me 💆🏻‍♂️</p>
           </div>
           <div className='me'>
-            {/* <img src='/images/manelet-dark2.png' alt="" /> */}
             <Img fixed={image.fixed} />
           </div>
         </div>

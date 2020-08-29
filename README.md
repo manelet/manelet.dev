@@ -6,7 +6,7 @@
 - [x] excerpt
 - [x] bug on resize menu desktop disappears
 - [x] bug css projects
-- [ ] lightscore best practices
+- [ ] imatges projects desde gatsby
 - [ ] menu dropdown
 
 ## Post
