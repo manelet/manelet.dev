@@ -38,7 +38,7 @@ const ThemeToggle = () => {
   return (
     <div
       onClick={updateTheme}
-      className='cursor-pointer flex items-center'
+      className='theme-toggle'
       style={{ transformOrigin: 'center center', transformStyle: 'preserve-3d', transformBox: 'fill-box' }}      
     >
       <AnimatePresence exitBeforeEnter initial={false}>
@@ -51,7 +51,6 @@ const ThemeToggle = () => {
             exit='hide'          
             fill="none"
             height="18" 
-            stroke="#fff"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
@@ -65,7 +64,6 @@ const ThemeToggle = () => {
           <motion.svg
             fill="none"
             height="18"
-            stroke="#fff"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2" 
