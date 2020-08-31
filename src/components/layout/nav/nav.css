@@ -172,6 +172,12 @@ nav .icons .icon {
   @apply relative mr-3 cursor-pointer text-xl;
 }
 
+nav .icons .icon svg,
+nav .theme-toggle svg {
+  fill: var(--color-text-default);
+  stroke: var(--color-text-default);
+}
+
 nav div.menu-mobile-opened .icons .icon svg,
 nav div.menu-mobile-opened .theme-toggle svg {
   fill: var(--color-text-default) !important;
