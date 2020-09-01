@@ -6,6 +6,8 @@ import cn from 'classnames'
 import ThemeToggle from '../../../ThemeToggle'
 import { useLayout } from '../../../../context/layout'
 import useWindow from '../../../../hooks/useWindow'
+import useCategories from '../../../../hooks/useCategories'
+import Dropdown, { DropdownMenu, DropdownToggle, DropdownItem } from '../../../dropdown/dropdown'
 
 const wrapperVariants = {
   hidden: {
@@ -49,13 +51,15 @@ const itemVariants = {
 }
 
 const Menu = ({ handleToggleMenu }) => {
+  const categories = useCategories()
   const { width, isTablet } = useWindow()
   const [{ refs, mobileMenuOpened }] = useLayout()
   const handleOnClick = useCallback(
     e => {
       e.preventDefault()
+      e.stopPropagation()
       const slug = e.currentTarget.dataset.slug
-
+      console.log('click!', slug);
       if (isTablet) {
         handleToggleMenu()
       }
@@ -86,9 +90,24 @@ const Menu = ({ handleToggleMenu }) => {
           onClick={handleOnClick}
           variants={isTablet && itemVariants}
         >
-          <Link to='/articles'>
-            Articles
-          </Link>
+          <Dropdown>
+            <DropdownToggle>
+              <Link to='/articles'>
+                Articles
+              </Link>
+            </DropdownToggle>
+            <DropdownMenu style={{ width: '200px' }}>
+              {categories.map(({ name, slug }) => (
+                <DropdownItem key={`cat-${slug}`}>
+                  <div data-slug={`/category/${slug}`} onClick={handleOnClick}>
+                    <Link to={`/category/${slug}`}>
+                      {name}
+                    </Link>
+                  </div>
+                </DropdownItem>
+              ))}              
+            </DropdownMenu>
+          </Dropdown>
         </motion.li>
         <motion.li
           data-slug='/projects'

@@ -1,7 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import cn from 'classnames'
-import { motion } from 'framer-motion'
-// import { Link } from 'gatsby'
 
 import useWindow from '../../../hooks/useWindow'
 import Burger from '../../burger/burger'
@@ -34,13 +32,12 @@ const Nav = ({ path }) => {
   )
 
   const handleScroll = useCallback(() =>
-    handleNavScroll(
-      refs.nav.current,
-      refs.navInner.current,
-      refs.splash.current,
+    handleNavScroll({
+      nav: refs.nav.current,
+      splash: refs.splash.current,
       isDark,
       isHome
-    ),
+    }),
     [isDark, isHome, refs.nav, refs.navInner, refs.splash]
   )
 
@@ -53,6 +50,8 @@ const Nav = ({ path }) => {
       window.addEventListener('scroll', handleScroll)
       handleScroll()
       return () => window.removeEventListener('scroll', handleScroll)
+    } else if (theme && mounted) {
+      handleScroll()
     }
     // eslint-disable-next-line
   }, [mounted, theme, isHome])
