@@ -26,13 +26,13 @@ const Dropdown = ({ children, style = {} }) => {
 const DropdownToggle = ({ children, refs }) => (
   <div ref={refs.toggle} className='dropdown-toggle'>
     {children}
-    <ArrowDown width='12' height='12' fill='#fff' className='ml-2' />
+    <ArrowDown width='12' height='12' fill='#fff' className='hidden md:block ml-2' />
   </div>
 )
 
 const DropdownMenu = ({ children, refs, open, isTablet, style = {} }) => (
   <motion.div
-    variants={!isTablet && animations}
+    variants={isTablet === false && animations}
     initial='hidden'
     animate={isTablet ? false : open ? 'show' : 'hidden'}
     ref={refs.menu}
