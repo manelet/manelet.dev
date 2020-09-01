@@ -8,6 +8,10 @@
   @apply text-lg pl-3;
 }
 
+.dropdown .dropdown-menu li a {
+  color: var(--color-text-default);
+}
+
 .dropdown .dropdown-toggle {
   @apply flex items-center;
 }
@@ -43,9 +47,8 @@
     content: '';
     width: 0px;
     height: 0px;
-    top: -5px;
-    /* left: calc(50% - 4px); */
-    left: 0;
+    top: -4px;
+    left: 10px;
     width: 0; 
     height: 0; 
     border-left: 5px solid transparent;
@@ -57,7 +60,7 @@
     @apply mx-0 my-2 text-base pl-0;
   }
 
-  .dropdown .dropdown-toggle:after {
+  /* .dropdown .dropdown-toggle:after {
     content: '';
     position: relative;
     width: 0; 
@@ -67,7 +70,11 @@
     border-top: 5px solid #f00;
     border-top-width: 5px;
     border-top-style: solid;
-    border-top-color: var(--subtext);
+    border-top-color: var(--color-text-default);
     margin-left: 5px;
-  }
+  } */
+
+  .dropdown .dropdown-menu li a {
+    color: #2d3748;
+  }  
 }

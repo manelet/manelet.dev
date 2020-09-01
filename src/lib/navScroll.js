@@ -1,39 +1,44 @@
-function paint (svgs, color) {
-  svgs.forEach(svg => {
-    if (svg) {
-      svg.style.fill = color
-      svg.style.stroke = color
+const handleSvg = nav => {
+  return {
+    svgs: [
+      ...nav.querySelectorAll('.icons .icon svg'),
+      nav.querySelector('.theme-toggle svg'),
+      ...nav.querySelectorAll('.menu svg')
+    ],
+    paint: (svgs, color) => {
+      svgs.forEach(svg => {
+        if (svg) {
+          svg.style.fill = color
+          svg.style.stroke = color
+        }
+      })  
     }
-  })   
+  }
 }
 
-export default (nav, navInner, splash, isDark, isHome) => {
-  const { height: navHeight } = nav.getBoundingClientRect()
-  const { height: splashHeight } = splash.getBoundingClientRect()
-  const svgs = [...nav.querySelectorAll('.icons .icon svg'), nav.querySelector('.theme-toggle svg')]
+export default ({ nav, splash, isDark, isHome }) => {
+  const { svgs, paint } = handleSvg(nav)
 
-  if (window.scrollY > (splashHeight - navHeight)) {
-    // navInner.style.display = 'flex'
-
-    if (!isDark) {
-      nav.classList.add('text-gray-800')
-      nav.classList.remove('text-white')
-      paint(svgs, '#2d3748')
+  if (isHome) {
+    const { height: navHeight } = nav.getBoundingClientRect()
+    const { height: splashHeight } = splash.getBoundingClientRect()
+  
+    if (window.scrollY > (splashHeight - navHeight)) {
+      const color = !isDark ? '#2d3748' : '#fff'
+      nav.style.color = color
+      paint(svgs, color)
+      nav.classList.remove('home')
     } else {
-      nav.classList.remove('text-gray-800')
-      nav.classList.add('text-white')
-      paint(svgs, '#fff')
+      nav.classList.add('home')
+  
+      if (!isDark) {
+        nav.style.color = '#fff'
+        paint(svgs, '#fff')
+      }
     }
-
-    nav.classList.remove('home')
   } else {
-    // navInner.style.display = 'none'
-    nav.classList.add('home')
-
-    if (!isDark) {
-      nav.classList.remove('text-gray-800')
-      nav.classList.add('text-white')  
-      paint(svgs, '#fff')
-    }
+    const color = !isDark ? '#2d3748' : '#fff'
+    nav.style.color = color
+    paint(svgs, color)
   }
 }

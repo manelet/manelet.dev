@@ -1,27 +1,12 @@
 import React, { Children, cloneElement } from 'react'
 import { motion } from 'framer-motion'
 
+import { ReactComponent as ArrowDown } from './arrow-down.svg'
 import useWindow from '../../hooks/useWindow'
 import { useDropdown } from './context'
-import './dropdown.css'
+import animations from './animations'
 
-const menuVariants = {
-  hidden: {
-    opacity: 0,
-    scale: .9,
-    transitionEnd: {
-      display: 'none'
-    }
-  },
-  show: {
-    opacity: 1,
-    display: 'flex',
-    scale: [1.05, 1.1, 1],
-    transition: {
-      duration: .2
-    }
-  }
-}
+import './dropdown.css'
 
 const Dropdown = ({ children, style = {} }) => {
   const ctx = useDropdown()
@@ -41,12 +26,13 @@ const Dropdown = ({ children, style = {} }) => {
 const DropdownToggle = ({ children, refs }) => (
   <div ref={refs.toggle} className='dropdown-toggle'>
     {children}
+    <ArrowDown width='12' height='12' fill='#fff' className='ml-2' />
   </div>
 )
 
 const DropdownMenu = ({ children, refs, open, isTablet, style = {} }) => (
   <motion.div
-    variants={!isTablet && menuVariants}
+    variants={!isTablet && animations}
     initial='hidden'
     animate={isTablet ? false : open ? 'show' : 'hidden'}
     ref={refs.menu}

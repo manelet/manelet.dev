@@ -4,11 +4,8 @@
 - [ ] categories
 - [ ] rss feed
 - [ ] instagram cooking widgetn: https://www.instagram.com/maneleat/?__a=1 
-- [x] excerpt
-- [x] bug on resize menu desktop disappears
-- [x] bug css projects
-- [x] imatges projects desde gatsby
-- [ ] menu dropdown
+- [x] color caret dropdown quan es light a home/no-home
+- [ ] onResize desktop2mobile dropdown-menu no es reinicia i per tant no es veu
 
 ## Post
 - [x] table of contents
