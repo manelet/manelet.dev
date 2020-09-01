@@ -103,12 +103,12 @@ const ProjectsList = props => {
               variants={variants}
               style={style}
             >
-              <Link to={project.fields.slug} className='text-xl'>
+              <Link to={project.fields.slug} className='text-xl font-bold'>
                 {project.frontmatter.name}
               </Link>
-              <p className="text-sm">
+              {/* <p className="text-sm">
                 {project.frontmatter.description}
-              </p>
+              </p> */}
             </motion.li>
           )
         })}

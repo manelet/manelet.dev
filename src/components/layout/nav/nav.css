@@ -172,6 +172,22 @@ nav .icons .icon {
   @apply relative mr-3 cursor-pointer text-xl;
 }
 
+nav .icons .icon svg,
+nav .theme-toggle svg {
+  fill: var(--color-text-default);
+  stroke: var(--color-text-default);
+}
+
+nav div.menu-mobile-opened .icons .icon svg,
+nav div.menu-mobile-opened .theme-toggle svg {
+  fill: var(--color-text-default) !important;
+  stroke: var(--color-text-default) !important;
+}
+
+nav .theme-toggle {
+  @apply cursor-pointer flex items-center;
+}
+
 /**
  * Nav Media Queries
  */
@@ -233,7 +249,7 @@ nav .icons .icon {
     -webkit-text-fill-color: transparent;       
   }
 
-  nav .menu ul li:not(:last-child) {
+  nav .menu > ul > li:not(:last-child) {
     @apply mr-4;
   }
 

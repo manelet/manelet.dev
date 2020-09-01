@@ -9,7 +9,7 @@
 }
 
 .project .tagged {
-  @apply text-xs rounded-lg p-2 cursor-pointer;
+  @apply flex items-center text-xs rounded-lg p-2 cursor-pointer;
   background-color: var(--bg-post);
   color: var(--color-text-default);
 }
