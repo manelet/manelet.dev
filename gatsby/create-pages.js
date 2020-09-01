@@ -12,7 +12,7 @@ const createCategories = async graphql => {
 
     node.frontmatter.categories.map(category => {
       set.set(category, {
-        slug: slugify(category),
+        slug: slugify(category, { lower: true }),
         name: category
       })
     })
@@ -20,8 +20,8 @@ const createCategories = async graphql => {
     return set
   }, new Map()))
   
-  return categories.map(([, { slug, name }]) => ({
-    path: slug,
+  return categories.map(([, { slug, name }]) => console.log(slug, name) || ({
+    path: `/category/${slug}`,
     component,
     context: {
       slug,
