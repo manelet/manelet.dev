@@ -11,7 +11,7 @@ export default (nav, navInner, splash, isDark, isHome) => {
   const { height: navHeight } = nav.getBoundingClientRect()
   const { height: splashHeight } = splash.getBoundingClientRect()
   const svgs = [...nav.querySelectorAll('.icons .icon svg'), nav.querySelector('.theme-toggle svg')]
-console.log('ntro navscroll', svgs);
+
   if (window.scrollY > (splashHeight - navHeight)) {
     // navInner.style.display = 'flex'
 
@@ -29,11 +29,8 @@ console.log('ntro navscroll', svgs);
   } else {
     // navInner.style.display = 'none'
     nav.classList.add('home')
-    console.log('ntro navscroll2');
 
     if (!isDark) {
-      console.log('ntro navscroll3');
-
       nav.classList.remove('text-gray-800')
       nav.classList.add('text-white')  
       paint(svgs, '#fff')

@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
-// import { Link } from 'gatsby'
 
 import useWindow from '../../../hooks/useWindow'
 import Burger from '../../burger/burger'

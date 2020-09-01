@@ -6,6 +6,7 @@ import cn from 'classnames'
 import ThemeToggle from '../../../ThemeToggle'
 import { useLayout } from '../../../../context/layout'
 import useWindow from '../../../../hooks/useWindow'
+import Dropdown, { DropdownMenu, DropdownToggle, DropdownItem } from '../../../dropdown/dropdown'
 
 const wrapperVariants = {
   hidden: {
@@ -86,9 +87,21 @@ const Menu = ({ handleToggleMenu }) => {
           onClick={handleOnClick}
           variants={isTablet && itemVariants}
         >
-          <Link to='/articles'>
-            Articles
-          </Link>
+          <Dropdown>
+            <DropdownToggle>
+              <Link to='/articles'>
+                Articles
+              </Link>
+            </DropdownToggle>
+            <DropdownMenu style={{ width: '200px' }}>
+              <DropdownItem>
+                Category 1
+              </DropdownItem>
+              <DropdownItem>
+                Category 1
+              </DropdownItem>              
+            </DropdownMenu>
+          </Dropdown>
         </motion.li>
         <motion.li
           data-slug='/projects'

@@ -249,7 +249,7 @@ nav .theme-toggle {
     -webkit-text-fill-color: transparent;       
   }
 
-  nav .menu ul li:not(:last-child) {
+  nav .menu > ul > li:not(:last-child) {
     @apply mr-4;
   }
 
