@@ -21,8 +21,8 @@ const variants = {
 const H1 = props => (
   <a
     title={props.children}
-    name={slugify(props.children)}
-    href={`#${slugify(props.children)}`}
+    name={slugify(props.children, { lower: true })}
+    href={`#${slugify(props.children, { lower: true })}`}
   >
     <motion.h1 variants={variants} {...props} />
   </a>
