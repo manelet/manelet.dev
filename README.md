@@ -2,10 +2,12 @@
 - [ ] real content
 - [ ] repas bugs tontos, links, alts, titles, 404s, <articles> ....
 - [x] categories
-- [ ] rss feed
+- [x] rss feed
 - [ ] instagram cooking widgetn: https://www.instagram.com/maneleat/?__a=1 
 - [ ] check onResize animations mobile/desktop menu-nav, scroll ....
-- [ ] al cambiar a dark theme homepage l'icone no es posa blanc
+- [x] al cambiar a dark theme homepage l'icone no es posa blanc
+- [ ] ssr: al carregar es veu el menu primer.. :\ no s'ha de veure
+- [ ] about page
 
 ## Post
 - [x] table of contents
