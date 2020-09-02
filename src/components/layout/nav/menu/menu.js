@@ -59,7 +59,7 @@ const Menu = ({ handleToggleMenu, isHome }) => {
       e.preventDefault()
       e.stopPropagation()
       const slug = e.currentTarget.dataset.slug
-      console.log('click!', slug);
+
       if (isTablet) {
         handleToggleMenu()
       }

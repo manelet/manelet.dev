@@ -20,7 +20,7 @@ const createCategories = async graphql => {
     return set
   }, new Map()))
   
-  return categories.map(([, { slug, name }]) => console.log(slug, name) || ({
+  return categories.map(([, { slug, name }]) => ({
     path: `/category/${slug}`,
     component,
     context: {
