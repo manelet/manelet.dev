@@ -2,7 +2,7 @@
 }
 
 .dropdown .dropdown-menu {
-  @apply hidden;
+  @apply block;
 }
 
 .dropdown .dropdown-menu li {
@@ -23,7 +23,7 @@
   }
 
   .dropdown .dropdown-menu {
-    @apply absolute block;
+    @apply absolute hidden;
   }
 
   .dropdown .dropdown-menu ul {

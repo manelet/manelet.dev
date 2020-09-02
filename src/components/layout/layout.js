@@ -28,9 +28,11 @@ const Layout = ({ children, path, location }) => {
         <meta name="theme-color" content="#ffffff" />
       </Helmet>
       <Nav path={path} />
-      <Transition location={location}>
-        {children}
-      </Transition>      
+      <main>
+        <Transition location={location}>
+          {children}
+        </Transition>  
+      </main>    
       <Footer />
     </>
   )

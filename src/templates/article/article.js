@@ -40,7 +40,7 @@ export default function Template(props) {
       >
         <div className="cont-inner items-start flex-col">
           <div className="w-full flex">
-            <div className="flex flex-col w-full">
+            <article className="flex flex-col w-full">
               <div className="w-full">
                 <H1 className='text-5xl font-bold' itemProp="name">
                   {frontmatter.title}
@@ -60,14 +60,14 @@ export default function Template(props) {
                   {body}
                 </MDXRenderer>
               </div>
-            </div>
+            </article>
 
             <div
               className="hidden lg:sticky mb-auto lg:flex flex-col w-auto ml-20 flex-shrink-0"
               style={{ top: '130px' }}
             >
               {headings && !!headings.length && (
-                <div className='toc'>
+                <aside className='toc'>
                   <div className='text-xl font-bold'>Table Of Contents</div>
                   <ul>
                     {headings.map(({ value, depth }) => (
@@ -83,7 +83,7 @@ export default function Template(props) {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </aside>
               )}              
               <div className="share">
                 <div className="flex flex-row">

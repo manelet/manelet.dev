@@ -43,7 +43,7 @@ const Articles = () => {
             <>No posts.</>
           )}
           {posts.map(({ post }) => (
-            <div
+            <article
               className='articles-item'
               key={`posts-${post.fields.slug}`}
             >
@@ -72,7 +72,7 @@ const Articles = () => {
                   &rsaquo;
                 </span>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

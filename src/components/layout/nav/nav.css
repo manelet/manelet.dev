@@ -10,7 +10,6 @@ nav {
     z-50
     h-16;
   background-color: var(--nav-bg);
-  /* color: var(--color-text-default); */
 }
 
 nav.home::before {
@@ -29,17 +28,6 @@ nav::before {
 nav div.nav-inner {
   @apply flex items-center py-3 z-10 justify-between;  
 }
-
-/**
- * Nav burger
- */
-/* nav .nav-inner .burger {
-  @apply relative;
-} */
-
-/* nav .nav-inner.menu-mobile-opened .burger {
-  @apply hidden;
-} */
 
 /**
  * Nav menu
@@ -61,22 +49,6 @@ nav .menu {
   background-color: var(--color-bg);  
 }
 
-/* nav .menu.menu-mobile-opened {
-  @apply
-    justify-around
-    absolute
-    flex-col
-    w-screen
-    h-screen
-    top-0
-    left-0
-    right-0
-    items-start
-    pl-10;
-  color: var(--color-text-default);
-  background-color: var(--color-bg);
-} */
-
 nav .menu .close {
   @apply
     absolute
@@ -86,7 +58,6 @@ nav .menu .close {
 
 nav .menu ul {
   @apply flex flex-col text-4xl text-left;
-  /* font-weight: lighter; */
 }
 
 /**
@@ -108,30 +79,19 @@ nav .logo span.logo {
   position: relative;
   display: flex;
   font-size: 42px;
-  /* background-image: none; */
   background-image: linear-gradient(to right top, #d16ba5 33%, #8aa7ec 33%, #5ffbf1 33%);  
   -webkit-background-clip: text;
-  /* -webkit-text-fill-color: transparent; */
   color: rgba(255, 255, 255, 0);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #fff;
   transition: all 1s linear;
-  /* text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; */
 }
 
 nav .logo span.logo span {
   display: flex;
   align-items: center;
-  /* transform: translateY(-150px); */
   position: relative;
-  /* background: -webkit-linear-gradient(#ff0000, #333); */
-  /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;    */
 }
-
-/* nav div.nav-inner.menu-mobile-opened .logo {
-  @apply flex;
-}  */
 
 /**
  * Nav homepage specifics
@@ -142,10 +102,6 @@ nav.home {
 
   
 }
-
-/* nav.home .logo {
-  @apply hidden;
-} */
 
 /**
  * Nav Mobile Menu Opened
@@ -217,10 +173,6 @@ nav .theme-toggle {
     @apply py-10;
   }
 
-  /* nav.home .menu ul {
-    @apply hidden;
-  } */
-
   nav div.menu ul li {
     display: flex;
     opacity: 1 !important;
@@ -231,13 +183,8 @@ nav .theme-toggle {
     @apply ml-auto;
   }  
 
-  /* nav .menu .close {
-    @apply hidden;
-  } */
-  
   nav .menu ul {
     @apply flex-row ml-10 text-lg;
-    /* font-weight: lighter; */
   }
 
   nav .menu > ul > li > a,
@@ -256,10 +203,6 @@ nav .theme-toggle {
   nav .menu > ul > li:not(:last-child) {
     @apply mr-4;
   }
-
-  /* nav .burger {
-    @apply hidden;
-  }   */
 
   nav .icons .icon {
     @apply text-lg;

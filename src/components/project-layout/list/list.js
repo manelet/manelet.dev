@@ -74,7 +74,7 @@ const ProjectsList = props => {
 
 
   return (
-    <div ref={refs.wrapper} className="project-list">
+    <aside ref={refs.wrapper} className="project-list">
       <ul className='project-list-inner'>
         {projects.map(({ project }, i) => {
           const isActive = project.frontmatter.name === props.pageContext.name
@@ -113,7 +113,7 @@ const ProjectsList = props => {
           )
         })}
       </ul>
-    </div>
+    </aside>
   )
 }
 

@@ -57,13 +57,15 @@ const Nav = ({ path }) => {
   }, [mounted, theme, isHome])
 
   return (
+    <header>
       <nav ref={refs.nav} className={cn('cont fixed', isHome && 'home')}>
         <div ref={refs.navInner} className='cont-inner nav-inner'>
           <Logo  />
           <Menu handleToggleMenu={handleToggleMenu} isHome={isHome} />
           <Burger onClick={handleToggleMenu} ref={refs.burger} />
         </div>
-    </nav>
+      </nav>
+    </header>
   )
 }
 

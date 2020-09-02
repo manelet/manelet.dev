@@ -17,7 +17,7 @@ const Category = ({ pageContext: category, data: { allPosts: { posts } } }) =>
             <>No posts.</>
           )}
           {posts.map(({ post }) => (
-            <div
+            <article
               className='articles-item'
               key={`posts-${post.fields.slug}`}
             >
@@ -46,7 +46,7 @@ const Category = ({ pageContext: category, data: { allPosts: { posts } } }) =>
                   &rsaquo;
                 </span>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
