@@ -1,11 +1,11 @@
 # To-Do
 - [ ] real content
-- [ ] repas bugs tontos, links, alts, titles, 404s ....
-- [ ] categories
+- [ ] repas bugs tontos, links, alts, titles, 404s, <articles> ....
+- [x] categories
 - [ ] rss feed
 - [ ] instagram cooking widgetn: https://www.instagram.com/maneleat/?__a=1 
-- [x] color caret dropdown quan es light a home/no-home
-- [ ] onResize desktop2mobile dropdown-menu no es reinicia i per tant no es veu
+- [ ] check onResize animations mobile/desktop menu-nav, scroll ....
+- [ ] al cambiar a dark theme homepage l'icone no es posa blanc
 
 ## Post
 - [x] table of contents

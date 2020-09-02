@@ -50,7 +50,7 @@ const itemVariants = {
   }
 }
 
-const Menu = ({ handleToggleMenu }) => {
+const Menu = ({ handleToggleMenu, isHome }) => {
   const categories = useCategories()
   const { width, isTablet } = useWindow()
   const [{ refs, mobileMenuOpened }] = useLayout()
@@ -176,7 +176,7 @@ const Menu = ({ handleToggleMenu }) => {
           </a>
         </div>
 
-        <ThemeToggle />
+        <ThemeToggle isHome={isHome} />
       </div>
     </motion.div>
   )

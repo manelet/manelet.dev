@@ -23,7 +23,7 @@ const variants = {
   }
 }
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ isHome }) => {
   const [{ theme }, { toggleTheme }] = useLayout()
 
   if (!theme) {
@@ -35,7 +35,7 @@ const ThemeToggle = () => {
     toggleTheme(isDark ? 'light' : 'dark')
   }, [toggleTheme, isDark])
 
-  const color = isDark ? '#fff' : '#2d3748'
+  const color = isDark ? '#fff' : isHome ? '#fff' : '#2d3748'
 
   return (
     <div
