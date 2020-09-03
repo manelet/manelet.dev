@@ -10,6 +10,7 @@
 .projects li {
   @apply rounded mb-4 p-4 flex items-center w-full cursor-pointer h-48 overflow-hidden;
   /* perspective: 1000px; */
+  transition: .4s;
 }
 
 .projects li h2 {
@@ -18,10 +19,9 @@
 
 .projects li > div {
   @apply flex flex-col h-full w-full text-white;
-  transition: .4s;
 }
 
-.projects li:hover div {
+.projects li:hover {
   transform: scale(1.03);
 }
 
