@@ -78,7 +78,7 @@ const query = graphql`
     }
 
     images: file(
-      relativePath: { eq: "manelet-dark3.png" }
+      relativePath: { eq: "manelet-dark.png" }
     ) {
       splashImage: childImageSharp {
         fixed(width: 300) {

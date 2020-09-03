@@ -4,12 +4,10 @@ import Img from "gatsby-image"
 
 import smoothScroll from '../../../lib/smoothScroll'
 import { useLayout } from '../../../context/layout'
-// import useWindow from '../../../hooks/useWindow'
 
 import './splash.css'
 
 const Splash = ({ image }) => {
-  // const { width } = useWindow()
   const [{ refs }] = useLayout() 
   
   return (
