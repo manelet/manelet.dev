@@ -10,6 +10,7 @@ nav {
     z-50
     h-16;
   background-color: var(--nav-bg);
+  color: var(--color-text-default);
 }
 
 nav.home::before {
@@ -27,37 +28,6 @@ nav::before {
  */
 nav div.nav-inner {
   @apply flex items-center py-3 z-10 justify-between;  
-}
-
-/**
- * Nav menu
- */
-nav .menu {
-  @apply
-    hidden
-    items-start
-    justify-around
-    absolute
-    flex-col
-    w-screen
-    h-screen
-    top-0
-    left-0
-    right-0
-    pl-10;
-  color: var(--color-text-default);
-  background-color: var(--color-bg);  
-}
-
-nav .menu .close {
-  @apply
-    absolute
-    top-0
-    right-0;
-}
-
-nav .menu ul {
-  @apply flex flex-col text-4xl text-left;
 }
 
 /**
@@ -98,25 +68,8 @@ nav .logo span.logo span {
  */
 nav.home {
   @apply bg-transparent;
-  background-image: none;  
-
-  
+  background-image: none;
 }
-
-/**
- * Nav Mobile Menu Opened
- */
-nav div.nav-inner.menu-mobile-opened {
-  @apply
-    relative
-    justify-center
-    mx-0;
-} 
-
-nav div.nav-inner.menu-mobile-opened div.logo{
-  @apply z-10 absolute;
-  left: 1rem;
-} 
 
 /**
  * Nav Icons
@@ -129,17 +82,16 @@ nav .icons .icon {
   @apply relative mr-3 cursor-pointer text-xl;
 }
 
-nav .icons .icon svg,
 nav .theme-toggle svg {
   fill: var(--color-text-default);
   stroke: var(--color-text-default);
 }
-
+/* 
 nav div.menu-mobile-opened .icons .icon svg,
 nav div.menu-mobile-opened .theme-toggle svg {
   fill: var(--color-text-default) !important;
   stroke: var(--color-text-default) !important;
-}
+} */
 
 nav .theme-toggle {
   @apply cursor-pointer flex items-center;
@@ -152,21 +104,13 @@ nav .theme-toggle {
   nav {
     @apply h-24;
   }
-  nav .logo {
-    transform: none;
+
+  nav.home {
+    color: #fff;
   }
 
-  nav .menu {
-    @apply
-      flex-row
-      items-start
-      justify-between 
-      flex
-      w-full
-      h-auto
-      relative;
-    background-color: inherit;
-    color: inherit;
+  nav .logo {
+    transform: none;
   }
 
   nav div.nav-inner {
@@ -179,32 +123,12 @@ nav .theme-toggle {
     transform: none !important;
   }
 
-  nav.home .menu > div {
-    @apply ml-auto;
-  }  
-
-  nav .menu ul {
-    @apply flex-row ml-10 text-lg;
-  }
-
-  nav .menu > ul > li > a,
-  nav .menu > ul > li > div.dropdown > div.dropdown-toggle a {
-    transition: background 1s linear;
-    font-weight: bold;
-  }
-
-  nav .menu > ul > li:hover > a,
-  nav .menu > ul > li:hover > div.dropdown > div.dropdown-toggle a {
-    background: linear-gradient(to right, #845EC2, #D65DB1, #FF6F91, #FFC75F, #F9F871);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;       
-  }
-
-  nav .menu > ul > li:not(:last-child) {
-    @apply mr-4;
-  }
-
   nav .icons .icon {
     @apply text-lg;
+  }  
+
+  nav.home .theme-toggle svg {
+    fill: #fff;
+    stroke: #fff;
   }  
 }

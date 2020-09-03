@@ -4,6 +4,7 @@ import createAppContext from './ctx'
 import createReducer from './reducer'
 import { ACTIONS } from './actions'
 import { generateCssVariables } from '../lib/dark-theme'
+import toggleMenu from '../lib/toggle-menu'
 
 const ctx = createAppContext()
 const reducer = createReducer(ctx)
@@ -33,6 +34,15 @@ export const useLayout = () => {
     generateCssVariables(theme, root)
   }
 
+  const toggleMobileMenu = () => {
+    toggleMenu({
+      burger: ctx.refs.burger.current,
+      navInner: ctx.refs.navInner.current,
+      navMenu: ctx.refs.navMenu.current
+    })    
+    actions.toggleMobileMenu()
+  }
+
   useEffect(() => {
     const root = document.documentElement
     const theme = root.style.getPropertyValue('--initial-color-mode')
@@ -40,5 +50,5 @@ export const useLayout = () => {
     // eslint-disable-next-line
   }, [])
 
-  return [ctx, { ...actions, toggleTheme }]
+  return [ctx, { ...actions, dispatch, toggleTheme, toggleMobileMenu }]
 }

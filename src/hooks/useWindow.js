@@ -1,23 +1,26 @@
-import { useEffect, useState, useCallback } from 'react'
-import debounce from '../lib/debounce'
+import { useEffect, useState } from 'react'
 
-const DEBOUNCE_MS = 50
 const isSsr = typeof window === 'undefined'
-const getSize = () => ({
-  width: isSsr ? null : window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth,
-  height: isSsr ? null : window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight 
-})
 
 const useWindow = () => {
+  const getSize = () => ({
+    width: isSsr ? null : window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth,
+    height: isSsr ? null : window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight 
+  })
   const [size, setSize] = useState(getSize())
-  const handleOnResize = debounce(useCallback(() => setSize(getSize()), []), DEBOUNCE_MS)
 
   useEffect(() => {  
+    const handleOnResize = () => setSize(getSize())
     window.addEventListener('resize', handleOnResize, false)
     return () => window.removeEventListener('resize', handleOnResize, false)
-  }, [handleOnResize])
+  }, [])
 
   const flags = isSsr ? {} : { isMobile: size.width <= 480, isTablet: size.width < 768 }
+
+  // console.log('useWindow', {
+  //   ...size,
+  //   ...flags
+  // });
 
   return {
     ...size,

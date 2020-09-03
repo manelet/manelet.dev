@@ -35,7 +35,7 @@ const ThemeToggle = ({ isHome }) => {
     toggleTheme(isDark ? 'light' : 'dark')
   }, [toggleTheme, isDark])
 
-  const color = isDark ? '#fff' : isHome ? '#fff' : '#2d3748'
+  // const color = isDark ? '#fff' : isHome ? '#fff' : '#2d3748'
 
   return (
     <div
@@ -57,7 +57,7 @@ const ThemeToggle = ({ isHome }) => {
           strokeWidth="2"
           viewBox="0 0 24 24"
           width="18"
-          style={{ fill: color, stroke: color }}
+          // style={{ fill: color, stroke: color }}
         >
           {isDark
             ? (

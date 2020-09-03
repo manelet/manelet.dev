@@ -17,7 +17,7 @@
   @apply flex items-center;
 }
 
-@screen lg {
+@screen md {
   .dropdown {
     @apply relative;
   }

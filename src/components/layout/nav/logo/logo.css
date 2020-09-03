@@ -1,6 +1,7 @@
 svg.logo {
-  @apply w-full;
-  max-width: 120px;
+  /* @apply w-full;
+  max-width: 120px; */
+  width: 120px;
 
   overflow: visible;
   stroke: #fff;

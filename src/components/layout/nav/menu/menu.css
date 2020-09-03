@@ -1,0 +1,110 @@
+nav .menu {
+  @apply
+    hidden
+    items-start
+    justify-around
+    absolute
+    flex-col
+    w-screen
+    h-screen
+    top-0
+    left-0
+    right-0
+    pl-10;
+  color: var(--color-text-default);
+  background-color: var(--color-bg);  
+}
+
+nav .menu .close {
+  @apply
+    absolute
+    top-0
+    right-0;
+}
+
+nav .menu ul {
+  @apply flex flex-col text-4xl text-left;
+}
+
+/**
+ * Nav Mobile Menu Opened
+ */
+nav div.nav-inner.menu-mobile-opened {
+  @apply
+    relative
+    justify-center
+    mx-0;
+} 
+
+nav div.nav-inner.menu-mobile-opened div.logo{
+  @apply z-10 absolute;
+  left: 1rem;
+}
+
+nav .icons .feed svg {
+  fill: var(--color-text-default);
+  stroke-width: 0px;
+}
+
+nav .icons .twitter svg,
+nav .icons .github svg {
+  fill: var(--color-text-default);
+  stroke-width: 0px;
+}
+
+@screen md {
+  nav .menu {
+    @apply
+      flex-row
+      items-start
+      justify-between 
+      flex
+      w-full
+      h-auto
+      relative;
+    background-color: inherit;
+    color: inherit;
+  }
+  
+  nav.home .menu > div {
+    @apply ml-auto;
+  }  
+
+  nav .menu ul {
+    @apply flex-row ml-10 text-lg;
+  }
+
+  nav .menu > ul > li > a,
+  nav .menu > ul > li > div.dropdown > div.dropdown-toggle a {
+    transition: background 1s linear;
+    font-weight: bold;
+  }
+
+  nav .menu > ul > li:hover > a,
+  nav .menu > ul > li:hover > div.dropdown > div.dropdown-toggle a {
+    background: linear-gradient(to right, #845EC2, #D65DB1, #FF6F91, #FFC75F, #F9F871);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;       
+  }
+
+  nav .menu > ul > li:not(:last-child) {
+    @apply mr-4;
+  }  
+
+  nav.home .icons .feed svg {
+    fill: #fff;
+    stroke-width: 0px;
+  }
+
+  nav.home .icons .twitter svg,
+  nav.home .icons .github svg {
+    fill: #fff;
+    stroke-width: 0px;
+  }
+
+  nav .icons .twitter svg,
+  nav .icons .github svg {
+    fill: var(--color-text-default);
+    stroke-width: 0px;
+  }  
+}

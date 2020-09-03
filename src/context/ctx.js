@@ -1,7 +1,5 @@
 import { createRef } from 'react'
 
-
-
 export default () => ({
   refs: {
     nav: createRef(null),
