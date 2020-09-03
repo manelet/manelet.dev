@@ -19,19 +19,19 @@ const renderRow = (images, rowIndex, reverse) => (
       {cloneElement(images[0], { ['data-gallery']: true })}
     </div>
     <div className='subrow flex flex-col md:flex-row w-full md:w-1/3'>
-      <div className='item w-full mb-auto'>
+      <div className='item'>
         {cloneElement(images[1], { ['data-gallery']: true })}
       </div>
 
-      <div className='item w-full mb-auto'>
+      <div className='item'>
         {cloneElement(images[2], { ['data-gallery']: true })}
       </div> 
 
-      <div className='item w-full mb-auto'>
+      <div className='item'>
         {cloneElement(images[3], { ['data-gallery']: true })}
       </div>
 
-      <div className='item w-full mb-auto'>
+      <div className='item'>
         {cloneElement(images[4], { ['data-gallery']: true })}
       </div>                 
     </div>
