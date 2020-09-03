@@ -1,14 +1,19 @@
 import { Children } from 'react'
+import removeMd from 'remove-markdown'
 
 function truncate (text = '', limit = 250, after = '') {
 	return text.trim().slice(0, limit) + after
+}
+
+function stripMarkdown (str) {
+  return str.replace(/`/gi, '')
 }
 
 function Wrapper ({ onlyExcerpt = false, ...props }) {
   if (onlyExcerpt && props.children.length) {
     const [excerpt] = props.children
       .filter((child, _) => child.props && child.props['data-excerpt'])
-      .map(child => truncate(child.props.children))
+      .map(child => removeMd(truncate(child.props.children)))
 
     if (excerpt) {
       return excerpt
