@@ -1,5 +1,4 @@
 # To-Do
-- [ ] 404 page
 - [ ] real content
 - [ ] instagram cooking widgetn: https://www.instagram.com/maneleat/?__a=1 
 

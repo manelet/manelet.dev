@@ -32,6 +32,9 @@
   @apply w-full mb-12;
 }
 
+.post .post-pic {
+}
+
 @screen md {
   .post .cont-inner {
     @apply px-32;
@@ -40,6 +43,10 @@
   .page .cont-inner {
     @apply px-12;
   }
+
+  .post .post-pic {
+    @apply rounded-lg overflow-hidden;
+  }  
 }
 
 @screen lg {

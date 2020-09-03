@@ -20,8 +20,18 @@ const variants = {
 }
 
 function Img (props) {
+  console.log('img props', props);
+  if (props['data-gallery']) {
+    return (
+      <img {...props} />
+    )
+  }
+
   return (
-    <motion.figure variants={variants} className='md:rounded-lg md:overflow-hidden'>
+    <motion.figure
+      variants={variants}
+      className='post-pic'
+    >
       <img {...props} />
     </motion.figure>
   )

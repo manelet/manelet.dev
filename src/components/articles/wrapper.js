@@ -5,10 +5,6 @@ function truncate (text = '', limit = 250, after = '') {
 	return text.trim().slice(0, limit) + after
 }
 
-function stripMarkdown (str) {
-  return str.replace(/`/gi, '')
-}
-
 function Wrapper ({ onlyExcerpt = false, ...props }) {
   if (onlyExcerpt && props.children.length) {
     const [excerpt] = props.children

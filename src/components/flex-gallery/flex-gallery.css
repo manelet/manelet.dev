@@ -1,0 +1,37 @@
+.flex-gallery {
+  @apply flex flex-col my-5;
+}
+
+.flex-gallery .row {
+  @apply flex flex-col;
+}
+
+.flex-gallery .subrow {
+  @apply flex flex-wrap w-full;
+}
+
+.flex-gallery .item {
+  @apply flex flex-shrink-0 m-2 mb-auto rounded-lg overflow-hidden w-full;
+}
+
+@screen md {
+  .flex-gallery .row:nth-child(odd) {
+    @apply flex-row;
+  }
+
+  .flex-gallery .row.reverse {
+    @apply flex-row-reverse;
+  }
+
+  .flex-gallery .row:nth-child(even) {
+    @apply flex-row-reverse;
+  }
+
+  .flex-gallery .item {
+    max-width: calc(50% - 1rem);
+  }
+
+  .flex-gallery .subrow .item {
+    @apply w-1/2;
+  }  
+}
