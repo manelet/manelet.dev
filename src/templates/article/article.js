@@ -46,13 +46,13 @@ export default function Template(props) {
                   {frontmatter.title}
                 </H1>
                 <motion.time
-                  className='text-subtext'
+                  className='block lg:hidden text-subtext'
                   dateTime={frontmatter.date}
                   itemProp="datePublished"
-                  variants={{ initial: { opacity: 0, scale: .7 }, animate: { opacity: 1, scale: 1 }, exit: { opacity: 0, scale: .7 }}}
+                  variants={{ initial: { opacity: 0, scale: .7 }, animate: { opacity: 1, scale: 1 }, exit: { opacity: 0, scale: .7 }}}                  
                 >
                   {frontmatter.date}
-                </motion.time>
+                </motion.time>                
               </div>
               
               <div className="mt-5 w-full">
@@ -66,6 +66,14 @@ export default function Template(props) {
               className="hidden lg:sticky mb-auto lg:flex flex-col w-auto ml-20 flex-shrink-0"
               style={{ top: '130px' }}
             >
+              <time
+                className='text-subtext'
+                dateTime={frontmatter.date}
+                itemProp="datePublished"
+              >
+                {frontmatter.date}
+              </time>
+              
               {headings && !!headings.length && (
                 <aside className='toc'>
                   <div className='text-xl font-bold'>Table Of Contents</div>
