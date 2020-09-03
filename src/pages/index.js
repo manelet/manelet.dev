@@ -49,8 +49,8 @@ export default function Home ({ location }) {
         exit='exit'
       >
         <Splash image={splashImage} />
-        <HomeProjects projects={projectsWithImages} />
         <PostsList title='Recently published' posts={posts} />
+        <HomeProjects projects={projectsWithImages} />
       </motion.div>
     </>
   )

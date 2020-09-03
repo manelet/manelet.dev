@@ -22,7 +22,7 @@ const PostsList = ({ title, posts = [] }) => {
   const hoverAnimation = !isMobile ? { scale: 1.05, boxShadow }: null
 
   return (
-    <div className="posts-list cont">
+    <div id='home-articles' className="posts-list cont">
       <div className="cont-inner flex-col">
         {title && (
           <h2 className='font-bold text-3xl'>{title}</h2>
