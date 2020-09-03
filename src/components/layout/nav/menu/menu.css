@@ -71,7 +71,7 @@ nav .icons .github svg {
   }  
 
   nav .menu ul {
-    @apply flex-row ml-10 text-lg;
+    @apply flex-row text-lg;
   }
 
   nav .menu > ul > li > a,
@@ -107,4 +107,10 @@ nav .icons .github svg {
     fill: var(--color-text-default);
     stroke-width: 0px;
   }  
+}
+
+@screen lg {
+  nav .menu ul {
+    @apply ml-10;
+  }
 }
