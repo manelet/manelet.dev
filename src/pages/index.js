@@ -6,6 +6,7 @@ import SEO from '../components/SEO'
 import Splash from '../components/layout/splash/splash'
 import HomeProjects from "../components/home-projects/home-projects"
 import PostsList from "../components/posts-list/posts-list"
+import Instagram from '../components/instagram/instagram'
 
 const variants = {
   initial: {
@@ -51,6 +52,11 @@ export default function Home ({ location }) {
         <Splash image={splashImage} />
         <PostsList title='Recently published' posts={posts} />
         <HomeProjects projects={projectsWithImages} />
+        <div className="cont pt-8 pb-20">
+          <div className="cont-inner items-center flex-col lg:flex-row">        
+            <Instagram />
+          </div>
+        </div>
       </motion.div>
     </>
   )

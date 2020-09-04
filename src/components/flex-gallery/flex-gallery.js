@@ -1,9 +1,25 @@
 import React, { cloneElement, Children } from 'react'
 import cn from 'classnames'
+import { motion } from 'framer-motion'
 
 import './flex-gallery.css'
 
 const ITEMS_PER_ROW = 5
+
+const variants = {
+  initial: {
+    opacity: 0,
+    y: 50
+  },
+  exit: {
+    opacity: 0,
+    y: 50
+  },
+  animate: {
+    opacity: 1,
+    y: 0
+  }
+}
 
 const renderRow = (images, rowIndex, reverse) => (
   <div
@@ -43,35 +59,16 @@ const FlexGallery = ({ children, reverse = false }) => {
   const childrenAsArray = Children.toArray(children)
 
   return (
-    <div className='flex-gallery'>
+    <motion.div
+      className='flex-gallery'
+      variants={variants}
+    >
       {rows.map((_,rowIndex) => renderRow(
         childrenAsArray.slice(rowIndex * ITEMS_PER_ROW, (rowIndex * ITEMS_PER_ROW) + ITEMS_PER_ROW),
         rowIndex,
         reverse
       ))}
-    </div>
-
-    //       {
-    //         .map((child, itemIndex) => {
-    //           return (
-    //             <div
-    //               className={cn(
-    //                 'item',
-    //                 itemIndex === 0 && 'w-1/2',
-    //                 itemIndex === 1 && 'w-1/3',
-    //                 itemIndex > 1 && itemIndex < 4 && 'w-1/4'
-    //               )}
-    //               data-gallery-item={itemIndex + 1}
-    //               key={`flex-gallery-item-${itemIndex + 1}`}
-    //             >
-    //               {cloneElement(child, { ['data-gallery']: true })}
-    //             </div>
-    //           )
-    //         }
-    //       )}
-    //     </div>
-    //   ))}
-    // </div>
+    </motion.div>
   )
 }
 

@@ -20,7 +20,6 @@ const variants = {
 }
 
 function Img (props) {
-  console.log('img props', props);
   if (props['data-gallery']) {
     return (
       <img {...props} />

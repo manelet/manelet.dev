@@ -17,11 +17,6 @@ const useWindow = () => {
 
   const flags = isSsr ? {} : { isMobile: size.width <= 480, isTablet: size.width < 768 }
 
-  // console.log('useWindow', {
-  //   ...size,
-  //   ...flags
-  // });
-
   return {
     ...size,
     ...flags
