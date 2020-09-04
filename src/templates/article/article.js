@@ -7,6 +7,7 @@ import slugify from 'slugify'
 
 import SEO from '../../components/SEO'
 import H1 from '../../components/articles/h1'
+import Instagram from '../../components/instagram/instagram'
 
 import './article.css'
 
@@ -40,7 +41,7 @@ export default function Template(props) {
       >
         <div className="cont-inner items-start flex-col">
           <div className="w-full flex">
-            <article className="flex flex-col w-full">
+            <article className="flex flex-col w-full">      
               <div className="w-full">
                 <H1 className='text-5xl font-bold' itemProp="name">
                   {frontmatter.title}
@@ -60,6 +61,10 @@ export default function Template(props) {
                   {body}
                 </MDXRenderer>
               </div>
+
+              <div className="mt-5 w-full">
+                <Instagram />
+              </div>              
             </article>
 
             <div
