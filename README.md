@@ -1,6 +1,5 @@
 # To-Do
 - [ ] real content
-- [ ] instagram cooking widgetn: https://www.instagram.com/maneleat/?__a=1 
 
 ## Post
 - [ ] diferents plantilles depenent de la categoria/tag

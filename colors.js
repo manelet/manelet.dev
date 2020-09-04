@@ -10,7 +10,9 @@ export default {
     'bg-post': '#2d3748',
     'nav-bg': 'rgba(45, 55, 72,.5)',
     'footer-text': '#718096',
-    'bg-inline-code': '#2d3748'
+    'bg-inline-code': '#2d3748',
+    'ig-text': '#ffffff',
+    'ig-bg': '#2d3748'
   },
   light: {
     'color-bg': '#ffffff',
@@ -23,6 +25,8 @@ export default {
     'bg-post': '#f7fafc',
     'nav-bg': 'rgba(255, 255, 255,.5)',
     'footer-text': '#a0aec0',
-    'bg-inline-code': '#e2e8f0'
+    'bg-inline-code': '#e2e8f0',
+    'ig-text': '#1a202c',
+    'ig-bg': '#fffaf0'    
   }
 }
