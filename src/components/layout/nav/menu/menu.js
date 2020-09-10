@@ -10,7 +10,7 @@ import { wrapperAnimation } from './animations'
 
 import './menu.css'
 
-const Menu = ({ isHome }) => {
+const Menu = ({ path, isHome }) => {
   const { isTablet } = useWindow()
   const [{ refs, mobileMenuOpened }] = useLayout()
 
@@ -22,7 +22,7 @@ const Menu = ({ isHome }) => {
 
   const content = (
     <>
-      <Items />
+      <Items path={path} />
       <Icons isHome={isHome} />    
     </>
   )

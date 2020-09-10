@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { navigate, Link } from 'gatsby'
+import cn from 'classnames'
 
 import Dropdown, { DropdownItem, DropdownMenu, DropdownToggle } from '../../../dropdown/dropdown'
 import useWindow from '../../../../hooks/useWindow'
@@ -8,7 +9,7 @@ import useCategories from '../../../../hooks/useCategories'
 import { useLayout } from '../../../../context/layout'
 import { itemAnimation } from './animations'
 
-const Items = () => {
+const Items = ({ path }) => {
   const [, { toggleMobileMenu }] = useLayout()
   const { isTablet } = useWindow()
   const categories = useCategories()
@@ -37,7 +38,7 @@ const Items = () => {
       >
         <Dropdown>
           <DropdownToggle>
-            <Link to='/articles'>
+            <Link to='/articles' className={cn(path.includes('/articles') && 'active')}>
               Articles
             </Link>
           </DropdownToggle>
@@ -59,7 +60,7 @@ const Items = () => {
         onClick={handleOnClick}
         variants={isTablet && itemAnimation}
       >
-        <Link to='/projects'>
+        <Link to='/projects' className={cn(path.includes('/projects') && 'active')}>
           Projects
         </Link>
       </motion.li>
@@ -68,7 +69,7 @@ const Items = () => {
         onClick={handleOnClick}
         variants={isTablet && itemAnimation}
       >
-        <Link to='/about'>
+        <Link to='/about' className={cn(path.includes('/about') && 'active')}>
           About
         </Link>
       </motion.li>

@@ -8,9 +8,9 @@ import Logo from './logo/logo'
 import Menu from './menu/menu'
 
 const Nav = ({ path }) => {
+  const isHome = path === '/'
   const [mounted, setMounted] = useState(true)
   const [{ theme, refs }] = useLayout() 
-  const isHome = path === '/'
 
   useEffect(() => {
     if (!mounted) {
@@ -35,7 +35,7 @@ const Nav = ({ path }) => {
       <nav ref={refs.nav} className={cn('cont fixed', isHome && 'home')}>
         <div ref={refs.navInner} className='cont-inner nav-inner'>
           <Logo  />
-          <Menu isHome={isHome} />
+          <Menu path={path} isHome={isHome} />
           <Burger ref={refs.burger} />
         </div>
       </nav>
