@@ -6,4 +6,4 @@ import './src/styles/main.css'
 
 export const wrapRootElement = wrapRoot
 export const wrapPageElement = wrapPage
-// export const shouldUpdateScroll = updateScroll
+export const shouldUpdateScroll = updateScroll

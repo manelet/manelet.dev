@@ -1,6 +1,10 @@
 export const duration = 500
 
 const shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPosition }) => {
+  if (location.pathname.includes('/projects')) {
+    return false
+  }
+
   if (location.action === "PUSH") {
     window.setTimeout(() => window.scrollTo(0, 0), duration)
   } else {
