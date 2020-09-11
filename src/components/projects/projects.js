@@ -7,8 +7,8 @@ import useProjects from '../../hooks/useProjects'
 
 const Projects = (props) => {
   const projects = useProjects()
-  const activeProject = props.pathContext.slug
-    ? projects.find(({ project }) => project.fields.slug === props.pathContext.slug)
+  const activeProject = props.pageContext.slug
+    ? projects.find(({ project }) => project.fields.slug === props.pageContext.slug)
     : undefined
 
   return (

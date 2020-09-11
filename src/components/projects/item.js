@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useCallback, useLayoutEffect } from 'react'
 import { motion } from 'framer-motion'
 import { navigate } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -6,8 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { contentVariants } from './animations'
 import '../../templates/project/project.css'
 
-const Item = ({ data: { mdx: { body, fields, frontmatter } } }) => {
-  const [top, setTop] = useState(null)
+const Item = ({ data: { mdx: { body, fields, frontmatter } }, location }) => {
   const handleBack = useCallback(e => {
     if (
       e.target.classList.contains('project-list-container') ||
@@ -17,16 +16,18 @@ const Item = ({ data: { mdx: { body, fields, frontmatter } } }) => {
     }
   }, [])
 
-  useEffect(() => {
-    setTop(window.scrollY)
+  useLayoutEffect(() => {
     document.body.classList.add('locked')
     return () => document.body.classList.remove('locked')
   }, [])
 
-  const style = top ? { top: `${top}px` } : {}
+  const style = location.state.scrollY ? { top: `${location.state.scrollY}px` } : {}
 
   return (
-    <div className='project-list-container open' onClick={handleBack}>
+    <div
+      className='project-list-container open'
+      onClick={handleBack}
+    >
       <motion.div
         className="project-list-item"
         style={style}

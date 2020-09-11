@@ -12,10 +12,19 @@
 }
 
 .project-list-container.open {
-  @apply absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center;
+  @apply
+    w-full
+    h-screen
+    absolute
+    top-0
+    left-0
+    right-0 
+    bottom-0
+    flex
+    justify-center
+    items-center;
   backdrop-filter: blur(3px);
   background: var(--modal-bg);
-  /* top: 3em; */
 }
 
 .project-list-item {
