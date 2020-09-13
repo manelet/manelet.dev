@@ -21,7 +21,7 @@ const Item = ({ data: { mdx: { body, fields, frontmatter } }, location }) => {
     return () => document.body.classList.remove('locked')
   }, [])
 
-  const style = location.state.scrollY ? { top: `${location.state.scrollY}px` } : {}
+  const style = location.state && location.state.scrollY ? { top: `${location.state.scrollY}px` } : {}
 
   return (
     <div
