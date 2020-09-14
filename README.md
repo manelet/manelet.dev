@@ -8,5 +8,6 @@
 - [ ] preperar content
 
 ## Projects
+- [ ] fer servir <Img />
 - [ ] content inicial
 - [ ] content projects
