@@ -34,7 +34,7 @@
 .project-list-container.open .project-list-item {
   @apply w-full z-50 mb-0 shadow-xl;
   max-width: 85vw;
-  height: 80vh;
+  height: 70vh;
   /* border: 1px solid red; */
 }
 
@@ -70,6 +70,10 @@
   .project-list-item {
     @apply m-0 mb-5;
   } */
+
+  .project-list-container.open .project-list-item {
+    height: 80vh;
+  }  
 }
 
 @screen lg {
