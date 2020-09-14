@@ -88,7 +88,7 @@ const query = graphql`
     ) {
       splashImage: childImageSharp {
         fixed(width: 300) {
-          ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }
