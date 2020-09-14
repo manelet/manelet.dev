@@ -15,7 +15,6 @@ const shouldUpdateScroll = props => {
       window.scrollTo(0, 0)
     } else {
       window.setTimeout(() => {
-        console.log('scrollToTop');
         window.scrollTo(0, 0)
       }, duration)
     }
