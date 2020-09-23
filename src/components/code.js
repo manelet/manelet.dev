@@ -4,7 +4,23 @@ import React from 'react'
 import Highlight, {defaultProps} from 'prism-react-renderer'
 import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
 import {mdx} from '@mdx-js/react'
+import { motion } from 'framer-motion'
 import dracula from 'prism-react-renderer/themes/dracula'
+
+const variants = {
+  initial: {
+    opacity: 0,
+    y: 50
+  },
+  exit: {
+    opacity: 0,
+    y: 50
+  },
+  animate: {
+    opacity: 1,
+    y: 0
+  }
+}
 
 export default ({children, className, live, render}) => {
   const language = className.replace(/language-/, '')
@@ -42,7 +58,7 @@ export default ({children, className, live, render}) => {
       language={language}
       theme={dracula}>
       {({className, style, tokens, getLineProps, getTokenProps}) => (
-        <div style={{...style, padding: '20px', overflow: 'auto' }}>
+        <motion.div variants={variants} style={{...style, padding: '20px', overflow: 'auto' }}>
           <pre className={className}>
             {tokens.map((line, i) => (
               <div key={`line-${i}`} {...getLineProps({line, key: i})}>
@@ -52,7 +68,7 @@ export default ({children, className, live, render}) => {
               </div>
             ))}
           </pre>
-        </div>
+        </motion.div>
       )}
     </Highlight>
   )
