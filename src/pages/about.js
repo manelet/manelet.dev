@@ -1,18 +1,33 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import SEO from '../components/SEO'
 
 const About = () => {
   return (
     <>
       <SEO title='About' description='Manel has been developing websites since his childhood. Discover his road to senior frontend development from the beginnings' />
-      <div className='page cont'>
+      <motion.div
+        animate='animate'
+        initial='initial'
+        exit='exit'
+        variants={{ animate: { opacity: 1 }, initial: { opacity: 0 }, exit: { opacity: 0 }}}
+        transition={{ staggerChildren: .5 }}
+        className='page cont'
+      >
         <div className="cont-inner flex-col">
-          <h1 className="text-5xl">
+          <motion.h1
+            variants={{ animate: { opacity: 1 }, initial: { opacity: 0 }, exit: { opacity: 0 }}}
+            className="text-5xl"
+          >
             About
-          </h1>        
+          </motion.h1>        
 
           <div className="flex flex-col md:flex-row">
-            <div className='w-full md:w-1/2 relative' style={{ maxWidth: '500px' }}>
+            <motion.div
+              variants={{ animate: { opacity: 1 }, initial: { opacity: 0 }, exit: { opacity: 0 }}}
+              className='w-full md:w-1/2 relative'
+              style={{ maxWidth: '500px' }}
+            >
               <img src="/images/manel.jpg" alt="" style={{ clipPath: 'url(#clip)' }} />
               <svg
                 // className='top-0 left-0'
@@ -39,7 +54,7 @@ const About = () => {
                 {/* <image id='img' href='/images/manel.jpg' />
                 <use clipPath="url(#clip)" href="#img" /> */}
               </svg>          
-            </div>
+            </motion.div>
             <div className='flex w-full md:w-1/2'>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -47,7 +62,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   )
 }
