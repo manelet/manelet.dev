@@ -47,7 +47,7 @@ const Articles = () => {
               className='articles-item'
               key={`posts-${post.fields.slug}`}
             >
-              <Link to={post.fields.slug} className='text-4xl'>
+              <Link to={post.fields.slug} className='text-4xl font-bold'>
                 {post.frontmatter.title}
               </Link>
 
