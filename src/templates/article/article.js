@@ -45,39 +45,39 @@ export default function Template(props) {
         itemscope
         itemtype="http://schema.org/Article"
       >
-        <div className="cont-inner items-start flex-col">
+        <div className="cont-inner">
           <div className="w-full flex">
-            <article className="flex flex-col w-full">      
-              <div className="w-full">
-                <H1 className='text-5xl font-bold' itemProp="name">
-                  {frontmatter.title}
-                </H1>
+            <article>      
+              <H1 itemProp="name">
+                {frontmatter.title}
+              </H1>
 
-                <div className="py-4 w-full flex justify-between items-center border-t border-b border-gray-200">
-                  <motion.time
-                    className='block text-subtext'
-                    dateTime={frontmatter.date}
-                    itemProp="datePublished"
-                    variants={{ initial: { opacity: 0, scale: .7 }, animate: { opacity: 1, scale: 1 }, exit: { opacity: 0, scale: .7 }}}                  
-                  >
-                    {numberOfDaysSincePublication <= 60 ? dateObj.fromNow() : dateObj.format('dddd, MMMM D YYYY')}
-                  </motion.time>                
-                  
-                  <div className="flex items-center">
-                    <div className='w-10 h-10 rounded-full overflow-hidden mr-3 shadow-md'>
-                      <img src='/images/avatar.jpg' />
-                    </div>
-                    <div className='flex flex-col'>
-                      <span className='text-sm font-bold'>Manel Escuer</span>
-                      <span className='text-xs'>
-                        <a className='text-blue-500 underline' href='https://twitter.com/manelescuer' target='_blank'>
-                          @manelescuer
-                        </a>
-                      </span>
-                    </div>
+              <motion.div
+                className="post-data"
+                variants={{ initial: { opacity: 0, scale: .7 }, animate: { opacity: 1, scale: 1 }, exit: { opacity: 0, scale: .7 }}}                  
+              >
+                <time
+                  className='block text-subtext'
+                  dateTime={frontmatter.date}
+                  itemProp="datePublished"
+                >
+                  {numberOfDaysSincePublication <= 60 ? dateObj.fromNow() : dateObj.format('dddd, MMMM D YYYY')}
+                </time>                
+                
+                <div className="flex items-center">
+                  <div className='w-10 h-10 rounded-full overflow-hidden mr-3 shadow-md'>
+                    <img src='/images/avatar.jpg' />
+                  </div>
+                  <div className='flex flex-col'>
+                    <span className='text-sm font-bold'>Manel Escuer</span>
+                    <span className='text-xs'>
+                      <a className='text-blue-500 underline' href='https://twitter.com/manelescuer' target='_blank'>
+                        @manelescuer
+                      </a>
+                    </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
               
               <div className="mt-5 w-full">
                 <MDXRenderer headings={headings}>
@@ -114,14 +114,12 @@ export default function Template(props) {
                 </aside>
               )}              
               <div className="share">
-                <div className="flex flex-row">
-                  <LinkedinShareButton quote={frontmatter.title} url={'http://localhost:3000'} className='mr-3'>
-                    <LinkedinIcon size='42' round />
-                  </LinkedinShareButton>
-                  <TwitterShareButton quote={frontmatter.title} url={'http://localhost:3000'}>
-                    <TwitterIcon size='42' round />
-                  </TwitterShareButton>          
-                </div>
+                <LinkedinShareButton quote={frontmatter.title} url={'http://localhost:3000'} className='mr-3'>
+                  <LinkedinIcon size='42' round />
+                </LinkedinShareButton>
+                <TwitterShareButton quote={frontmatter.title} url={'http://localhost:3000'}>
+                  <TwitterIcon size='42' round />
+                </TwitterShareButton>          
               </div>          
             </div>            
           </div>

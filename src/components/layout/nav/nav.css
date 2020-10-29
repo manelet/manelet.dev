@@ -14,7 +14,8 @@ nav {
 }
 
 nav.home::before {
-  backdrop-filter: none;
+  /* backdrop-filter: none; */
+  backdrop-filter: blur(3px);  
 }
 
 nav::before {

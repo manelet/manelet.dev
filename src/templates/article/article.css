@@ -7,6 +7,14 @@
   max-width: 1100px;
 }
 
+.post .cont-inner {
+  @apply items-start flex-col;
+}
+
+.post h1 {
+  @apply text-5xl font-bold;
+}
+
 .post h2, .page h2 {
   @apply text-4xl;
 }
@@ -24,8 +32,17 @@
   background-color: var(--bg-inline-code);
 }
 
+.post article {
+  @apply flex flex-col w-full;
+}
+
+.post article .post-data {
+  @apply py-4 w-full flex justify-between items-center border-t border-b;
+  border-color: var(--bg-inline-code);
+} 
+
 .post .share {
-  @apply block;
+  @apply flex flex-row;
 }
 
 .post .toc {
