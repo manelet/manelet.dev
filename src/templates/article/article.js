@@ -4,12 +4,16 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { TwitterIcon, TwitterShareButton, LinkedinShareButton, LinkedinIcon } from 'react-share'
 import { motion } from 'framer-motion'
 import slugify from 'slugify'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
 
 import SEO from '../../components/SEO'
 import H1 from '../../components/articles/h1'
 import Instagram from '../../components/instagram/instagram'
 
 import './article.css'
+
+dayjs.extend(relativeTime)
 
 const variants = {
   initial: {},
@@ -23,6 +27,8 @@ const variants = {
 
 export default function Template(props) {
   const { data: { mdx: { headings, excerpt, body, frontmatter } } } = props
+  const dateObj = dayjs(frontmatter.date, 'MMMM DD, YYYY')
+  const numberOfDaysSincePublication = dayjs().diff(dateObj, 'day')
 
   return (
     <>
@@ -46,14 +52,31 @@ export default function Template(props) {
                 <H1 className='text-5xl font-bold' itemProp="name">
                   {frontmatter.title}
                 </H1>
-                <motion.time
-                  className='block lg:hidden text-subtext'
-                  dateTime={frontmatter.date}
-                  itemProp="datePublished"
-                  variants={{ initial: { opacity: 0, scale: .7 }, animate: { opacity: 1, scale: 1 }, exit: { opacity: 0, scale: .7 }}}                  
-                >
-                  {frontmatter.date}
-                </motion.time>                
+
+                <div className="py-4 w-full flex justify-between items-center border-t border-b border-gray-200">
+                  <motion.time
+                    className='block text-subtext'
+                    dateTime={frontmatter.date}
+                    itemProp="datePublished"
+                    variants={{ initial: { opacity: 0, scale: .7 }, animate: { opacity: 1, scale: 1 }, exit: { opacity: 0, scale: .7 }}}                  
+                  >
+                    {numberOfDaysSincePublication <= 60 ? dateObj.fromNow() : dateObj.format('dddd, MMMM D YYYY')}
+                  </motion.time>                
+                  
+                  <div className="flex items-center">
+                    <div className='w-10 h-10 rounded-full overflow-hidden mr-3 shadow-md'>
+                      <img src='/images/avatar.jpg' />
+                    </div>
+                    <div className='flex flex-col'>
+                      <span className='text-sm font-bold'>Manel Escuer</span>
+                      <span className='text-xs'>
+                        <a className='text-blue-500 underline' href='https://twitter.com/manelescuer' target='_blank'>
+                          @manelescuer
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               <div className="mt-5 w-full">
@@ -70,15 +93,7 @@ export default function Template(props) {
             <div
               className="hidden lg:sticky mb-auto lg:flex flex-col w-auto ml-20 flex-shrink-0"
               style={{ top: '130px' }}
-            >
-              <time
-                className='text-subtext'
-                dateTime={frontmatter.date}
-                itemProp="datePublished"
-              >
-                {frontmatter.date}
-              </time>
-              
+            >             
               {headings && !!headings.length && (
                 <aside className='toc'>
                   <div className='text-xl font-bold'>Table Of Contents</div>
