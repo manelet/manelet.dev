@@ -27,7 +27,7 @@
   }
 
   .dropdown .dropdown-menu {
-    @apply absolute hidden;
+    @apply absolute hidden z-50;
   }
 
   .dropdown .dropdown-menu ul {
