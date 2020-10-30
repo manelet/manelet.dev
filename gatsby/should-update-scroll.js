@@ -1,16 +1,17 @@
 export const duration = 500
 
 const shouldUpdateScroll = ({ prevRouterProps, routerProps, getSavedScrollPosition }) => {
-  const projectsFromOutside = routerProps.location.pathname.includes('/projects') && prevRouterProps.location.pathname.includes('/projects')
+  // const projectsFromOutside = routerProps.location.pathname.includes('/projects') && !prevRouterProps.location.pathname.includes('/projects')
   const isHash = routerProps.location.hash !== '' && !routerProps.location.action
 
-  if (projectsFromOutside || isHash) {
+  if (isHash) {
     return false
   }
 
 
   if (routerProps.location.action === "PUSH") {
-    window.setTimeout(() => window.scrollTo(0, 0), duration)    
+    window.scrollTo(0, 0)
+    // window.setTimeout(() => window.scrollTo(0, 0), duration)    
     // if (routerProps.location.pathname.includes('/projects')) {
     //   window.scrollTo(0, 0)
     // } else {
