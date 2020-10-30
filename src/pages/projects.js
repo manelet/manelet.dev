@@ -1,9 +1,6 @@
 import React from 'react'
 import SEO from '../components/SEO'
-
 import Projects from '../components/projects/projects'
-
-import '../components/projects/project-layout.css'
 
 const Page = props => (
   <>

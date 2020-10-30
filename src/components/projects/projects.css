@@ -1,0 +1,9 @@
+.tagged {
+  @apply flex items-center text-xs rounded-lg p-2 cursor-pointer mb-5;
+  background-color: var(--bg-post);
+  color: var(--color-text-default);
+}
+
+.tagged:not(:last-child) {
+  @apply mr-2;
+}

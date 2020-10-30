@@ -5,7 +5,7 @@ import Nav from './nav/nav'
 import Footer from './footer/footer'
 import Transition from '../page-transition'
 
-const Layout = ({ children, path, location }) => {
+const Layout = ({ children, path, location, pageContext }) => {
   return (
     <>
       <Helmet>
@@ -27,7 +27,7 @@ const Layout = ({ children, path, location }) => {
         <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
       </Helmet>
-      <Nav path={path} />
+      <Nav path={path} pageContext={pageContext} />
       <main>
         <Transition location={location}>
           {children}

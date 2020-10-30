@@ -21,6 +21,7 @@ function useProjects (id = false) {
               description
               bg_color
               has_image
+              call_to_action
             }
           }
         }

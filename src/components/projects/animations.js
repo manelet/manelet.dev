@@ -38,3 +38,12 @@ export const contentVariants = {
     }    
   },
 }
+
+export const cardVariants = {
+  enter: {
+    opacity: 1
+  },
+  exit: {
+    opacity: 0
+  }
+}

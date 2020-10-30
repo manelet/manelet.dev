@@ -1,19 +1,5 @@
-/* .project-list-item-inner {
-  @apply flex flex-col;
-} */
-
-.project-list-item-inner .header {
+.project-list-item .header {
   @apply rounded-lg p-5;
   background-color: var(--bg-post);
   color: var(--color-text-default);
-}
-
-.project-list-item-inner .tagged {
-  @apply flex items-center text-xs rounded-lg p-2 cursor-pointer;
-  background-color: var(--bg-post);
-  color: var(--color-text-default);
-}
-
-.project-list-item-inner .tagged:not(:last-child) {
-  @apply mr-2;
 }

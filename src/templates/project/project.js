@@ -1,13 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { motion } from 'framer-motion'
 
 import SEO from '../../components/SEO'
 import Projects from "../../components/projects/projects"
-
-// import './project.css'
-import '../../components/projects/project-layout.css'
 
 export default props => (
   <>
@@ -30,6 +25,7 @@ export const pageQuery = graphql`
         url
         tags
         bg_color
+        call_to_action
       }
       fields {
         slug

@@ -1,53 +1,36 @@
-import React, { useCallback } from 'react'
-import cn from 'classnames'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { Link, navigate } from 'gatsby'
+import { cardVariants } from './animations'
 
-import { variants } from './animations'
-
-const Card = ({ frontmatter, fields, isActive }) => {
-  const handleNavigate = useCallback(e => navigate(
-    e.currentTarget.dataset.projectSlug,
-    { state: { scrollY: window.scrollY }}
-  ), [])
+const Card = ({ frontmatter, fields }) => {
+  const handleNavigate = slug => () => navigate(slug, { state: { scrollY: window.scrollY }})
 
   return (
-    <motion.li
-      whileHover='hover'
-      initial='idle'
-      className={cn('relative, cursor-pointer')}
-      onClick={handleNavigate}
-      data-project-slug={fields.slug}
-      data-active={isActive}
-      variants={variants}
+    <motion.div
+      variants={cardVariants}
+      onClick={handleNavigate(fields.slug)}
+      layoutId={`project-header-${fields.slug}`}
+      className='project hover:shadow-xl cursor-pointer px-10 rounded-lg relative h-48 mb-10 w-full text-white flex flex-col items-start justify-center overflow-hidden'
+      style={{
+        backgroundColor: frontmatter.bg_color,
+        backgroundImage: `url(/images/${fields.slug.slice(0, -1)}.png)`
+      }}
     >
-      <div className={cn('project-list-container')}>
-        <motion.div
-          className="project-list-item"
-          layoutId={`proj-list-item-${fields.slug}`}
-        >
-          <div className="project-list-item-inner">
-            <header className='relative w-full h-full flex items-center' style={{ backgroundColor: frontmatter.bg_color }}>
-              <div className='relative z-10'>
-                <motion.div layoutId={`project-title-${fields.slug}}`} className='text-2xl font-bold'>
-                  <Link to={fields.slug}>
-                    {frontmatter.name}
-                  </Link>             
-                </motion.div>
-
-                <motion.p className='text-sm' layoutId={`project-description-${fields.slug}}`}>
-                  {frontmatter.description}
-                </motion.p>
-              </div>
-
-              <div className="z-0 absolute left-0 top-0 right-0">
-                <img src={`/images${fields.slug.slice(0, -1)}.png`} />
-              </div>
-            </header>              
-          </div>        
-        </motion.div>
+      <div className='text-2xl font-bold'>
+        <Link to={fields.slug}>
+          {frontmatter.name}
+        </Link>             
       </div>
-    </motion.li>
+
+      <p className='mb-3'>
+        {frontmatter.description}
+      </p>
+
+      <code className='rounded bg-black text-xs p-3 opacity-50'>
+        {frontmatter.call_to_action}
+      </code>
+    </motion.div>
   )
 }
 

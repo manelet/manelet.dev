@@ -7,8 +7,9 @@ import handleNavScroll from '../../../lib/navScroll'
 import Logo from './logo/logo'
 import Menu from './menu/menu'
 
-const Nav = ({ path }) => {
+const Nav = ({ path, pageContext }) => {
   const isHome = path === '/'
+  const isProject = path.includes('/projects/') && pageContext.name
   const [mounted, setMounted] = useState(true)
   const [{ theme, refs }] = useLayout() 
 
@@ -18,7 +19,7 @@ const Nav = ({ path }) => {
     }  
 
     if (theme && mounted) {
-      const onScroll = handleNavScroll(refs)
+      const onScroll = handleNavScroll(refs, isHome, isProject)
       onScroll()
 
       window.addEventListener('scroll', onScroll)
@@ -28,11 +29,11 @@ const Nav = ({ path }) => {
       }
     }
     // eslint-disable-next-line
-  }, [mounted, theme])
+  }, [mounted, theme, path])
 
   return (
     <header>
-      <nav ref={refs.nav} className={cn('cont fixed', isHome && 'home')}>
+      <nav ref={refs.nav} className={cn('cont fixed', (isHome || isProject) && 'home')}>
         <div ref={refs.navInner} className='cont-inner nav-inner'>
           <Logo  />
           <Menu path={path} isHome={isHome} />
