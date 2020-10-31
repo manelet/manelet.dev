@@ -3,11 +3,11 @@ import { navigate, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 const Item = ({ image, frontmatter, fields: { slug } }) => {
-  const goToProject = useCallback(e => {
+  const goToProject = slug => e => {
     e.preventDefault()
     e.stopPropagation()
-    navigate(e.currentTarget.getAttribute('data-path'))
-  }, [])
+    navigate(slug)
+  }
   
   // let styles = { backgroundColor: frontmatter.bg_color }
 
@@ -24,30 +24,35 @@ const Item = ({ image, frontmatter, fields: { slug } }) => {
 
   return (
     <li
-      onClick={goToProject}
-      data-path={slug}
+      onClick={goToProject(slug)}
       key={`post-${slug}`}
       className='relative'
       style={liStyle}
     >
-      <div className='z-10'>
-        <h2>
+      <div className='flex flex-col z-10 w-full h-full justify-center'>
+        <h2 className='mt-auto'>
           <Link to={slug}>
             {frontmatter.name}
           </Link>
         </h2>
         {frontmatter.description}
+
+        <button onClick={goToProject(slug)}>
+          Learn more
+        </button>
       </div>
-      {image && (
-        <div style={{ backgroundColor: frontmatter.bg_color }} className='absolute top-0 left-0 w-full h-full'>
-          <Img fluid={image.image.fluid} />
-        </div>
-      )}
+      
+      <div
+        style={{ background: frontmatter.bg_color }}
+        className='bg'
+      >
+        {image && <Img fluid={image.image.fluid} />}
+      </div>
     </li>
   )
 }
 
-const query = slug => `
+export const query = slug => `
   query {
     images: file(
       relativePath: { eq: "${slug}" }

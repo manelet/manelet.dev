@@ -1,48 +1,92 @@
-.projects {
-  --gap: 1rem;
-  @apply flex w-full bg-transparent rounded;
+.home-projects {
+  @apply my-20;
+  background-color: var(--bg-post);
 }
 
-.projects ul {
-  @apply flex flex-wrap;
+.projects {
+  @apply relative w-auto flex flex-wrap justify-center;
 }
 
 .projects li {
-  @apply rounded mb-4 p-4 flex items-center w-full cursor-pointer h-48 overflow-hidden;
-  /* perspective: 1000px; */
-  transition: .4s;
+  @apply 
+    text-white
+    rounded
+    mb-4
+    p-4
+    flex
+    items-center
+    w-full
+    cursor-pointer
+    h-48
+    overflow-hidden;
+  transition: all .4s ease-in-out;
+}
+
+.projects li div.bg {
+  @apply absolute top-0 left-0 w-full h-full;
 }
 
 .projects li h2 {
-  @apply text-3xl;
+  @apply font-bold text-3xl;
 }
 
-.projects li > div {
-  @apply flex flex-col h-full w-full text-white;
+.projects li button {
+  @apply
+    mr-auto
+    block
+    opacity-100
+    border-2
+    border-white
+    rounded-lg
+    px-3
+    py-2
+    text-xs
+    mt-auto
+    mb-0;
+  transition: all .4s ease-in-out; 
 }
 
-.projects li:hover {
-  transform: scale(1.03);
-}
-
-@screen md {
-
+.projects li button:hover {
+  @apply bg-white text-gray-900;
 }
 
 @screen lg {
   .projects {
-    @apply;
-  }
- 
-  .projects ul li {
-    max-width: calc(50% - var(--gap) / 2);    
+    @apply mx-20;
+    perspective: 1000px;
   }
 
-  .projects ul li:nth-child(odd) {
-    @apply mr-2;
+  .projects li {
+    width: 300px;
+    height: 250px;
+    transform: rotateY(-20deg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /* 5px 5px 3px red; */
   }
-  
-  .projects ul li:nth-child(even) {
-    @apply ml-2;
-  } 
+
+  .projects li:nth-child(odd) {
+    @apply -mr-24;
+  }
+
+  .projects li:nth-child(even) {
+    @apply z-10 -mt-10;
+  }    
+
+  .projects li:hover {
+    @apply z-20 shadow-xl;
+    transform: rotateY(0deg) scale(1.2) !important;
+  }
+
+  .projects:hover > li:not(:hover) {
+    transform: rotateY(-20deg) scale(0.9);
+  }
+
+  .projects li button {
+    @apply opacity-0;
+  }
+
+  .projects li:hover button {
+    @apply opacity-100;
+  }
 }
