@@ -13,8 +13,8 @@ const Card = ({ frontmatter, fields }) => {
       layoutId={`project-header-${fields.slug}`}
       className='project hover:shadow-xl cursor-pointer px-10 rounded-lg relative h-48 mb-10 w-full text-white flex flex-col items-start justify-center overflow-hidden'
       style={{
-        backgroundColor: frontmatter.bg_color,
-        backgroundImage: `url(/images/${fields.slug.slice(0, -1)}.png)`
+        backgroundImage: `url(/images/${fields.slug.slice(0, -1)}.png)`,
+        background: frontmatter.bg_color,
       }}
     >
       <div className='text-2xl font-bold'>

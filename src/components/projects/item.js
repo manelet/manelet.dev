@@ -11,7 +11,7 @@ const Item = (props) => {
   const handleBack = e => navigate('/projects')
 
   // const style = location.state && location.state.scrollY ? { top: `${location.state.scrollY}px` } : {}
-
+  
   return (
     <>
       <motion.div
@@ -20,7 +20,7 @@ const Item = (props) => {
         style={{
           height: '500px',
           backgroundImage: `url(/images${fields.slug.slice(0, -1)}.png)`,
-          backgroundColor: frontmatter.bg_color
+          background: frontmatter.bg_color
         }}
       >
         <div className='cont-inner flex-col'>
