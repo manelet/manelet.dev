@@ -1,31 +1,29 @@
 .posts-list .posts-wrapper {
-  @apply flex flex-wrap;
+  @apply flex flex-col;
 }
 
 .posts-list .post {
   @apply
-    rounded-lg
     w-full
     flex
-    p-5
-    mb-6
     cursor-pointer
-    h-56;
-  background-color: var(--bg-post);
-  /* border: 1px solid red; */
+    p-0
+    border-b
+    py-5;
+  border-color: var(--bg-inline-code);
+}
+
+.posts-list button {
+  @apply border-2 w-48 m-auto my-10 rounded-lg py-3;
+  border-color: var(--bg-inline-code);
+}
+
+.posts-list button:hover {
+  background-color: var(--bg-inline-code);
 }
 
 @screen lg {
   .posts-list .post {
-    /* max-width: calc(50% - 4em); */
-    flex: 0 calc(50% - .75rem);
+    @apply py-10 px-10 -mx-10;
   }
-
-  .posts-list .post:nth-child(odd) {
-    @apply ml-0 mr-3;
-  }
-  
-  .posts-list .post:nth-child(even) {
-    @apply mr-0 ml-3;
-  }  
 }
