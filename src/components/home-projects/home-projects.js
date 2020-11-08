@@ -1,4 +1,5 @@
 import React, { memo } from 'react'
+import { navigate } from 'gatsby'
 
 import Item from './item'
 
@@ -14,6 +15,9 @@ const HomeProjects = ({ projects = [] }) => (
         <p>
           <span role='img' aria-label='heart'>♥️</span> bootsrapping side projects, toy with new techs and experiment
         </p>
+        <button onClick={() => navigate('/projects')}>
+          Check them all
+        </button>
       </div>
       <ul className='projects'>
         {projects.map((project) => (

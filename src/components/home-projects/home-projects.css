@@ -37,7 +37,7 @@
     opacity-100
     border-2
     border-white
-    rounded-lg
+    rounded-full
     px-3
     py-2
     text-xs
@@ -48,6 +48,15 @@
 
 .projects li button:hover {
   @apply bg-white text-gray-900;
+}
+
+.home-projects button {
+  @apply border-2 w-auto mr-auto my-10 rounded-full p-3 text-sm;
+  border-color: var(--footer-text);
+}
+
+.home-projects button:hover {
+  background-color: var(--footer-text);
 }
 
 @screen lg {

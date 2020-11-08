@@ -6,21 +6,33 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { ReactComponent as ArrowLeft } from '../../../static/icons/arrow-left.svg'
 import '../../templates/project/project.css'
 
+const projectContentVariants = {
+  initial: {
+    opacity: 0,
+    y: 100
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: .6
+    }
+  }
+}
+
 const Item = (props) => {
   const { data: { mdx: { body, fields, frontmatter } } } = props
-  const handleBack = e => navigate('/projects')
+  const handleBack = () => navigate('/projects')
+  const id = fields.slug.split('/').filter(e => e !== '').pop()
 
-  // const style = location.state && location.state.scrollY ? { top: `${location.state.scrollY}px` } : {}
-  
   return (
     <>
       <motion.div
         layoutId={`project-header-${fields.slug}`}
-        className='absolute w-full top-0 left-0 flex justify-center items-center text-white bg-cover'
+        className={`project__open ${id}`}
         style={{
           height: '500px',
-          backgroundImage: `url(/images${fields.slug.slice(0, -1)}.png)`,
-          background: frontmatter.bg_color
+          background: frontmatter.background
         }}
       >
         <div className='cont-inner flex-col'>
@@ -45,11 +57,14 @@ const Item = (props) => {
           </div>
         </div>
       </motion.div>    
-      <div
-        className='w-full'
-        style={{ marginTop: 'calc(500px - 4rem)' }}
+      <motion.div
+        initial='initial'
+        animate='animate'
+        variants={projectContentVariants}
+        className={`project__content ${id} w-full`}
+        style={{ marginTop: 'calc(500px - 5rem)' }}
       >
-        {frontmatter.tags && frontmatter.tags.length && (
+        {/* {frontmatter.tags && frontmatter.tags.length && (
           <div className="flex">
             {frontmatter.tags.map(tag => (
               <div key={`tag-${tag}`} className='tagged'>
@@ -57,12 +72,12 @@ const Item = (props) => {
               </div>
             ))}
           </div>
-        )}
+        )} */}
 
         <MDXRenderer>
           {body}
         </MDXRenderer> 
-      </div>
+      </motion.div>
     </>
   )
 }

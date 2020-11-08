@@ -7,3 +7,26 @@
 .tagged:not(:last-child) {
   @apply mr-2;
 }
+
+div.project {
+  transition: all .15s ease-in-out;
+  @apply
+    cursor-pointer
+    px-10
+    rounded-lg
+    relative
+    h-48
+    mb-10
+    w-full
+    text-white
+    flex
+    flex-col
+    items-start 
+    justify-center
+    overflow-hidden;
+}
+
+div.project:hover {
+  transform: scale(1.02) !important;
+  @apply shadow-xl;
+}

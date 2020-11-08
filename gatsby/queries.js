@@ -42,7 +42,7 @@ exports.getAllProjects = `
             github
             stack
             description
-            bg_color
+            background
           }
         }
       }

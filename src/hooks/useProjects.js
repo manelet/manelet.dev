@@ -19,8 +19,7 @@ function useProjects (id = false) {
               github
               stack
               description
-              bg_color
-              has_image
+              background
               call_to_action
             }
           }

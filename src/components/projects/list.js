@@ -17,14 +17,16 @@ const listVariants = {
 
 const ProjectsList = ({ projects }) => (
   <motion.ul
-    className='project-list-inner'
     variants={listVariants}
     initial='exit'
     animate='enter'
     layoutId='projects-list'
   >
     {projects.map(({ project }) => (
-      <Card key={`proj-${project.fields.slug}`} {...project} />
+      <Card
+        key={`proj-${project.fields.slug}`}
+        {...project}
+      />
     ))}
   </motion.ul>
 )

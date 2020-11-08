@@ -120,8 +120,7 @@ const query = graphql`
             github
             stack
             description
-            bg_color
-            has_image
+            background
           }
           fields {
             slug

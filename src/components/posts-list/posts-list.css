@@ -14,7 +14,7 @@
 }
 
 .posts-list button {
-  @apply border-2 w-48 m-auto my-10 rounded-lg py-3;
+  @apply border-2 w-48 m-auto my-10 rounded-full py-3;
   border-color: var(--bg-inline-code);
 }
 

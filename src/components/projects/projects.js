@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 import List from './list'
 import Item from './item'
 import useProjects from '../../hooks/useProjects'
+
 import './projects.css'
 
 const Projects = (props) => {

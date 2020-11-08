@@ -26,7 +26,7 @@ collections:
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Bg color", name: "bg_color", widget: "string"}
+      - {label: "Bg color", name: "background", widget: "string"}
       - {label: "Url", name: "url", widget: "string"}            
       - {label: "Stack", name: "stack", widget: "list"}  
       - {label: "Tags", name: "tags", widget: "list"}                                        

@@ -23,8 +23,15 @@ const variants = {
 }
 
 export default ({children, className, live, render}) => {
-  const language = className.replace(/language-/, '')
+  let language
 
+  if (typeof className === 'undefined') {
+    [language] = children.replace(/`/gi, '').split(/\n/)
+    children = children.replace(/`/gi, '').replace(language, '')
+  } else {
+    language = className.replace(/language-/, '')
+  }
+  
   if (live) {
     return (
       <div style={{marginTop: '40px', backgroundColor: 'black'}}>

@@ -24,7 +24,7 @@ export const pageQuery = graphql`
         description
         url
         tags
-        bg_color
+        background
         call_to_action
       }
       fields {

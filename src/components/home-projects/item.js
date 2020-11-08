@@ -1,33 +1,19 @@
-import React, { memo, useCallback } from 'react'
+import React, { memo } from 'react'
 import { navigate, Link } from 'gatsby'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 
-const Item = ({ image, frontmatter, fields: { slug } }) => {
+const Item = ({ frontmatter, fields: { slug } }) => {
   const goToProject = slug => e => {
     e.preventDefault()
     e.stopPropagation()
     navigate(slug)
   }
-  
-  // let styles = { backgroundColor: frontmatter.bg_color }
-
-  // if (image) {
-  //   styles = {
-  //     ...styles,
-  //     backgroundImage: `url('/images${slug.slice(0, -1)}.png')`,
-  //     backgroundPosition: 'center',
-  //     backgroundSize: 'cover'
-  //   }
-  // }
-
-  const liStyle = !image ? { backgroundColor: frontmatter.bg_color } : {}
 
   return (
     <li
       onClick={goToProject(slug)}
       key={`post-${slug}`}
       className='relative'
-      style={liStyle}
     >
       <div className='flex flex-col z-10 w-full h-full justify-center'>
         <h2 className='mt-auto'>
@@ -43,11 +29,11 @@ const Item = ({ image, frontmatter, fields: { slug } }) => {
       </div>
       
       <div
-        style={{ background: frontmatter.bg_color }}
+        style={{ background: frontmatter.background }}
         className='bg'
-      >
-        {image && <Img fluid={image.image.fluid} />}
-      </div>
+      />
+        {/* {image && <Img fluid={image.image.fluid} />} */}
+      {/* </div> */}
     </li>
   )
 }
