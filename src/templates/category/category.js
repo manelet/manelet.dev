@@ -1,55 +1,14 @@
 import React from 'react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { Link, navigate, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
+import List from '../../components/articles/list/list'
 import SEO from '../../components/SEO'
-import H1 from '../../components/articles/h1'
 
 const Category = ({ pageContext: category, data: { allPosts: { posts } } }) => {  
   return (
     <>
       <SEO title='Categories' description='List of articles written by Manel Escuer grouped by categories' />
-      <div className="page cont">
-        <div className="cont-inner items-start flex-col">
-          <H1 className='uppercase text-sm font-bold mb-4'>{category.name}</H1>
-
-          {!posts || !posts.length && (
-            <>No posts.</>
-          )}
-          {posts.map(({ post }) => (
-            <article
-              className='articles-item'
-              key={`posts-${post.fields.slug}`}
-            >
-              <Link to={post.fields.slug} className='text-4xl'>
-                {post.frontmatter.title}
-              </Link>
-
-              <p className='my-3'>
-                <MDXRenderer onlyExcerpt={true}>
-                  {post.body}
-                </MDXRenderer>
-              </p>
-
-              <div
-                className='read-more'
-                data-slug={post.fields.slug}
-                // onClick={handleNavigate}
-              >
-                <span className="text">
-                  Read more&nbsp;
-                </span>
-                <span className='arr'>
-                  &raquo;
-                </span>
-                <span className='arr'>
-                  &rsaquo;
-                </span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
+      <List title={category.name} posts={posts} />
     </>
   )
 }
