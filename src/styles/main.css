@@ -22,6 +22,16 @@ body {
   color: var(--color-text-default);
 }
 
+p > a {
+  color: var(--link);
+}
+
+p > a[target="_blank"]::after {
+  content: '\1F517';
+  font-size: 9px;
+  color: var(--link);
+}
+
 b {
   font-weight: 600;
 }

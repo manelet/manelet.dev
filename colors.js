@@ -13,7 +13,8 @@ export default {
     'bg-inline-code': '#2d3748',
     'ig-text': '#ffffff',
     'ig-bg': '#2d3748',
-    'modal-bg': 'rgba(26, 32, 44, 0.3)'
+    'modal-bg': 'rgba(26, 32, 44, 0.3)',
+    'link': 'aqua'
   },
   light: {
     'color-bg': '#ffffff',
@@ -30,6 +31,7 @@ export default {
     'bg-inline-code': '#e2e8f0',
     'ig-text': '#1a202c',
     'ig-bg': '#fffaf0',
-    'modal-bg': 'rgba(255, 255, 255, 0.3)'  
+    'modal-bg': 'rgba(255, 255, 255, 0.3)',
+    'link': 'fuchsia'
   }
 }
