@@ -26,6 +26,7 @@ exports.getAllProjects = `
   {
     allMdx (
       limit: 1000
+      sort: { order: DESC, fields: [frontmatter___name] }
       filter: { fileAbsolutePath: { regex : "/projects/" } }
     ) {
       edges {

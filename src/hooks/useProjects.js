@@ -4,6 +4,7 @@ function useProjects (id = false) {
   const { allProjects: { projects } } = useStaticQuery(graphql`
     query {
       allProjects: allMdx(
+        sort: { order: DESC, fields: [frontmatter___name] }
         filter: { fileAbsolutePath: { regex : "\/projects/" } }
       ) {
         projects: edges {
@@ -16,11 +17,11 @@ function useProjects (id = false) {
             frontmatter {
               name
               url
-              github
               stack
               description
               background
               call_to_action
+              github
             }
           }
         }

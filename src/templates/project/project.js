@@ -26,6 +26,7 @@ export const pageQuery = graphql`
         tags
         background
         call_to_action
+        github
       }
       fields {
         slug

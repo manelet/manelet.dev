@@ -117,10 +117,10 @@ const query = graphql`
           frontmatter {
             name
             url
-            github
             stack
             description
             background
+            github
           }
           fields {
             slug

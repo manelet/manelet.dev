@@ -9,6 +9,9 @@ slug: "str"
 stack:
  - "TypeScript"
 ---
+import Code from '../../src/components/code/code.js'
+import Wip from '../../src/components/projects/wip.js'
+
 <div className='project__hero'>
   <div className='showcase'>
 
@@ -30,16 +33,50 @@ stack:
   </div>
 </div>
 
+<Wip />
+
 <div className='project__narrow'>
-  <h2>Usage</h2>
+  <h2>Methods</h2>
 
-  ```jsx
-  import Donut from 'react-donut-svg'
-
-  function Chart () {
-    return (
-      <Donut value={50} label='name' />
-    )
-  }
-  ```
+  <ul className='as-table'>
+    <li>
+      <div className='title'>slugify</div>
+      <Code className='javascript'>
+        slugify("I'm Manel", delimeter = '-') // im-manel
+      </Code>
+    </li>
+    <li>
+      <div className='title'>camelcase</div>
+      <Code className='javascript'>
+        camelcase("I'm Manel") // imManel
+      </Code>      
+    </li>
+    <li>
+      <div className='title'>startsWidth</div>
+      <Code className='javascript'>
+        startsWidth("I'm Manel", "I") // true
+      </Code>      
+    </li>    
+    <li>
+      <div className='title'>endsWith</div>
+      <Code className='javascript'>
+        endsWith("I'm Manel", "el") // true
+      </Code>        
+    </li>
+    <li>
+      <div className='title'>upper</div>
+      <Code className='javascript'>
+        upper("I'm Manel") // I'M MANEL
+      </Code>      
+    </li>
+    <li>
+      <div className='title'>lower</div>
+      <Code className='javascript'>
+        lower("I'm Manel") // i'm manel
+      </Code>      
+    </li>    
+    <li>
+      And many more! <a href='https://github.com/manelet/str/pulls' target='_BLANK'>Feel free to add yours</a> 😚
+    </li>
+  </ul>
 </div>

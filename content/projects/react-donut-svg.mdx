@@ -1,0 +1,64 @@
+---
+name: "react-donut-svg"
+description: "🍩 A flexible lightweight react donut chart component"
+background: "#FFC75F"
+slug: "react-donut-svg"
+url: "https://manelet.github.io/react-donut-svg/"
+github: "https://github.com/manelet/react-donut-svg"
+call_to_action: "npm i -S react-donut-svg"
+stack:
+  - "React"
+  - "TypeScript"
+tags:
+  - "charts"
+  - "svg"
+---
+import Donut from 'react-donut-svg'
+
+<div className='project__hero'>
+  <div className='showcase'>
+    <div>
+      <Donut value={75} label='A' color='fuchsia' />
+    </div>
+    <div>
+      <Donut value={100} label='B' />
+    </div>
+    <div>
+      <Donut value={25} label='C' color='lime' />
+    </div>  
+    <div>
+      <Donut value={33} label='D' color='fuchsia' />
+    </div>        
+  </div>
+  <div className='flex flex-col'>
+    <h2>Light donuts, just 1.7kb</h2>
+    <p>
+      Do you need to show some key indicators in a form of donut chart? I've got your back covered! 💪
+    </p>
+    <p>
+      Enjoy easy-to-use, responsive, SVG animated donut charts with just 2 steps.
+    </p>
+  </div>
+</div>
+
+<div className='project__narrow'>
+  <h2>Install</h2>
+
+  ```javascript
+  npm install -S react-donut-svg
+  ```  
+</div>
+
+<div className='project__narrow'>
+  <h2>Usage</h2>
+
+  ```jsx
+  import Donut from 'react-donut-svg'
+
+  function Chart () {
+    return (
+      <Donut value={50} label='name' />
+    )
+  }
+  ```  
+</div>

@@ -24,7 +24,7 @@ const Item = (props) => {
   const { data: { mdx: { body, fields, frontmatter } } } = props
   const handleBack = () => navigate('/projects')
   const id = fields.slug.split('/').filter(e => e !== '').pop()
-
+console.log(frontmatter);
   return (
     <>
       <motion.div
@@ -56,24 +56,50 @@ const Item = (props) => {
             </code>            
           </div>
         </div>
-      </motion.div>    
+      </motion.div>
+
+      <motion.div
+        initial='initial'
+        animate='animate'
+        variants={projectContentVariants}
+        className='project__panel'
+        style={{ marginTop: 'calc(500px - 5rem)' }}
+      >
+        <div>
+          {frontmatter.url && (
+            <button>
+              visit site
+            </button>
+          )}
+
+          {frontmatter.github && (
+            <button>
+              github
+            </button>
+          )}          
+        </div>
+
+        <div>
+          {frontmatter.tags && frontmatter.tags.length && frontmatter.tags.map(tag => (
+            <span key={`tag-${tag}`} className='label'>
+              {tag}
+            </span>
+          ))}
+
+          {frontmatter.stack && frontmatter.stack.length && frontmatter.stack.map(stack => (
+            <span key={`tag-${stack}`} className='label'>
+              {stack}
+            </span>
+          ))}          
+        </div>
+      </motion.div>
+
       <motion.div
         initial='initial'
         animate='animate'
         variants={projectContentVariants}
         className={`project__content ${id} w-full`}
-        style={{ marginTop: 'calc(500px - 5rem)' }}
       >
-        {/* {frontmatter.tags && frontmatter.tags.length && (
-          <div className="flex">
-            {frontmatter.tags.map(tag => (
-              <div key={`tag-${tag}`} className='tagged'>
-                {tag}
-              </div>
-            ))}
-          </div>
-        )} */}
-
         <MDXRenderer>
           {body}
         </MDXRenderer> 

@@ -14,4 +14,59 @@ tags:
  - "Web app"
  - "Mobile app" 
 ---
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+import { Link } from 'gatsby'
+import Wip from '../../src/components/projects/wip.js'
+
+<div className='project__hero'>
+  <div className='showcase'>
+    {/* <div className=''>
+      <img src='/images/projects/meal-planning.png' />
+    </div>
+    <div className=''>
+      <img src='/images/projects/meal-planning.png' />
+    </div>
+    <div className='md:mx-auto'>
+      <img src='/images/projects/meal-planning.png' />
+    </div>
+    <div className='md:mx-auto'>
+      <img src='/images/projects/meal-planning.png' />
+    </div>        */}
+  </div>
+  <div>
+    <h2>A project born during pandemic lockdown</h2>
+    <p>It was during first pandemic lockdown around March when me, <a href='https://twitter.com/jordicrisol' target='_blank'>Jordi</a> and <a href='https://www.instagram.com/raquelsancho/' target='_blank'>Raquel</a> started talking about trying to bootstrap something while at home.</p>
+    <p>We all like food and eating very much so we decided to start thinking about something food-related, and we came up with <b>🥑 bocado</b></p>
+  </div>
+</div>
+
+<Wip />
+
+<div className='project__hero'>
+  <div>
+    <h2>Meal planning</h2>
+    <p>Customizable dynamically generated meal plans based on your user preferences. Save time and discover new recipes that will help you leverage both health and pleasure.</p>
+  </div>  
+  <div className='showcase'>
+  </div>
+</div>
+
+<div className='project__hero'>
+  <div className='showcase'>
+    
+  </div>
+  <div>
+    <h2>Your own recipe book</h2>
+    <p>Easily create your own recipe book both from your laptor or your mobile.</p>
+    <p>We believe media as a main tool for describing recipes therefor we use AI to guess recipes metadata powered by <Link to='/projects/nyora'><span role='img' aria-label='robot'>🤖</span> nyora</Link>.</p>
+  </div>  
+</div>
+
+<div className='project__hero'>
+  <div>
+    <h2>Learn & discover</h2>
+    <p>Discover recipes, food tips and tricks from both people around you and food influencers with <span role='img' aria-label='tips'>🤳🏻</span> <b>Tips</b></p>
+    <p><span role='img' aria-label='tips'>🤳🏻</span> <b>Tips</b> are small (or large), with text (or just videos or photos) portions of content that will enlight your cooking world</p>
+  </div>  
+  <div className='showcase'>
+  </div>
+</div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { LayoutProvider } from '../src/context/layout'
 
-import Code from '../src/components/code'
+import Code from '../src/components/code/code'
 import H1 from '../src/components/articles/h1'
 import H2 from '../src/components/articles/h2'
 import H3 from '../src/components/articles/h3'

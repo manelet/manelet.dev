@@ -29,8 +29,10 @@ const Icons = ({ isHome }) => {
         <a
           title='twitter profile @manelescuer'
           name='twitter profile @manelescuer'
-          rel="noopener"
-          rel="noreferrer" href='https://twitter.com/manelescuer' target='_blank'>
+          rel="noopener noreferrer"
+          href='https://twitter.com/manelescuer'
+          target='_blank'
+        >
           <svg
             viewBox="0 0 512 512"
             width="18"
@@ -45,8 +47,7 @@ const Icons = ({ isHome }) => {
         <a
           title='github profile @manelet'
           name='github profile @manelet'
-          rel="noopener"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           href='https://github.com/manelet'
           target='_blank'
         >
