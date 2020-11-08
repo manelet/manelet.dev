@@ -15,6 +15,7 @@ exports.getAllArticles = `
           frontmatter {
             title
             categories
+            date
           }
         }
       }

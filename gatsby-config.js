@@ -1,3 +1,4 @@
+const { getAllArticles } = require('./gatsby/queries')
 const IMAGE_WIDTH = 300
 
 module.exports = {
@@ -80,29 +81,7 @@ module.exports = {
                 }
               })
             },
-            query: `
-              {
-                allMdx (
-                  sort: { order: DESC, fields: [frontmatter___date] }
-                  limit: 1000
-                  filter: { fileAbsolutePath: { regex : "/articles/" } }
-                ) {
-                  edges {
-                    node {
-                      body
-                      excerpt
-                      fields {
-                        slug
-                      }
-                      frontmatter {
-                        title
-                        date
-                      }
-                    }
-                  }
-                }
-              }
-            `,
+            query: getAllArticles,
             output: "/rss.xml",
             title: "Your Site's RSS Feed",
             match: "^/articles/"
