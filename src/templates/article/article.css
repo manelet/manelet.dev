@@ -41,6 +41,10 @@
   border-color: var(--bg-inline-code);
 } 
 
+.post article .post-data time {
+  color: var(--subtext);
+}
+
 .post .share {
   @apply flex flex-row;
 }

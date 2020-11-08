@@ -1,5 +1,7 @@
-import React, { forwardRef } from 'react';
-import { useLayout } from '../../context/layout';
+import React, { forwardRef } from 'react'
+import { useLayout } from '../../context/layout'
+
+import './burger.css'
 
 const Burger = forwardRef((props, ref) => {
   const [, { toggleMobileMenu }] = useLayout()

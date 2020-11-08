@@ -7,6 +7,8 @@ import handleNavScroll from '../../../lib/navScroll'
 import Logo from './logo/logo'
 import Menu from './menu/menu'
 
+import './nav.css'
+
 const Nav = ({ path, pageContext }) => {
   const isHome = path === '/'
   const isProject = path.includes('/projects/') && pageContext.name

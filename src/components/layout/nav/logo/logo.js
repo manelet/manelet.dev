@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 
 import { letter } from './logo.anim'
 
+import './logo.css'
+
 const Logo = () => (
   <div className='logo'>
     <Link to='/'>

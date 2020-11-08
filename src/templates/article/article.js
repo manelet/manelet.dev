@@ -57,7 +57,7 @@ export default function Template(props) {
                 variants={{ initial: { opacity: 0, scale: .7 }, animate: { opacity: 1, scale: 1 }, exit: { opacity: 0, scale: .7 }}}                  
               >
                 <time
-                  className='block text-subtext'
+                  className='block'
                   dateTime={frontmatter.date}
                   itemProp="datePublished"
                 >

@@ -1,19 +1,9 @@
-.text-subtext {
-  color: var(--subtext);
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* @import './mediaqueries.css'; */
 @import './fonts.css';
 @import './variables.css';
-
-@import '../components/layout/nav/nav.css';
-@import '../components/layout/footer/footer.css';
-@import '../components/layout/nav/logo/logo.css';
-@import '../components/burger/burger.css';
 
 body {
   background-color: var(--color-bg);
@@ -59,10 +49,4 @@ body.locked {
   .cont .cont-inner {
     @apply px-12;
   }
-}
-
-@media (min-width: 1024px) and (max-width: 1160px) {
-  .home-pic{
-    margin-bottom: -5em;
-  } 
 }
