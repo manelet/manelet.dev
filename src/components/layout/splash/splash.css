@@ -26,17 +26,17 @@
 
 .splash .wave svg {
   @apply w-full;
-  fill: var(--splash-wave);
+  fill: var(--color-bg);
 }
 
 .splash .wave .arrow-scroll {
-  @apply absolute text-2xl cursor-pointer;  
+  @apply absolute text-2xl cursor-pointer;
+  color: #a0aec0;
   bottom: .5em;
-  color: var(--splash-arrow);
 }
 
 .splash .wave .arrow-scroll svg {
-  fill: var(--splash-arrow);
+  fill: #a0aec0;
 }
 
 

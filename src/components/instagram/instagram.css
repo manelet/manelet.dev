@@ -6,7 +6,7 @@
     p-5
     rounded-lg
     my-6;
-  color: var(--ig-text);
+  color: var(--color-text-default);
   background-color: var(--ig-bg);
 }
 

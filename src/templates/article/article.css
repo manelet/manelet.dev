@@ -42,7 +42,7 @@
 } 
 
 .post article .post-data time {
-  color: var(--subtext);
+  color: var(--footer-text);
 }
 
 .post .share {
