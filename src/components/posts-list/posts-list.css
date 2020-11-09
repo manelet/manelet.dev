@@ -22,6 +22,10 @@
   background-color: var(--bg-inline-code);
 }
 
+.posts-list a {
+  color: var(--color-text-default);
+}
+
 @screen lg {
   .posts-list .post {
     @apply py-10 px-10 -mx-10;
