@@ -26,9 +26,6 @@ nav .menu ul {
   @apply flex flex-col text-4xl text-left;
 }
 
-/**
- * Nav Mobile Menu Opened
- */
 nav div.nav-inner.menu-mobile-opened {
   @apply
     relative

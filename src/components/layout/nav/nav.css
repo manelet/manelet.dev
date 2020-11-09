@@ -1,6 +1,3 @@
-/**
- * Nav
- */
 nav {
   @apply
     relative
@@ -10,6 +7,10 @@ nav {
     z-50
     h-16;
   background-color: var(--nav-bg);
+  color: var(--color-text-default);
+}
+
+nav a {
   color: var(--color-text-default);
 }
 
@@ -24,16 +25,10 @@ nav::before {
   backdrop-filter: blur(3px);
 }
 
-/**
- * Nav inner
- */
 nav div.nav-inner {
   @apply flex items-center py-3 z-10 justify-between;  
 }
 
-/**
- * Nav logo
- */
  nav .logo {
   display: flex;
   align-items: center;
@@ -64,17 +59,11 @@ nav .logo span.logo span {
   position: relative;
 }
 
-/**
- * Nav homepage specifics
- */
 nav.home {
   @apply bg-transparent;
   background-image: none;
 }
 
-/**
- * Nav Icons
- */
 nav .icons {
   @apply flex;
 }
@@ -87,20 +76,11 @@ nav .theme-toggle svg {
   fill: var(--color-text-default);
   stroke: var(--color-text-default);
 }
-/* 
-nav div.menu-mobile-opened .icons .icon svg,
-nav div.menu-mobile-opened .theme-toggle svg {
-  fill: var(--color-text-default) !important;
-  stroke: var(--color-text-default) !important;
-} */
 
 nav .theme-toggle {
   @apply cursor-pointer flex items-center;
 }
 
-/**
- * Nav Media Queries
- */
 @screen md {
   nav {
     @apply h-24;
@@ -108,6 +88,10 @@ nav .theme-toggle {
 
   nav.home {
     color: #fff;
+  }
+
+  nav.home a {
+    color: var(--color-bg);
   }
 
   nav .logo {
