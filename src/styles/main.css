@@ -12,7 +12,7 @@ body {
   color: var(--color-text-default);
 }
 
-p > a {
+a {
   color: var(--link);
 }
 
