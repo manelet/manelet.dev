@@ -30,6 +30,10 @@
   @apply font-bold text-3xl;
 }
 
+.projects li a {
+  color: white;
+}
+
 .projects li button {
   @apply
     mr-auto

@@ -9,7 +9,7 @@ const Category = ({ pageContext: category, data: { allPosts: { posts } } }) =>
   return (
     <>
       <SEO title='Categories' description='List of articles written by Manel Escuer grouped by categories' />
-      <PageWrapper className='page cont'>
+      <PageWrapper className='page cont page-category'>
         <List title={category.name} posts={posts} />
       </PageWrapper>
     </>

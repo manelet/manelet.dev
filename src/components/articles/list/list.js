@@ -4,6 +4,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import H1 from '../h1'
 
+import './list.css'
+
 const List = ({ title, posts }) => {
   const handleNavigate = useCallback(e => navigate(e.currentTarget.dataset.slug), [])
 
