@@ -1,0 +1,7 @@
+.articles-item a {
+  color: var(--color-text-default);
+}
+
+.page-category a > h1 {
+  color: var(--footer-text);
+}

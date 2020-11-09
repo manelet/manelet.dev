@@ -91,7 +91,7 @@ nav .theme-toggle {
   }
 
   nav.home a {
-    color: var(--color-bg);
+    color: #fff;
   }
 
   nav .logo {
