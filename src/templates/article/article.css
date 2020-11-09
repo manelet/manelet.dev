@@ -11,6 +11,14 @@
   @apply items-start flex-col;
 }
 
+.post a > h1,
+.post a > h2,
+.post a > h3,
+.post a > h4,
+aside.toc a {
+  color: var(--color-text-default);
+}
+
 .post h1 {
   @apply text-5xl font-bold;
 }

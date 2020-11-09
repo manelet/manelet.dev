@@ -30,3 +30,7 @@ div.project:hover {
   transform: scale(1.02) !important;
   @apply shadow-xl;
 }
+
+div.project a {
+  color: white;
+}

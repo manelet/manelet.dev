@@ -56,7 +56,7 @@ export default function Template(props) {
                   <div className='flex flex-col'>
                     <span className='text-sm font-bold'>Manel Escuer</span>
                     <span className='text-xs'>
-                      <a className='text-blue-500 underline' href='https://twitter.com/manelescuer' target='_blank'>
+                      <a className='underline' href='https://twitter.com/manelescuer' target='_blank'>
                         @manelescuer
                       </a>
                     </span>

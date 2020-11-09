@@ -1,3 +1,9 @@
+div[class*=project__] a > h2,
+div[class*=project__] a > h3,
+div[class*=project__] a > h4 {
+  color: var(--color-text-default);
+}
+
 .project__open {
   @apply
     absolute
