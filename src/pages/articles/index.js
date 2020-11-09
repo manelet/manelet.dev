@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import SEO from '../../components/SEO'
 import List from '../../components/articles/list/list'
+import PageWrapper from '../../components/page-wrapper'
 
 import './articles.css'
 
@@ -33,7 +34,9 @@ const Articles = () => {
   return (
     <>
       <SEO title='Articles' description='List of articles written by Manel Escuer' />
-      <List posts={posts} />
+      <PageWrapper className='page cont'>
+        <List posts={posts} />
+      </PageWrapper>
     </>
   )
 }

@@ -7,6 +7,7 @@ import Splash from '../components/layout/splash/splash'
 import HomeProjects from "../components/home-projects/home-projects"
 import PostsList from "../components/posts-list/posts-list"
 import Instagram from '../components/instagram/instagram'
+import PageWrapper from '../components/page-wrapper'
 
 const variants = {
   initial: {
@@ -43,12 +44,7 @@ export default function Home ({ location }) {
   return (
     <>
       <SEO url={location.href} />
-      <motion.div
-        variants={variants}
-        animate='animate'
-        initial='initial'
-        exit='exit'
-      >
+      <PageWrapper>
         <Splash image={splashImage} />
         <PostsList title='Recently published' posts={posts} />
         <HomeProjects projects={projectsWithImages} />
@@ -57,7 +53,7 @@ export default function Home ({ location }) {
             <Instagram />
           </div>
         </div>
-      </motion.div>
+      </PageWrapper>
     </>
   )
 }

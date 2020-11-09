@@ -9,56 +9,52 @@ const List = ({ title, posts }) => {
 
   if (!posts || !posts.length) {
     return (
-      <div className="page cont">
-        <div className="cont-inner items-start flex-col">
-          No posts.
-        </div>
+      <div className="cont-inner items-start flex-col">
+        No posts.
       </div>
     )
   }
 
   return (
-    <div className="page cont">
-      <div className="cont-inner items-start flex-col">
-        {title && (
-          <H1 className='uppercase text-sm font-bold mb-4'>
-            {title}
-          </H1>
-        )}
+    <div className="cont-inner items-start flex-col">
+      {title && (
+        <H1 className='uppercase text-sm font-bold mb-4'>
+          {title}
+        </H1>
+      )}
 
-        {posts.map(({ post }) => (
-          <article
-            className='articles-item'
-            key={`posts-${post.fields.slug}`}
+      {posts.map(({ post }) => (
+        <article
+          className='articles-item'
+          key={`posts-${post.fields.slug}`}
+        >
+          <Link to={post.fields.slug} className='text-4xl font-bold'>
+            {post.frontmatter.title}
+          </Link>
+
+          <p className='my-3'>
+            <MDXRenderer onlyExcerpt={true}>
+              {post.body}
+            </MDXRenderer>
+          </p>
+
+          <div
+            className='read-more'
+            data-slug={post.fields.slug}
+            onClick={handleNavigate}
           >
-            <Link to={post.fields.slug} className='text-4xl font-bold'>
-              {post.frontmatter.title}
-            </Link>
-
-            <p className='my-3'>
-              <MDXRenderer onlyExcerpt={true}>
-                {post.body}
-              </MDXRenderer>
-            </p>
-
-            <div
-              className='read-more'
-              data-slug={post.fields.slug}
-              onClick={handleNavigate}
-            >
-              <span className="text">
-                Read more&nbsp;
-              </span>
-              <span className='arr'>
-                &raquo;
-              </span>
-              <span className='arr'>
-                &rsaquo;
-              </span>
-            </div>
-          </article>
-        ))}
-      </div>
+            <span className="text">
+              Read more&nbsp;
+            </span>
+            <span className='arr'>
+              &raquo;
+            </span>
+            <span className='arr'>
+              &rsaquo;
+            </span>
+          </div>
+        </article>
+      ))}
     </div>
   )
 }

@@ -10,20 +10,11 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import SEO from '../../components/SEO'
 import H1 from '../../components/articles/h1'
 import Instagram from '../../components/instagram/instagram'
+import PageWrapper from '../../components/page-wrapper'
 
 import './article.css'
 
 dayjs.extend(relativeTime)
-
-const variants = {
-  initial: {},
-  animate: { 
-    transition: {
-      staggerChildren: .3
-    }
-  },
-  exit: {}
-}
 
 export default function Template(props) {
   const { data: { mdx: { headings, excerpt, body, frontmatter } } } = props
@@ -32,16 +23,10 @@ export default function Template(props) {
 
   return (
     <>
-      <SEO
-        title={frontmatter.title}
-        description={excerpt}
-      />
-      <motion.div
+      <SEO title={frontmatter.title} description={excerpt} />
+      <PageWrapper
+        transition={{ staggerChildren: .3 }}
         className="post cont"
-        variants={variants}
-        animate='animate'
-        initial='initial'
-        exit='exit'
         itemscope
         itemtype="http://schema.org/Article"
       >
@@ -66,7 +51,7 @@ export default function Template(props) {
                 
                 <div className="flex items-center">
                   <div className='w-10 h-10 rounded-full overflow-hidden mr-3 shadow-md'>
-                    <img src='/images/avatar.jpg' />
+                    <img src='/images/avatar.jpg' title='Manel Escuer' alt='Manel Escuer' />
                   </div>
                   <div className='flex flex-col'>
                     <span className='text-sm font-bold'>Manel Escuer</span>
@@ -124,7 +109,7 @@ export default function Template(props) {
             </div>            
           </div>
         </div>  
-      </motion.div>
+      </PageWrapper>
     </>
   )
 }

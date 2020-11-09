@@ -3,12 +3,15 @@ import { graphql } from "gatsby"
 
 import List from '../../components/articles/list/list'
 import SEO from '../../components/SEO'
+import PageWrapper from '../../components/page-wrapper'
 
 const Category = ({ pageContext: category, data: { allPosts: { posts } } }) => {  
   return (
     <>
       <SEO title='Categories' description='List of articles written by Manel Escuer grouped by categories' />
-      <List title={category.name} posts={posts} />
+      <PageWrapper className='page cont'>
+        <List title={category.name} posts={posts} />
+      </PageWrapper>
     </>
   )
 }
