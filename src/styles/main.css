@@ -12,9 +12,17 @@ body {
   color: var(--color-text-default);
 }
 
-h1 {
-  @apply text-5xl font-bold mb-5;
+h1, h2 {
+  @apply font-bold mb-5;
   color: var(--color-text-default);
+}
+
+h1 {
+  @apply text-5xl;
+}
+
+h2 {
+  @apply text-4xl;
 }
 
 a {

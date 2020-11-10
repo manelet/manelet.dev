@@ -1,0 +1,10 @@
+.pills {
+  @apply flex mb-10;
+}
+.pill {
+  @apply border-2 p-2 rounded-full cursor-pointer;
+}
+
+.pill:not(:last-child) {
+  @apply mr-4;
+}
