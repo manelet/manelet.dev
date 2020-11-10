@@ -20,7 +20,7 @@ const List = ({ title, posts }) => {
   return (
     <div className="cont-inner items-start flex-col">
       {title && (
-        <H1 className='uppercase text-sm font-bold mb-4'>
+        <H1 className='uppercase text-sm'>
           {title}
         </H1>
       )}

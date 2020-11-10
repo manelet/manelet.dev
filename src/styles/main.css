@@ -12,6 +12,11 @@ body {
   color: var(--color-text-default);
 }
 
+h1 {
+  @apply text-5xl font-bold mb-5;
+  color: var(--color-text-default);
+}
+
 a {
   color: var(--link);
 }

@@ -17,7 +17,7 @@
 } */
 
 .splash h1 {
-  @apply text-5xl text-white font-bold;
+  @apply text-5xl text-white;
 }
 
 .splash .wave {
@@ -56,7 +56,7 @@
   } 
 
   .splash h1 {
-    @apply text-6xl text-white;
+    @apply text-6xl;
   }  
 
   .splash .me {

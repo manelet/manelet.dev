@@ -19,10 +19,6 @@ aside.toc a {
   color: var(--color-text-default);
 }
 
-.post h1 {
-  @apply text-5xl font-bold;
-}
-
 .post h2, .page h2 {
   @apply text-4xl;
 }
