@@ -1,0 +1,78 @@
+.page-about .pill.skills {
+  border-color: rgb(214, 93, 177);
+}
+
+.page-about .pill.skills,
+.page-about .pill.skills a {
+  color: rgb(214, 93, 177);
+}
+
+.page-about .pill.skills:hover,
+.page-about .pill.skills.active {
+  background-color: rgb(214, 93, 177);
+}
+
+.page-about .pill.career,
+.page-about .pill.career a {
+  border-color: rgb(255, 199, 95);
+  color: rgb(255, 199, 95);
+}
+
+.page-about .pill.career:hover,
+.page-about .pill.career.active {
+  background-color: rgb(255, 199, 95);
+}
+
+.page-about .pill.entrepreneurship,
+.page-about .pill.entrepreneurship a {
+  border-color: rgb(187, 0, 43);
+  color: rgb(187, 0, 43);
+}
+
+.page-about .pill.entrepreneurship:hover,
+.page-about .pill.entrepreneurship.active {
+  background-color: rgb(187, 0, 43);
+}
+
+.page-about .pill.beginnings,
+.page-about .pill.beginnings a {
+  border-color: rgb(255, 111, 145);
+  color: rgb(255, 111, 145);
+}
+
+.page-about .pill.beginnings:hover,
+.page-about .pill.beginnings.active {
+  background-color: rgb(255, 111, 145);
+}
+
+.page-about .pill:hover a,
+.page-about .pill.active a {
+  color: white;
+}
+
+/* .page-about p:nth-child(1) {
+  position: absolute;
+}
+
+.page-about p:nth-child(1):before {
+  content: '';
+  border: 1px solid red;
+  shape-outside: polygon(
+    2% 0%,
+    100% 0%,
+    100% 100%,
+    2% 100%,
+    50% 94%,
+    76.6% 82.7%,
+    94% 65.6%,
+    100% 50%,
+    94% 32.6%,
+    76.6% 17.3%,
+    50% 6%
+    );
+  shape-margin: 0%;
+  width: 300px;
+  height: 500px;
+  float: left;
+  opacity: .2;
+} */
