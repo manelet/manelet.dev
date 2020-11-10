@@ -17,14 +17,18 @@ const variants = {
   }
 }
 
-const H1 = props => (
-  <a
-    title={props.children}
-    name={slugify(props.children, { lower: true })}
-    href={`#${slugify(props.children, { lower: true })}`}
-  >
-    <motion.h1 variants={variants} {...props} />
-  </a>
-)
+const H1 = props => {
+  const value = typeof props.children !== 'string' ? props.children[0] : props.children
+
+  return (
+    <a
+      title={props.children}
+      name={slugify(value, { lower: true })}
+      href={`#${slugify(value, { lower: true })}`}
+    >
+      <motion.h1 variants={variants} {...props} />
+    </a>
+  )
+}
 
 export default H1
