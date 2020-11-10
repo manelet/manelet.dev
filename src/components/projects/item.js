@@ -24,18 +24,15 @@ const Item = (props) => {
   const { data: { mdx: { body, fields, frontmatter } } } = props
   const handleBack = () => navigate('/projects')
   const id = fields.slug.split('/').filter(e => e !== '').pop()
-console.log(frontmatter);
+
   return (
     <>
       <motion.div
         layoutId={`project-header-${fields.slug}`}
         className={`project__open ${id}`}
-        style={{
-          height: '500px',
-          background: frontmatter.background
-        }}
+        style={{ background: frontmatter.background }}
       >
-        <div className='cont-inner flex-col'>
+        <div className='cont-inner flex-col mt-auto'>
           <div onClick={handleBack} className='cursor-pointer flex items-center mb-10'>
             <ArrowLeft width={24} />
             <span className="ml-3">
@@ -56,41 +53,37 @@ console.log(frontmatter);
             </code>            
           </div>
         </div>
-      </motion.div>
 
-      <motion.div
-        initial='initial'
-        animate='animate'
-        variants={projectContentVariants}
-        className='project__panel'
-        style={{ marginTop: 'calc(500px - 5rem)' }}
-      >
-        <div>
-          {frontmatter.url && (
-            <button>
-              visit site
-            </button>
-          )}
+        <div className="cont-inner flex-col mb-10 mt-auto ">
+          <div className='project__panel'>
+            <div>
+              {frontmatter.url && (
+                <button>
+                  visit site
+                </button>
+              )}
 
-          {frontmatter.github && (
-            <button>
-              github
-            </button>
-          )}          
-        </div>
+              {frontmatter.github && (
+                <button>
+                  github
+                </button>
+              )}          
+            </div>
 
-        <div>
-          {frontmatter.tags && frontmatter.tags.length && frontmatter.tags.map(tag => (
-            <span key={`tag-${tag}`} className='label'>
-              {tag}
-            </span>
-          ))}
+            <div>
+              {frontmatter.tags && frontmatter.tags.length && frontmatter.tags.map(tag => (
+                <span key={`tag-${tag}`} className='label'>
+                  {tag}
+                </span>
+              ))}
 
-          {frontmatter.stack && frontmatter.stack.length && frontmatter.stack.map(stack => (
-            <span key={`tag-${stack}`} className='label'>
-              {stack}
-            </span>
-          ))}          
+              {frontmatter.stack && frontmatter.stack.length && frontmatter.stack.map(stack => (
+                <span key={`tag-${stack}`} className='label'>
+                  {stack}
+                </span>
+              ))}          
+            </div>
+          </div>
         </div>
       </motion.div>
 
@@ -99,6 +92,7 @@ console.log(frontmatter);
         animate='animate'
         variants={projectContentVariants}
         className={`project__content ${id} w-full`}
+        style={{ marginTop: 'calc(500px - 5rem)' }}
       >
         <MDXRenderer>
           {body}

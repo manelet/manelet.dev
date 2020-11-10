@@ -6,10 +6,7 @@ import Projects from "../../components/projects/projects"
 
 export default props => (
   <>
-    <SEO
-      title={props.data.mdx.frontmatter.name}
-      derscription={props.data.mdx.frontmatter.description}
-    />
+    <SEO title={props.data.mdx.frontmatter.name} derscription={props.data.mdx.frontmatter.description} />
     <Projects {...props} />
   </>
 )

@@ -14,7 +14,9 @@ div[class*=project__] a > h4 {
     justify-center
     items-center
     text-white
-    bg-cover;
+    bg-cover
+    flex-col;
+  height: 500px;
 }
 
 .project__content h2 {
@@ -47,10 +49,6 @@ div[class*=project__] a > h4 {
   @apply w-full;
 }
 
-/* .project__hero > div:nth-child(1) {
-  @apply w-full;
-} */
-
 .project__narrow {
   @apply flex flex-col justify-center my-20;
 }
@@ -61,14 +59,14 @@ div[class*=project__] a > h4 {
 }
 
 .project__panel {
-  @apply w-full rounded-full flex justify-between items-center;
-  background-color: var(--bg-post);
-  color: var(--footer-text);
+  @apply w-full flex justify-between items-center;
+  /* color: var(--footer-text); */
+  color: white;
 }
 
 .project__panel button, .project__panel span.label {
   transition: all .15s ease-out;
-  @apply border-2 border-gray-500 rounded-full px-2 py-3 text-xs cursor-pointer;
+  @apply border-2 border-white rounded-full px-2 py-3 text-xs cursor-pointer;
 }
 
 .project__panel button:not(:last-child), .project__panel span.label:not(:last-child) {
@@ -77,6 +75,7 @@ div[class*=project__] a > h4 {
 
 .project__panel button:hover, .project__panel span.label:hover {
   background-color: var(--footer-text);
+  border-color: var(--footer-text);
   color: white;
 }
 
