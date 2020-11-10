@@ -18,7 +18,7 @@ const About = ({ location }) => {
       <motion.div className="flex flex-col md:flex-row" variants={defaultVariants}>
         <div className="w-full relative flex">
           <div 
-            className='w-full absolute'
+            className='w-full relative md:absolute'
             style={{ maxWidth: '300px', left: '50%' }}
           >
             <div className="relative" style={{ left: '-50%' }}>
@@ -26,13 +26,13 @@ const About = ({ location }) => {
             </div>
           </div>
           <div 
-            className='w-full absolute mx-auto left-0'
+            className='w-full hidden md:block absolute mx-auto left-0'
             style={{ maxWidth: '200px', bottom: '-3rem', transform: 'rotate(5deg)' }}
           >
             <ImgSvg src='/images/frontpage.jpg' id='frontpage' />
           </div>
           <div 
-            className='w-full absolute right-0 mx-auto'
+            className='w-full hidden md:block absolute right-0 mx-auto'
             style={{ maxWidth: '300px', bottom: '-6rem', transform: 'rotate(-5deg)' }}
           >
             <ImgSvg src='/images/counter-strike.jpg' id='counter-strike' />
