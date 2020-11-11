@@ -12,7 +12,18 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet" />        
+        <link
+          href='https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap'
+          rel='preload'
+          as='style'
+          onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap"
+          />
+        </noscript>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
