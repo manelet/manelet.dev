@@ -16,7 +16,7 @@ export default function HTML(props) {
           href='https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap'
           rel='preload'
           as='style'
-          onload="this.onload=null;this.rel='stylesheet'"
+          onLoad="this.onload=null;this.rel='stylesheet'"
         />
         <noscript>
           <link
