@@ -44,8 +44,6 @@ const Instagram = () => {
             )
           }
 
-          console.log(images[i]);
-
           return (
             <a
               href={`https://www.instagram.com/p/${images[i].node.shortcode}/`}
