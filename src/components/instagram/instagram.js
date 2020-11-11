@@ -58,6 +58,8 @@ const Instagram = () => {
                 className='rounded overdlow-hidden w-32 h-32 mr-4 mb-4'
                 alt={images[i].node.accessibility_caption}
                 title={images[i].node.accessibility_caption}
+                width='8rem'
+                height='8rem'
               />
             </a>
           )
