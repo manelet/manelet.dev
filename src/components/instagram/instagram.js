@@ -70,6 +70,10 @@ const Instagram = () => {
 }
 
 export default () => {
+  if (typeof window === 'undefined') {
+    return null
+  }
+
   return (
     <Suspense fallback={'loading'}>
       <Instagram />
