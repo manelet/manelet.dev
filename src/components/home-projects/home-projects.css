@@ -26,6 +26,12 @@
   @apply absolute top-0 left-0 w-full h-full;
 }
 
+.projects li div.bg div.gatsby-image-wrapper {
+  @apply h-full;
+  opacity: .15;
+}
+
+
 .projects li h2 {
   @apply font-bold text-3xl;
 }

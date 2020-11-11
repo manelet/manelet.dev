@@ -1,8 +1,8 @@
 import React, { memo } from 'react'
 import { navigate, Link } from 'gatsby'
-// import Img from 'gatsby-image'
+import Img from 'gatsby-image'
 
-const Item = ({ frontmatter, fields: { slug } }) => {
+const Item = ({ frontmatter, fields: { slug }, image }) => {
   const goToProject = slug => e => {
     e.preventDefault()
     e.stopPropagation()
@@ -31,9 +31,9 @@ const Item = ({ frontmatter, fields: { slug } }) => {
       <div
         style={{ background: frontmatter.background }}
         className='bg'
-      />
-        {/* {image && <Img fluid={image.image.fluid} />} */}
-      {/* </div> */}
+      >
+        {image && <Img fluid={image.image.fluid} />}
+      </div>
     </li>
   )
 }
@@ -44,7 +44,7 @@ export const query = slug => `
       relativePath: { eq: "${slug}" }
     ) {
       splashImage: childImageSharp {
-        fixed(width: 300) {
+        fixed(width: 300, height: 250) {
           ...GatsbyImageSharpFixed_withWebp_tracedSVG
         }
       }
