@@ -1,25 +1,12 @@
 import React, { useMemo } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { motion } from 'framer-motion'
 
 import SEO from '../components/SEO'
 import Splash from '../components/layout/splash/splash'
 import HomeProjects from "../components/home-projects/home-projects"
 import PostsList from "../components/posts-list/posts-list"
-import Instagram from '../components/instagram/instagram'
 import PageWrapper from '../components/page-wrapper'
-
-const variants = {
-  initial: {
-    opacity: 0
-  },
-  animate: {
-    opacity: 1
-  },
-  exit: {
-    opacity: 0
-  }
-}
+import Instagram from '../components/instagram/instagram'
 
 export default function Home ({ location }) {
   const {

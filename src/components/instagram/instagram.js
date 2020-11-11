@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 import './instagram.css'
@@ -69,4 +69,10 @@ const Instagram = () => {
   )
 }
 
-export default Instagram
+export default () => {
+  return (
+    <Suspense fallback={'loading'}>
+      <Instagram />
+    </Suspense>
+  )
+}
