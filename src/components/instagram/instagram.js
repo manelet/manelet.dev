@@ -52,6 +52,7 @@ const Instagram = () => {
               target='_blank'
               rel='noreferrer'
               key={`ig-thumb-${images[i].node.shortcode}`}
+              name={images[i].node.accessibility_caption}
             >
               <motion.img
                 whileHover={{ scale: 1.05 }}
