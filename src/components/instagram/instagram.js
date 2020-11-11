@@ -44,16 +44,21 @@ const Instagram = () => {
             )
           }
 
+          console.log(images[i]);
+
           return (
             <a
               href={`https://www.instagram.com/p/${images[i].node.shortcode}/`}
               target='_blank'
+              rel='noreferrer'
               key={`ig-thumb-${images[i].node.shortcode}`}
             >
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 src={images[i].node.thumbnail_resources[0].src}
                 className='rounded overdlow-hidden w-32 h-32 mr-4 mb-4'
+                alt={images[i].node.accessibility_caption}
+                title={images[i].node.accessibility_caption}
               />
             </a>
           )
