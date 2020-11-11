@@ -1,7 +1,7 @@
 footer {
   @apply text-white py-5;
   background-color: var(--bg-post);
-  color: var(--footer-text);
+  color: var(--color-text-default);
 }
 
 footer svg {
@@ -9,5 +9,5 @@ footer svg {
 }
 
 footer svg g {
-  fill: var(--footer-text);
+  fill: var(--color-text-default);
 }
