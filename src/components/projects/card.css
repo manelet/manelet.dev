@@ -59,14 +59,14 @@ div[class*=project__] a > h4 {
 }
 
 .project__panel {
-  @apply w-full flex justify-between items-center;
+  @apply w-full flex justify-between items-center overflow-x-scroll;
   /* color: var(--footer-text); */
   color: white;
 }
 
 .project__panel button, .project__panel span.label {
   transition: all .15s ease-out;
-  @apply border-2 border-white rounded-full px-2 py-3 text-xs cursor-pointer;
+  @apply border-2 border-white rounded-full px-2 py-3 text-xs cursor-pointer flex flex-shrink-0 w-auto;
 }
 
 .project__panel button:not(:last-child), .project__panel span.label:not(:last-child) {
@@ -77,6 +77,10 @@ div[class*=project__] a > h4 {
   background-color: var(--footer-text);
   border-color: var(--footer-text);
   color: white;
+}
+
+.project__panel .project__panel__inner, .project__panel > div {
+  @apply flex w-full;
 }
 
 ul.as-table {

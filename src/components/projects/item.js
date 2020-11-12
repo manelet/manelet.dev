@@ -56,32 +56,34 @@ const Item = (props) => {
 
         <div className="cont-inner flex-col mb-10 mt-auto ">
           <div className='project__panel'>
-            <div>
-              {frontmatter.url && (
-                <button>
-                  visit site
-                </button>
-              )}
+            <div className="project__panel__inner">
+              <div className='w-full flex justify-start'>
+                {frontmatter.url && (
+                  <button>
+                    visit site
+                  </button>
+                )}
 
-              {frontmatter.github && (
-                <button>
-                  github
-                </button>
-              )}          
-            </div>
+                {frontmatter.github && (
+                  <button>
+                    github
+                  </button>
+                )}          
+              </div>
 
-            <div>
-              {frontmatter.tags && frontmatter.tags.length && frontmatter.tags.map(tag => (
-                <span key={`tag-${tag}`} className='label'>
-                  {tag}
-                </span>
-              ))}
+              <div className='w-full flex justify-start md:justify-end'>
+                {frontmatter.tags && frontmatter.tags.length && frontmatter.tags.map(tag => (
+                  <span key={`tag-${tag}`} className='label'>
+                    {tag}
+                  </span>
+                ))}
 
-              {frontmatter.stack && frontmatter.stack.length && frontmatter.stack.map(stack => (
-                <span key={`tag-${stack}`} className='label'>
-                  {stack}
-                </span>
-              ))}          
+                {frontmatter.stack && frontmatter.stack.length && frontmatter.stack.map(stack => (
+                  <span key={`tag-${stack}`} className='label'>
+                    {stack}
+                  </span>
+                ))}          
+              </div>
             </div>
           </div>
         </div>
