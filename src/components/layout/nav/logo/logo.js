@@ -8,7 +8,7 @@ import './logo.css'
 
 const Logo = () => (
   <div className='logo'>
-    <Link to='/'>
+    <Link name='Return to homepage' to='/'>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         className='logo'
