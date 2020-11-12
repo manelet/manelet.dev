@@ -16,14 +16,12 @@ const About = ({ location }) => {
       description='Manel has been developing websites since his childhood. Discover his road to senior frontend development from the beginnings'
     >
       <motion.div className="flex flex-col md:flex-row" variants={defaultVariants}>
-        <div className="w-full relative flex">
+        <div className="w-full relative flex justify-center">
           <div 
             className='w-full relative md:absolute'
-            style={{ maxWidth: '300px', left: '50%' }}
+            style={{ maxWidth: '300px' }}
           >
-            <div className="relative" style={{ left: '-50%' }}>
-              <ImgSvg src='/images/manel.jpg' id='manelet-young' />
-            </div>
+            <ImgSvg src='/images/manel.jpg' id='manelet-young' />
           </div>
           <div 
             className='w-full hidden md:block absolute mx-auto left-0'

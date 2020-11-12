@@ -1,6 +1,11 @@
 .pills {
-  @apply flex mb-10;
+  @apply flex mb-10 w-full overflow-x-scroll;
 }
+
+.pills__inner {
+  @apply flex w-full;
+}
+
 .pill {
   @apply border-2 p-2 rounded-full cursor-pointer;
 }

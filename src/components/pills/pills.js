@@ -6,7 +6,9 @@ import './pills.css'
 export const Pills = ({ children }) => {
   return (
     <div className='pills'>
-      {children}
+      <div className="pills__inner">
+        {children}
+      </div>
     </div>
   );
 };
