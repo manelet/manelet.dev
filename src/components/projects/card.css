@@ -113,6 +113,10 @@ ul.as-table li div.code-inner {
 }
 
 @screen lg {
+  .project__panel {
+    @apply overflow-x-visible;
+  }
+
   .project__narrow {
     @apply mx-auto max-w-md;
   }
