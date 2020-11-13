@@ -17,7 +17,7 @@ export default function HTML(props) {
           rel='preload'
           as='style'
           onLoad="this.onload=null;this.rel='stylesheet'"
-          crossorigin
+          crossOrigin
         />
         <noscript>
           <link
