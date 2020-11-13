@@ -1,13 +1,15 @@
-const { getAllArticles } = require('./gatsby/queries')
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` })
+
 const IMAGE_WIDTH = 300
+const { URL } = process.env
 
 module.exports = {
   siteMetadata: {
     title: 'Manel Escuer - Frontend developer',
     titleTemplate: "%s - Manel Escuer",
-    siteUrl: 'https://manelet.dev',
+    siteUrl: URL,
     twitterUsername: '@manelescuer',
-    description: 'Manel Escuer is a Frontend developer based in Barcelona specialized in development of user interfaces with React'
+    description: 'Frontend developer specialized on ⚛️ React who loves to cook and tries to bootstrap projects that at some point, will retire me'
   },
   plugins: [
     'gatsby-plugin-offline',
