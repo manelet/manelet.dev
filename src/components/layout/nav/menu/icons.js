@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ThemeToggle from '../../../ThemeToggle'
+import ThemeToggle from '../../../theme-toggle'
 
 const Icons = ({ isHome }) => {
   return (

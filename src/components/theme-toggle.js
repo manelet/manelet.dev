@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import cn from 'classnames'
 
 import { useLayout } from '../context/layout'
 
@@ -23,19 +22,31 @@ const variants = {
   }
 }
 
-const ThemeToggle = ({ isHome }) => {
+const ThemeToggle = () => {
   const [{ theme }, { toggleTheme }] = useLayout()
+  const isDark = theme === 'dark'
+  const updateTheme = useCallback(() => toggleTheme(isDark ? 'light' : 'dark'), [toggleTheme, isDark])
 
   if (!theme) {
-    return null
+    return (
+      <div
+        className='theme-toggle'
+        style={{ transformOrigin: 'center center', transformStyle: 'preserve-3d', transformBox: 'fill-box' }}              
+      >
+        <svg
+          fill="none"
+          height="18" 
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width="18"        
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>      
+      </div>
+    )
   }
-
-  const isDark = theme === 'dark'
-  const updateTheme = useCallback(() => {
-    toggleTheme(isDark ? 'light' : 'dark')
-  }, [toggleTheme, isDark])
-
-  // const color = isDark ? '#fff' : isHome ? '#fff' : '#2d3748'
 
   return (
     <div
