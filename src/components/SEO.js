@@ -17,6 +17,7 @@ const SEO = ({ url, description, title }) => {
       <meta property="og:description" content={description || siteMetadata.description} />
       <meta property="og:locale" content="en_US" />
       <meta property='og:type' content='website' />
+      <meta property="og:image" content="/images/homepage.png" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:description" content={description || siteMetadata.description} />
       <meta name="twitter:title" content={title || siteMetadata.title} />

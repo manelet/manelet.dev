@@ -33,7 +33,7 @@ export default function Home ({ location }) {
       <SEO
         url={location.href}
         title='Manel Escuer - Frontend Developer'
-        description='Frontend developer specialized on React who loves to cook and tries to bootstrap projects that at some point, will retire me'
+        description='Frontend developer specialized on ⚛️ React who loves to cook and tries to bootstrap projects that at some point, will retire me'
       />
       <PageWrapper>
         <Splash image={splashImage} />
