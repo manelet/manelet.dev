@@ -7,7 +7,7 @@ import slugify from 'slugify'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
-import SEO from '../../components/SEO'
+import SEO from '../../components/seo'
 import H1 from '../../components/articles/h1'
 import Instagram from '../../components/instagram/instagram'
 import PageWrapper from '../../components/page-wrapper'
@@ -23,7 +23,11 @@ export default function Template(props) {
 
   return (
     <>
-      <SEO title={frontmatter.title} description={excerpt} />
+      <SEO
+        title={frontmatter.title}
+        description={excerpt}
+        slug={props.pathContext.slug}
+      />
       <PageWrapper
         transition={{ staggerChildren: .3 }}
         className="post cont"

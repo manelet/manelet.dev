@@ -6,6 +6,7 @@ import Wip from '../../components/wip'
 const Skills = ({ location }) => {
   return (
     <Layout
+      slug='/about/skills'
       title='Skills'
       description=''
       location={location}

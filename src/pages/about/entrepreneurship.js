@@ -6,6 +6,7 @@ import Wip from '../../components/wip'
 const Entrepreneurship = ({ location }) => {
   return (
     <Layout
+      slug='/about/entrepreneurship'
       title='Entrepreneurship'
       description=''
       location={location}

@@ -1,7 +1,7 @@
 import React, { useMemo } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import SEO from '../components/SEO'
+import SEO from '../components/seo'
 import Splash from '../components/layout/splash/splash'
 import HomeProjects from "../components/home-projects/home-projects"
 import PostsList from "../components/posts-list/posts-list"
@@ -30,7 +30,7 @@ export default function Home ({ location }) {
 
   return (
     <>
-      <SEO image='/images/homepage.png' />
+      <SEO />
       <PageWrapper>
         <Splash image={splashImage} />
         <PostsList title='Recently published' posts={posts} />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 
-import SEO from '../../components/SEO'
+import SEO from '../../components/seo'
 import List from '../../components/articles/list/list'
 import PageWrapper from '../../components/page-wrapper'
 
@@ -33,7 +33,11 @@ const Articles = () => {
 
   return (
     <>
-      <SEO title='Articles' description='List of articles written by Manel Escuer' />
+      <SEO
+        title='Articles'
+        description='List of articles written by Manel Escuer'
+        slug='/articles'
+      />
       <PageWrapper className='page cont'>
         <List posts={posts} />
       </PageWrapper>

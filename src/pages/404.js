@@ -1,5 +1,5 @@
   import React from 'react'
-  import SEO from '../components/SEO'
+  import SEO from '../components/seo'
   import PageWrapper from '../components/page-wrapper'
   import H1 from '../components/articles/h1'
 

@@ -2,13 +2,17 @@ import React from 'react'
 import { graphql } from "gatsby"
 
 import List from '../../components/articles/list/list'
-import SEO from '../../components/SEO'
+import SEO from '../../components/seo'
 import PageWrapper from '../../components/page-wrapper'
 
 const Category = ({ pageContext: category, data: { allPosts: { posts } } }) => {  
   return (
     <>
-      <SEO title='Categories' description='List of articles written by Manel Escuer grouped by categories' />
+      <SEO
+        slug={`/category/${category.slug}`}
+        title={category.name}
+        description=''
+      />
       <PageWrapper className='page cont page-category'>
         <List title={category.name} posts={posts} />
       </PageWrapper>

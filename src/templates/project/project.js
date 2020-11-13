@@ -1,12 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import SEO from '../../components/SEO'
+import SEO from '../../components/seo'
 import Projects from "../../components/projects/projects"
 
 export default props => (
   <>
-    <SEO title={props.data.mdx.frontmatter.name} derscription={props.data.mdx.frontmatter.description} />
+    <SEO
+      slug={props.data.mdx.fields.slug}
+      title={props.data.mdx.frontmatter.name} 
+      derscription={props.data.mdx.frontmatter.description}
+    />
     <Projects {...props} />
   </>
 )
