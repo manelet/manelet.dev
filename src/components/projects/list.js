@@ -22,7 +22,7 @@ const ProjectsList = ({ projects }) => (
     animate='enter'
     layoutId='projects-list'
   >
-    {projects.map(({ project }) => (
+    {projects.map((project) => (
       <Card
         key={`proj-${project.fields.slug}`}
         {...project}
