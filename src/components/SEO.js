@@ -14,8 +14,15 @@ const SEO = ({ url, description, title }) => {
       <meta name="twitter:creator" content={siteMetadata.twitterUsername} />
       <meta property="og:url" content={url || siteMetadata.siteUrl} />
       <meta property="og:title" content={title || siteMetadata.title} />
-      <meta property="og:description" content={description || siteMetadata.description} />      
-      {/* <meta property="og:image" content="" />       */}
+      <meta property="og:description" content={description || siteMetadata.description} />
+      <meta property="og:locale" content="en_US" />
+      <meta property='og:type' content='website' />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:description" content={description || siteMetadata.description} />
+      <meta name="twitter:title" content={title || siteMetadata.title} />
+      <meta name="twitter:site" content="@manelescuer" />
+      <meta name="twitter:image" content="/images/homepage.png" />
+      <meta name="twitter:creator" content="@manelescuer" />      
     </Helmet>
   )
 }
