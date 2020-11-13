@@ -38,18 +38,4 @@ const Item = ({ frontmatter, fields: { slug }, image }) => {
   )
 }
 
-export const query = slug => `
-  query {
-    images: file(
-      relativePath: { eq: "${slug}" }
-    ) {
-      splashImage: childImageSharp {
-        fixed(width: 300, height: 250) {
-          ...GatsbyImageSharpFixed_withWebp_tracedSVG
-        }
-      }
-    }
-  }
-`
-
 export default memo(Item)

@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Img from 'gatsby-image'
 
 import { defaultVariants } from '../../components/page-wrapper'
 import Layout from '../../components/about/layout'
@@ -7,8 +8,10 @@ import ImgSvg from '../../components/svg-image'
 import H2 from '../../components/articles/h2'
 
 import './about.css'
+import { graphql } from 'gatsby'
 
-const About = ({ location }) => {
+const About = ({ location, data, ...props }) => {
+  console.log(data);
   return (
     <Layout
       location={location}
@@ -16,8 +19,14 @@ const About = ({ location }) => {
       description='Manel has been developing websites since his childhood. Discover his road to senior frontend development from the beginnings'
     >
       <motion.div className="flex flex-col md:flex-row" variants={defaultVariants}>
-        <div className="w-full relative flex justify-center">
-          <div 
+        <div className="w-full relative flex justify-center flex-wrap">
+          <div className='w-full rounded-full overflow-hidden' style={{ maxWidth: '300px' }}>
+            <Img fluid={data.manelImage1.image.fluid} />
+          </div>
+          <div className='w-full rounded-full overflow-hidden' style={{ maxWidth: '150px' }}>
+            <Img fluid={data.manelImage2.image.fluid} />
+          </div>          
+          {/* <div 
             className='w-full relative md:absolute'
             style={{ maxWidth: '300px' }}
           >
@@ -34,7 +43,7 @@ const About = ({ location }) => {
             style={{ maxWidth: '300px', bottom: '-6rem', transform: 'rotate(-5deg)' }}
           >
             <ImgSvg src='/images/counter-strike.jpg' id='counter-strike' />
-          </div>           
+          </div>            */}
         </div>
         <div className='flex w-full md:ml-20 flex-col'>
           <H2>Beginnings</H2>
@@ -48,3 +57,39 @@ const About = ({ location }) => {
 }
 
 export default About
+
+export const query = graphql`
+  query {
+    manelImage1: file (relativePath: { eq: "about/manel-computer.jpg" }) {
+      image: childImageSharp {
+        fluid (maxWidth: 300) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+
+    manelImage2: file (relativePath: { eq: "about/manel-football.jpg" }) {
+      image: childImageSharp {
+        fluid (maxWidth: 300) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+
+    csImage: file (relativePath: { eq: "about/counter-strike.jpg" }) {
+      image: childImageSharp {
+        fluid (maxWidth: 300) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+
+    frontPageImage: file (relativePath: { eq: "about/frontpage.jpg" }) {
+      image: childImageSharp {
+        fluid (maxWidth: 150) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }    
+  }
+`
