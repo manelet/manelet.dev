@@ -141,21 +141,24 @@ ul.as-table li div.code-inner {
     @apply mr-10
   }
 
-  .project__content div.showcase {
-    @apply flex flex-wrap my-0;
-    min-height: 200px;
-    min-height: 400px;
+  div.showcase {
     perspective: 1000px;
     transition: all .35s ease-in-out;
   }
 
-  .project__content div.showcase:hover {
+  div.showcase:hover {
     transform: scale(.9);
-  }
+  }  
 
-  .project__content div.showcase > div {
+  div.showcase > div {
     transform: rotateY(30deg);
     transition: all .35s ease-in-out;    
+  }
+
+  .project__content div.showcase {
+    @apply flex flex-wrap my-0;
+    min-height: 200px;
+    min-height: 400px;
   }
 
   .project__content.react-donut-svg div.showcase > div {
@@ -170,8 +173,7 @@ ul.as-table li div.code-inner {
     height: 200px;
   }
 
-
-  .project__content div.showcase > div:hover {
+  div.showcase > div:hover {
     @apply z-20;
     transform: rotateY(0deg) scale(1.3) !important;    
   }

@@ -8,7 +8,7 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
 import SEO from '../../components/seo'
-import H1 from '../../components/articles/h1'
+import h from '../../components/articles/h'
 import Instagram from '../../components/instagram/instagram'
 import PageWrapper from '../../components/page-wrapper'
 
@@ -37,9 +37,9 @@ export default function Template(props) {
         <div className="cont-inner">
           <div className="w-full flex">
             <article>      
-              <H1 itemProp="name">
+              <h.h1 itemProp="name">
                 {frontmatter.title}
-              </H1>
+              </h.h1>
 
               <motion.div
                 className="post-data"

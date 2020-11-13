@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import { navigate, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import H1 from '../h1'
+import h from '../h'
 
 import './list.css'
 
@@ -20,9 +20,9 @@ const List = ({ title, posts }) => {
   return (
     <div className="cont-inner items-start flex-col">
       {title && (
-        <H1 className='uppercase text-sm'>
+        <h.h1 className='uppercase text-sm'>
           {title}
-        </H1>
+        </h.h1>
       )}
 
       {posts.map(({ post }) => (
