@@ -19,8 +19,6 @@ const SEO = ({ image, width, height, description, title }) => {
       <meta property='og:type' content='website' />
       <meta name="twitter:description" content={description || siteMetadata.description} />
       <meta name="twitter:title" content={title || siteMetadata.title} />
-      <meta name="twitter:site" content="@manelescuer" />
-      <meta name="twitter:creator" content="@manelescuer" />        
       {image && <meta name="twitter:card" content="summary_large_image" />}
       {image && <meta property="og:image" content={`${siteMetadata.siteUrl}${image}`} />}
       {image && width && <meta property="og:image:width" content={width} />}
