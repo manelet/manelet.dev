@@ -26,7 +26,7 @@ export default function Template(props) {
       <SEO
         title={frontmatter.title}
         description={excerpt}
-        slug={props.pathContext.slug}
+        slug={props.pageContext.slug}
       />
       <PageWrapper
         transition={{ staggerChildren: .3 }}
