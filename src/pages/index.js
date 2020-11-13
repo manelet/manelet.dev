@@ -30,11 +30,7 @@ export default function Home ({ location }) {
 
   return (
     <>
-      <SEO
-        url={location.href}
-        title='Manel Escuer - Frontend Developer'
-        description='Frontend developer specialized on ⚛️ React who loves to cook and tries to bootstrap projects that at some point, will retire me'
-      />
+      <SEO image='/images/homepage.png' />
       <PageWrapper>
         <Splash image={splashImage} />
         <PostsList title='Recently published' posts={posts} />
