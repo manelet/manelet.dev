@@ -1,7 +1,7 @@
   import React from 'react'
   import SEO from '../components/seo'
   import PageWrapper from '../components/page-wrapper'
-  import h from '../components/articles/h1'
+  import h from '../components/articles/h'
 
   const NotFound = () => {
     return (

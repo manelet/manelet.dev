@@ -10,7 +10,11 @@ export default {
     'bg-inline-code': '#2d3748',
     'ig-bg': '#2d3748',
     'modal-bg': 'rgba(26, 32, 44, 0.3)',
-    'link': 'aqua'
+    'link': 'aqua',
+    'gradient-top-desktop': 'linear-gradient(to bottom, rgba(26, 32, 44, 0), rgba(26, 32, 44, 1))',
+    'gradient-bottom-desktop': 'linear-gradient(to bottom, rgba(26, 32, 44, 1), rgba(26, 32, 44, 0))',
+    'gradient-top-mobile': 'linear-gradient(to left, rgba(26, 32, 44, 0), rgba(26, 32, 44, 1))',
+    'gradient-bottom-mobile': 'linear-gradient(to left, rgba(26, 32, 44, 1), rgba(26, 32, 44, 0))'            
   },
   light: {
     'color-bg': '#ffffff',
@@ -23,6 +27,10 @@ export default {
     'bg-inline-code': '#e2e8f0',
     'ig-bg': '#fffaf0',
     'modal-bg': 'rgba(255, 255, 255, 0.3)',
-    'link': 'fuchsia'
+    'link': 'fuchsia',
+    'gradient-top-desktop': 'linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))',
+    'gradient-bottom-desktop': 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))',
+    'gradient-top-mobile': 'linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))',
+    'gradient-bottom-mobile': 'linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))'    
   }
 }

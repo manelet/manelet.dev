@@ -12,7 +12,7 @@ body {
   color: var(--color-text-default);
 }
 
-h1, h2 {
+h1, h2, h3 {
   @apply font-bold mb-5;
   color: var(--color-text-default);
 }
@@ -23,6 +23,10 @@ h1 {
 
 h2 {
   @apply text-4xl;
+}
+
+h3 {
+  @apply text-3xl;
 }
 
 a {

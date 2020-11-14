@@ -20,7 +20,7 @@ export function useDropdown () {
     // if (refs.menu.current.classList.contains('open')) {
     //   refs.menu.current.classList.remove('open')
     // }    
-  }, [refs])
+  }, [])
 
   const onMouseOver = useCallback(e => {
     toggleOpen(true)
@@ -31,10 +31,10 @@ export function useDropdown () {
     // }, 800)
   }, [])
 
-  const positionMenu = () => {
-    const transform = `translateX(${(refs.menu.current.offsetWidth - refs.toggle.current.offsetWidth)}px)`
-    refs.menu.current.style.transform = transform
-  } 
+  // const positionMenu = () => {
+  //   const transform = `translateX(${(refs.menu.current.offsetWidth - refs.toggle.current.offsetWidth)}px)`
+  //   refs.menu.current.style.transform = transform
+  // } 
 
   useLayoutEffect(() => {
     refs.wrapper.current.addEventListener('mouseenter', onMouseOver)
@@ -46,6 +46,8 @@ export function useDropdown () {
       refs.wrapper.current.removeEventListener('mouseenter', onMouseOver)
       refs.wrapper.current.removeEventListener('mouseleave', onMouseOut)      
     }
+
+    // eslint-disable-next-line
   }, [])
   
   return { refs, isHovered, toggleIsHovered, open }

@@ -1,0 +1,114 @@
+.careers {
+  @apply relative w-full flex overflow-visible;
+}
+
+.careers::before,
+.careers::after {
+  content: '';
+  @apply w-10 h-full absolute z-10;
+}
+
+.careers::before {
+  background: var(--gradient-top-mobile);
+  @apply bottom-0 left-0;
+}
+
+.careers::after {
+  @apply top-0 right-0;
+  background: var(--gradient-bottom-mobile);
+}
+
+.careers__inner {
+  @apply w-full flex overflow-x-scroll pb-10;
+}
+
+.career {
+  @apply text-center w-full flex flex-col justify-center items-center flex-shrink-0 max-w-xs;
+}
+
+.career:nth-child(even) {
+  @apply flex-col-reverse;
+}
+
+.career__sep {
+  @apply relative w-full h-1 mx-0 my-8; 
+  background-color: var(--footer-text); 
+}
+
+.career__sep::after {
+  content: '';
+  @apply absolute w-3 h-3 bg-white rounded-full border-2;
+  border-color: var(--footer-text);
+  top: -3px;
+}
+
+.career__detail, .career__role {
+  @apply w-full flex flex-col h-24;
+}
+
+.career:nth-child(odd) .career__role {
+  @apply justify-end;
+}
+
+.career:nth-child(even) .career__role {
+  @apply justify-start;
+}
+
+.career__detail__inner {
+  @apply flex justify-end bg-white p-3 rounded-lg shadow-xl text-sm h-full items-center;
+  background-color: var(--bg-post);
+}
+
+@screen lg {
+  .careers__inner {
+    @apply flex-col overflow-x-visible py-0;
+  }
+
+  .careers::before,
+  .careers::after {
+    content: '';
+    @apply w-full h-32;
+  }
+
+  .careers::before {
+    background: var(--gradient-top-desktop);
+  }
+  
+  .careers::after {
+    background: var(--gradient-bottom-desktop);
+  }  
+
+  .career {
+    @apply flex-row flex-shrink max-w-none;
+  }
+
+  .career:nth-child(even) {
+    @apply flex-row-reverse;
+  }
+
+  .career:nth-child(odd) .career__role {
+    @apply text-right justify-center;
+  }
+  
+  .career:nth-child(even) .career__role {
+    @apply text-left justify-center;
+  }
+
+  .career__sep {
+    @apply relative w-1 mx-20 py-20 my-0; 
+    background-color: var(--footer-text); 
+  }
+
+  .career__sep::after {
+    left: calc(-0.375rem + 1px);
+    right: 0;
+    top: 50%;
+  }  
+
+  .career__detail, .career__role {
+    @apply h-full justify-center;
+  }
+  .career__detail__inner {
+    @apply text-base h-auto;
+  }
+}

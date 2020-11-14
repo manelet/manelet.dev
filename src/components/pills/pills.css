@@ -1,5 +1,5 @@
 .pills {
-  @apply flex mb-10 w-full overflow-x-scroll;
+  @apply flex w-full overflow-x-scroll;
 }
 
 .pills__inner {
@@ -12,4 +12,10 @@
 
 .pill:not(:last-child) {
   @apply mr-4;
+}
+
+@screen md {
+  .pills {
+    @apply overflow-x-visible;
+  }
 }

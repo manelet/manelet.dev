@@ -1,60 +1,59 @@
-.page-about .pill.skills {
+.about-header .pill.pill__skills {
   border-color: rgb(214, 93, 177);
 }
 
-.page-about .pill.skills,
-.page-about .pill.skills a {
+.about-header .pill.pill__skills,
+.about-header .pill.pill__skills a {
   color: rgb(214, 93, 177);
 }
 
-.page-about .pill.skills:hover,
-.page-about .pill.skills.active {
+.about-header .pill.pill__skills:hover,
+.about-header .pill.pill__skills.active {
   background-color: rgb(214, 93, 177);
+  color: white;
 }
 
-.page-about .pill.career,
-.page-about .pill.career a {
+.about-header .pill.pill__career,
+.about-header .pill.pill__career a {
   border-color: rgb(255, 199, 95);
   color: rgb(255, 199, 95);
 }
 
-.page-about .pill.career:hover,
-.page-about .pill.career.active {
+.about-header .pill.pill__career:hover,
+.about-header .pill.pill__career.active {
   background-color: rgb(255, 199, 95);
+  color: white;
 }
 
-.page-about .pill.entrepreneurship,
-.page-about .pill.entrepreneurship a {
+.about-header .pill.pill__entrepreneurship,
+.about-header .pill.pill__entrepreneurship a {
   border-color: rgb(187, 0, 43);
   color: rgb(187, 0, 43);
 }
 
-.page-about .pill.entrepreneurship:hover,
-.page-about .pill.entrepreneurship.active {
+.about-header .pill.pill__entrepreneurship:hover,
+.about-header .pill.pill__entrepreneurship.active {
   background-color: rgb(187, 0, 43);
+  color: white;
 }
 
-.page-about .pill.beginnings,
-.page-about .pill.beginnings a {
+.about-header .pill.pill__beginnings,
+.about-header .pill.pill__beginnings a {
   border-color: rgb(255, 111, 145);
   color: rgb(255, 111, 145);
 }
 
-.page-about .pill.beginnings:hover,
-.page-about .pill.beginnings.active {
+.about-header .pill.pill__beginnings:hover,
+.about-header .pill.pill__beginnings.active {
   background-color: rgb(255, 111, 145);
-}
-
-.page-about .pill:hover a,
-.page-about .pill.active a {
   color: white;
 }
 
-/* .page-about p:nth-child(1) {
+/* .about-header p:nth-child(1) {
   position: absolute;
 }
 
-.page-about p:nth-child(1):before {
+.about-header p:nth-child(1):before {
   content: '';
   border: 1px solid red;
   shape-outside: polygon(

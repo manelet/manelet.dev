@@ -1,0 +1,52 @@
+.skills {
+  @apply w-full flex flex-col-reverse my-5;
+  height: 300px;
+}
+
+.skills__detail {
+  @apply w-full flex flex-col bg-white p-3 z-10 justify-center shadow-2xl text-gray-700;
+}
+
+.skills__list {
+  @apply w-full flex;
+  height: 300px;
+}
+
+.skills__list__inner {
+  @apply h-full overflow-y-scroll w-full;
+}
+
+.skills__list ul {
+  @apply w-full flex flex-wrap text-sm rounded overflow-hidden;
+}
+
+.skills__list ul li {
+  @apply p-3 w-full flex flex-col justify-center bg-gray-100 cursor-pointer;
+  transition: all .3s ease-in-out;
+  background-color: var(--bg-post);
+  color: var(--footer-text);
+}
+
+.skills__list ul li:hover {
+  @apply bg-gray-200 shadow-inner rounded;
+  color: var(--footer-text);
+}
+
+.skills__list ul li.active {
+  @apply bg-gray-300 rounded shadow-inner;
+  color: var(--footer-text);
+}
+
+@screen md {
+  .skills {
+    @apply flex-row;
+  }
+
+  .skills__list ul li {
+    @apply w-1/2;
+  }
+
+  .skills__detail {
+    @apply w-3/4 rounded-lg -m-6;
+  }
+}

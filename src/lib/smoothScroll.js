@@ -1,4 +1,4 @@
-export default target => {
+export default (target, offset = 0) => {
   const el = document.querySelector(target)
 
   if (!el) {
@@ -6,7 +6,8 @@ export default target => {
   }
 
   window.scrollBy({
-    top: Math.floor(el.getBoundingClientRect().top),
-    left: 0, behavior: 'smooth'
+    top: Math.floor(el.getBoundingClientRect().top) - offset,
+    left: 0,
+    behavior: 'smooth'
   })
 }

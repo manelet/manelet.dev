@@ -27,7 +27,8 @@
   }
 
   .dropdown .dropdown-menu {
-    @apply absolute hidden z-50;
+    @apply absolute hidden;
+    z-index: 9999;
   }
 
   .dropdown .dropdown-menu ul {
@@ -44,6 +45,7 @@
       border-gray-100;
     color: var(--color-text-default);
     margin-top: 1em;
+
     /* transform: translateX(-25%); */
   }
 

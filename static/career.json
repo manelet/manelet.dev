@@ -1,0 +1,29 @@
+[
+  {
+    "company": "Quality-Courses",
+    "logo": "/images/companies/quality-courses.jpg",
+    "role": "PHP Developer",
+    "startedAt": "01/03/2009",
+    "endedAt": "01/12/2010",
+    "stack": ["php", "mysql"],
+    "description": "Created and maintained multiple sites from the company"
+  },
+  {
+    "company": "Quality-Courses",
+    "logo": "/images/companies/quality-courses.jpg",
+    "role": "PHP Developer",
+    "startedAt": "01/03/2009",
+    "endedAt": "01/12/2010",
+    "stack": ["php", "mysql"],
+    "description": "Created and maintained multiple sites from the company"
+  },
+  {
+    "company": "Quality-Courses",
+    "logo": "/images/companies/quality-courses.jpg",
+    "role": "PHP Developer",
+    "startedAt": "01/03/2009",
+    "endedAt": "01/12/2010",
+    "stack": ["php", "mysql"],
+    "description": "Created and maintained multiple sites from the company"
+  }  
+]

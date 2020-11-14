@@ -1,0 +1,45 @@
+.about-header {
+  @apply py-5;
+  background-color: var(--nav-bg);
+  transition: all .4s ease-in-out;
+  z-index: 100;
+}
+
+.about-header.scrolled {
+  @apply text-xs py-2;
+}
+
+.about-header h1 {
+  transition: all .4s ease-in-out;
+}
+
+.about-header.scrolled h1 {
+  @apply text-3xl;
+}
+
+.about-header::before {
+  position: absolute;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  content: '';
+  backdrop-filter: blur(3px);
+}
+
+.about-header .pills-wrapper {
+  @apply flex-col mx-auto z-10 pr-0;
+}
+
+@screen md {
+  .about-header .pills-wrapper {
+    @apply px-32;    
+  }
+}
+
+@screen lg {
+  .about-header .pills-wrapper {
+    @apply px-12;
+  }
+}
