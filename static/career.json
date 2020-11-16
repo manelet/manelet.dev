@@ -1,29 +1,97 @@
 [
   {
-    "company": "Quality-Courses",
-    "logo": "/images/companies/quality-courses.jpg",
-    "role": "PHP Developer",
-    "startedAt": "01/03/2009",
-    "endedAt": "01/12/2010",
-    "stack": ["php", "mysql"],
-    "description": "Created and maintained multiple sites from the company"
+    "company": "wefox",
+    "logo": "/images/companies/wefox.jpg",
+    "roles": [
+      {
+        "role": "Sr. Frontend developer",
+        "startedAt": "05/01/2020"
+      }
+    ],
+    "stack": ["javascript", "react", "twilio", "styled-components"],
+    "description": "Biggest insurtech company in Europe. In the customer care team I'm in charge of the maintenance and development of new features in the customer care app."
+  },
+  {
+    "company": "Tappx",
+    "logo": "/images/companies/tappx.jpg",
+    "roles": [
+      {
+        "role": "Sr. Frontend developer",
+        "startedAt": "08/01/2019",
+        "endedAt": "04/30/2020"
+      }
+    ],
+    "stack": ["javascript", "react", "vue", "mysql", "nodejs", "php"],
+    "description": "An adtech programmatic platform for desktop, mobile & ott/ctv and 2nd fastest growing advertising company."
+  },
+  {
+    "company": "Apartum",
+    "logo": "/images/companies/apartum.jpg",
+    "roles": [
+      {
+        "role": "Sr. Frontend developer",
+        "startedAt": "07/01/2019",
+        "endedAt": "09/01/2016"
+      },
+      {
+        "role": "Fullstack developer",
+        "startedAt": "09/01/2015",
+        "endedAt": "08/01/2016"
+      }
+    ],
+    "stack": ["react", "nodejs", "javascript", "web sockets", "ssr", "aws"],
+    "description": "Young fast growing startup focused on holiday rental price comparison. Think of it like the Trivag for holiday apartments."
+  },
+  {
+    "company": "Freelance",
+    "logo": "/images/companies/manelgarcia.jpg",
+    "roles": [
+      {
+        "role": "All-in-one",
+        "startedAt": "09/01/2011",
+        "endedAt": "08/01/2015"
+      }
+    ],
+    "stack": ["php", "mysql", "wordpress", "seo", "css/scss"],
+    "description": "Specialized in fast custom Wordpress sites with strong focus on SEO for both clients and personal projects."
+  },
+  {
+    "company": "Butonet",
+    "logo": "/images/companies/butonet.jpg",
+    "roles": [
+      {
+        "role": "Co-founder",
+        "startedAt": "10/01/2011",
+        "endedAt": "11/01/2013"
+      }
+    ],
+    "stack": ["php", "jquery", "mysql", "seo"],
+    "description": "Co-founded a custom button ecommerce along with my good friend Xavi. Went from 0 to 10k turnover in 6 months with 0 marketing."
+  },
+  {
+    "company": "Magtude",
+    "logo": "/images/companies/magtude.jpg",
+    "roles": [
+      {
+        "role": "PHP Developer",
+        "startedAt": "01/01/2011",
+        "endedAt": "08/01/2013"
+      }
+    ],
+    "stack": ["php", "mysql", "wordpress", "seo", "css"],
+    "description": "In charge of developing websites for the agency clients. Strict follow of design guidelines and good practices."
   },
   {
     "company": "Quality-Courses",
     "logo": "/images/companies/quality-courses.jpg",
-    "role": "PHP Developer",
-    "startedAt": "01/03/2009",
-    "endedAt": "01/12/2010",
-    "stack": ["php", "mysql"],
-    "description": "Created and maintained multiple sites from the company"
-  },
-  {
-    "company": "Quality-Courses",
-    "logo": "/images/companies/quality-courses.jpg",
-    "role": "PHP Developer",
-    "startedAt": "01/03/2009",
-    "endedAt": "01/12/2010",
-    "stack": ["php", "mysql"],
-    "description": "Created and maintained multiple sites from the company"
-  }  
+    "roles": [
+      {
+        "role": "PHP Developer",
+        "startedAt": "03/01/2009",
+        "endedAt": "12/01/2010"
+      }
+    ],
+    "stack": ["php", "mysql", "html", "css"],
+    "description": "A language courses online company that used SEO at that time as it's main selling channel. My main duty was to create and maintained all the sites from the company. "
+  }
 ]

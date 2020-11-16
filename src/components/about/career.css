@@ -1,5 +1,6 @@
 .careers {
   @apply relative w-full flex overflow-visible;
+  height: 500px;
 }
 
 .careers::before,
@@ -43,23 +44,45 @@
 }
 
 .career__detail, .career__role {
-  @apply w-full flex flex-col h-24;
+  @apply w-full flex h-24;
 }
 
-.career:nth-child(odd) .career__role {
+.career__detail {
+  @apply flex-col;
+}
+
+.career .career__role p {
+  @apply text-sm;
+}
+
+.career__role {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.career__role .career__role__detail:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+/* .career:nth-child(odd) .career__role {
   @apply justify-end;
 }
 
 .career:nth-child(even) .career__role {
   @apply justify-start;
-}
+} */
 
 .career__detail__inner {
-  @apply flex justify-end bg-white p-3 rounded-lg shadow-xl text-sm h-full items-center;
+  @apply flex justify-end p-3 text-sm h-full items-center;
   background-color: var(--bg-post);
 }
 
 @screen lg {
+  .careers {
+    height: auto;
+  }
+
   .careers__inner {
     @apply flex-col overflow-x-visible py-0;
   }
@@ -93,6 +116,10 @@
   .career:nth-child(even) .career__role {
     @apply text-left justify-center;
   }
+
+  .career__role {
+    flex-direction: column;
+  }  
 
   .career__sep {
     @apply relative w-1 mx-20 py-20 my-0; 
