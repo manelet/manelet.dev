@@ -12,8 +12,8 @@ const Career = () => {
         {careerPath.map((job, i) => (
           <div className='career' key={`job-${i}`}>
             <div className="career__role">
-              {job.roles.map(({ role, startedAt, endedAt }) => (
-                <div className='career__role__detail'>
+              {job.roles.map(({ role, startedAt, endedAt }, i) => (
+                <div key={`${role}-${i}`} className='career__role__detail'>
                   <div className="font-bold text-xl">
                     {role}
                   </div>

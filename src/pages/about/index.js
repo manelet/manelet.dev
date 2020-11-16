@@ -21,7 +21,11 @@ const About = ({ location, data }) => {
         title='About'
         description='Manel has been developing websites since his childhood. Discover his road to senior frontend development from the beginnings'
       >
-        <motion.div id='about-beginnings' className="flex flex-col md:flex-row my-5 md:my-20" variants={defaultVariants}>
+        <motion.div
+          id='about-beginnings'
+          className="flex flex-col md:flex-row my-5 md:my-20"
+          variants={defaultVariants}
+        >
           <div className="showcase w-full relative flex justify-center items-center flex-wrap mb-10 md:mb-0">
             <div
               className='shadow-2xl relative md:absolute w-full rounded-full overflow-hidden mb-auto'
@@ -51,7 +55,10 @@ const About = ({ location, data }) => {
           </div>
         </motion.div>
 
-        <motion.div className="flex flex-col-reverse md:flex-row my-5 md:my-20" variants={defaultVariants}>
+        <motion.div
+          className="flex flex-col-reverse md:flex-row my-5 md:my-20"
+          variants={defaultVariants}
+        >
           <div className='flex w-full flex-col'>
             <h.h3>My first steps towards web design early in the late 90's</h.h3>
             <p>
@@ -77,12 +84,20 @@ const About = ({ location, data }) => {
           </div>
         </motion.div>
 
-        <motion.div id='about-career' className="flex flex-col my-5 md:my-20 w-full items-center" variants={defaultVariants}>
+        <motion.div
+          id='about-career'
+          className="flex flex-col my-5 md:my-20 w-full items-center"
+          variants={defaultVariants}
+        >
           <h.h2>Career</h.h2>
           <Career />
         </motion.div>
 
-        <motion.div id='about-entrepreneurship' className="flex flex-col-reverse md:flex-row my-10 md:my-20" variants={defaultVariants}>
+        <motion.div
+          id='about-entrepreneurship'
+          className="flex flex-col-reverse md:flex-row my-10 md:my-20"
+          variants={defaultVariants}
+        >
           <div className='flex w-full flex-col'>
             <h.h3>Entrepreneurship</h.h3>
             <p>
@@ -94,16 +109,17 @@ const About = ({ location, data }) => {
               className='w-full rounded-lg overflow-hidden my-0 shadow-2xl z-10'
               style={{ maxWidth: '300px', transform: 'rotateY(-30deg)' }}
             >
-              <Img fluid={data.csImage.image.fluid} />
+              <Img fluid={data.butonet1.image.fluid} />
             </div>
             <div
               className='relative md:absolute bottom-0 right-0 w-full rounded-lg overflow-hidden my-0 shadow-2xl'
               style={{
                 maxWidth: '250px',
-                transform: 'rotateY(-30deg)'
+                transform: 'rotateY(-30deg)',
+                zIndex: 10
               }}
             >
-              <Img fluid={data.frontPageImage.image.fluid} />
+              <Img fluid={data.butonet2.image.fluid} />
             </div>            
           </div>
         </motion.div>
@@ -112,7 +128,6 @@ const About = ({ location, data }) => {
           <h.h2 className='mb-16 md:mb-10'>Skills</h.h2>
           <Skills />
         </motion.div> */}
-        
       </Layout>
     </>
   )
@@ -152,6 +167,22 @@ export const query = graphql`
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
-    }    
+    }
+
+    butonet1: file (relativePath: { eq: "about/butonet1.jpg" }) {
+      image: childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }   
+
+    butonet2: file (relativePath: { eq: "about/butonet2.jpg" }) {
+      image: childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }              
   }
 `
