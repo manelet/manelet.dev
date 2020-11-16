@@ -1,5 +1,4 @@
 ## Pre-public
-- [ ] about: content
 - [ ] projects: content
 - [ ] posts: content
 

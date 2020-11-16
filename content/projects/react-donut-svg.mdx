@@ -14,6 +14,7 @@ tags:
   - "svg"
 ---
 import Donut from 'react-donut-svg'
+import Panel from '../../src/components/panel/panel.js'
 
 <div className='project__hero'>
   <div className='showcase'>
@@ -61,4 +62,45 @@ import Donut from 'react-donut-svg'
     )
   }
   ```  
+</div>
+
+<div className='project__narrow'>
+  <Panel items={[
+    {
+      name: 'label',
+      description: `<pre>string</pre> Text displayed on top of the donut.`
+    },
+    {
+      name: 'value',
+      description: '<pre>int</pre> Value of the donut. From 0 to 100.'
+    },
+    {
+      name: 'color',
+      description: '<pre>string</pre> Fill color of the donut. Defaults to <pre>rgba(151, 239, 233, 1)</pre>'
+    },
+    {
+      name: 'bgColor',
+      description: '<pre>string</pre> Fill color of the background of the donut. Defaults to <pre>#ccc</pre>'
+    },
+    {
+      name: 'withGradient',
+      description: '<pre>boolean</pre> Whether or not to use color gradient. Defaults to <pre>false</pre>'
+    },
+    {
+      name: 'rounded',
+      description: '<pre>boolean</pre> Whether or not to use rounded borders. Defaults to <pre>true</pre>'
+    },
+    {
+      name: 'delay',
+      description: '<pre>int</pre> Delay in miliseconds. Defaults to <pre>0</pre>'
+    },
+    {
+      name: 'duration',
+      description: '<pre>int</pre> Duration of the animation in miliseconds. Defaults to <pre>850</pre>'
+    },
+    {
+      name: 'showLabel',
+      description: '<pre>boolean</pre> Whether or not to show the label. Defaults to <pre>true</pre>'
+    }
+  ]} />
 </div>
