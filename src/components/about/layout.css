@@ -32,6 +32,10 @@
   @apply flex-col mx-auto z-10 pr-0;
 }
 
+.page-about p {
+  @apply my-3;
+}
+
 @screen md {
   .about-header .pills-wrapper {
     @apply px-32;    

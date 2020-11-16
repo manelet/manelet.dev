@@ -1,7 +1,7 @@
 ## Pre-public
-- [ ] about: content + media
-- [ ] projects: content + media
-- [ ] posts: write 2/3 articles
+- [ ] about: content
+- [ ] projects: content
+- [ ] posts: content
 
 ## Roadmap
 - [ ] post: diferents plantilles depenent de la categoria/tag
@@ -9,3 +9,4 @@
 - [ ] confetti
 - [ ] contact
 - [ ] add projects: knoknok & joho
+- [ ] nav links svg border bottom

@@ -23,7 +23,7 @@ const About = ({ location, data }) => {
       >
         <motion.div
           id='about-beginnings'
-          className="flex flex-col md:flex-row my-5 md:my-20"
+          className="flex flex-col-reverse md:flex-row my-5 md:my-20"
           variants={defaultVariants}
         >
           <div className="showcase w-full relative flex justify-center items-center flex-wrap mb-10 md:mb-0">
@@ -50,19 +50,30 @@ const About = ({ location, data }) => {
           <div className='flex w-full flex-col'>
             <h.h2>Beginnings</h.h2>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              The two things that I liked to do the most as a child were playing football, I played for several teams until 16yo because of an injury but I still love playing from time to time.
+            </p>
+            <p>
+              The other one are computers, since a very child I've been passionate about computers, software and technology in general. Ah, I also played a lot of video games <span role='img' aria-label='smile'>😅</span>
             </p>
           </div>
         </motion.div>
 
         <motion.div
-          className="flex flex-col-reverse md:flex-row my-5 md:my-20"
+          className="flex flex-col md:flex-row my-5 md:my-20"
           variants={defaultVariants}
         >
           <div className='flex w-full flex-col'>
-            <h.h3>My first steps towards web design early in the late 90's</h.h3>
+            <h.h3>First steps towards web</h.h3>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              I still do remember myself toying with Frontpage 98 with 10yo playing with tables to create layouts and going crazy trying to align images. At that time it was more like a kind of "painting" and having fun rather than developing, but it created the needed curiosity to keep digging.
+            </p>
+            
+            <p>
+              Some years after I started playing Counter-Strike (a lot) and it was then when I really started to learn programming, some design ideas and how a website was made from the inside, whithout a proper website, your clan wasn't going to be popular <span role='img' aria-label='hahaha'>🤪</span>.
+            </p>
+
+            <p>
+              Without even knowing it, those years gave me a direction for my career.
             </p>
           </div>          
           <div className="showcase w-full relative flex justify-between md:justify-center flex-wrap items-center mb-10 md:mb-0">
@@ -101,7 +112,16 @@ const About = ({ location, data }) => {
           <div className='flex w-full flex-col'>
             <h.h3>Entrepreneurship</h.h3>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              Co-founded an ecommerce with my good friend <a href='https://instagram.com/xavill' target='_blank' rel='noreferrer noopener'>Xavi</a> on 2011, we ourselves manufactured the buttons with a couple of machines we bought.
+            </p>
+            <p>
+              We created a custom ecommerce site from scratch with PHP/MySQL that allowed us to customize price on our own, I even created an online custom designer with jQuery <span role='img' aria-label='angel'>😇</span>.
+            </p>
+            <p>
+              Learned a toon of SEO and we managed to create a 10k monthly turnover within six months and 0 spent on marketing.              
+            </p>
+            <p>
+              I still dream on creating a company from scratch.
             </p>
           </div>          
           <div className="showcase w-full relative flex justify-center flex-wrap items-center">
