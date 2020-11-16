@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 import { defaultVariants } from '../../components/page-wrapper'
 import Layout from '../../components/about/layout'
 import h from '../../components/articles/h'
-import Skills from '../../components/about/skills'
+// import Skills from '../../components/about/skills'
 import Career from '../../components/about/career'
 
 import './about.css'
@@ -108,10 +108,10 @@ const About = ({ location, data }) => {
           </div>
         </motion.div>
 
-        <motion.div id='about-skills' className="flex flex-col py-20 w-full max-w-3xl items-center mx-auto my-5 md:my-20" variants={defaultVariants}>
+        {/* <motion.div id='about-skills' className="flex flex-col py-20 w-full max-w-3xl items-center mx-auto my-5 md:my-20" variants={defaultVariants}>
           <h.h2 className='mb-16 md:mb-10'>Skills</h.h2>
           <Skills />
-        </motion.div>
+        </motion.div> */}
         
       </Layout>
     </>

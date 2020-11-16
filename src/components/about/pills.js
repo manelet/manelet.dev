@@ -8,7 +8,7 @@ export const pages = {
   beginnings: '/about',
   career: '/about/career',
   entrepreneurship: '/about/entrepreneurship',
-  skills: '/about/skills'
+  // skills: '/about/skills'
 }
 
 export default ({ pathname, refs }) => {
