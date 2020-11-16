@@ -8,6 +8,7 @@ nav {
     h-16;
   background-color: var(--nav-bg);
   color: var(--color-text-default);
+  z-index: 9999 !important;
 }
 
 nav a {

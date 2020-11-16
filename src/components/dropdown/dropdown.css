@@ -28,7 +28,7 @@
 
   .dropdown .dropdown-menu {
     @apply absolute hidden;
-    z-index: 9999;
+    z-index: 9999 !important;
   }
 
   .dropdown .dropdown-menu ul {
