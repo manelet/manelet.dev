@@ -59,24 +59,24 @@ const Item = (props) => {
             <div className="project__panel__inner">
               <div className='w-full flex justify-start'>
                 {frontmatter.url && (
-                  <button>
+                  <a href={frontmatter.url} target='_blank' rel='noopener noreferrer'>
                     visit site
-                  </button>
+                  </a>
                 )}
 
                 {frontmatter.github && (
-                  <button>
+                  <a href={frontmatter.github} target='_blank' rel='noopener noreferrer'>
                     github
-                  </button>
+                  </a>
                 )}          
               </div>
 
               <div className='w-full flex justify-start md:justify-end'>
-                {frontmatter.tags && frontmatter.tags.length && frontmatter.tags.map(tag => (
-                  <span key={`tag-${tag}`} className='label'>
+                {/* {frontmatter.tags && frontmatter.tags.length && frontmatter.tags.map(tag => (
+                  <a key={`tag-${tag}`} className='label'>
                     {tag}
-                  </span>
-                ))}
+                  </a>
+                ))} */}
 
                 {frontmatter.stack && frontmatter.stack.length && frontmatter.stack.map(stack => (
                   <span key={`tag-${stack}`} className='label'>

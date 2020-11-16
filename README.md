@@ -1,5 +1,4 @@
 ## Pre-public
-- [ ] projects: content
 - [ ] posts: content
 
 ## Roadmap

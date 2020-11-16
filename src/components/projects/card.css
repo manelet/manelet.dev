@@ -64,16 +64,22 @@ div[class*=project__] a > h4 {
   color: white;
 }
 
-.project__panel button, .project__panel span.label {
+.project__panel button,
+.project__panel span.label,
+.project__panel a {
   transition: all .15s ease-out;
-  @apply border-2 border-white rounded-full px-2 py-3 text-xs cursor-pointer flex flex-shrink-0 w-auto;
+  @apply border-2 border-white text-white rounded-full px-2 py-3 text-xs cursor-pointer flex flex-shrink-0 w-auto;
 }
 
-.project__panel button:not(:last-child), .project__panel span.label:not(:last-child) {
+.project__panel button:not(:last-child),
+.project__panel span.label:not(:last-child),
+.project__panel a:not(:last-child) {
   @apply mr-3;
 }
 
-.project__panel button:hover, .project__panel span.label:hover {
+.project__panel button:hover,
+.project__panel span.label:hover,
+.project__panel a:hover {
   background-color: var(--footer-text);
   border-color: var(--footer-text);
   color: white;

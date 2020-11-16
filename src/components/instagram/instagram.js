@@ -28,7 +28,7 @@ const Instagram = () => {
               <circle cx="325.1" cy="263.4" r="15.5" />
             </g>
           </svg>
-          <button className='p-2 py-4 pl-0'>
+          <button className='p-2 py-4 pl-0' onClick={() => window.open('https://www.instagram.com/maneleat/')}>
             @maneleat
           </button>            
         </motion.div>
