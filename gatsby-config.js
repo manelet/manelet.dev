@@ -61,6 +61,14 @@ module.exports = {
         head: false,
         // exclude: ["/preview/**", "/do-not-track/me/too/"],
       }  
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
     }   
   ]
 }   
