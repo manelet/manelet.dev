@@ -9,6 +9,7 @@ import useCategories from '../../../../hooks/useCategories'
 import { useLayout } from '../../../../context/layout'
 import { itemAnimation } from './animations'
 import { ReactComponent as Line } from './line.svg'
+import Contact from '../../../contact/contact'
 
 const Items = ({ path }) => {
   const width = useRef(null)
@@ -87,18 +88,25 @@ const Items = ({ path }) => {
           <Line />
         </Link>
       </motion.li>
-        <motion.li variants={isTablet && itemAnimation}>
-          <a
-            name='Cooking instagram profile @maneleat'
-            title='Cooking instagram profile @manelet'
-            rel="noopener noreferrer"
-            href='https://instagram.com/maneleat'
-            target='_blank'
-          >
-            Cooking
-            <Line />
-          </a>
-        </motion.li>
+      <motion.li variants={isTablet && itemAnimation}>
+        <a
+          name='Cooking instagram profile @maneleat'
+          title='Cooking instagram profile @manelet'
+          rel="noopener noreferrer"
+          href='https://instagram.com/maneleat'
+          target='_blank'
+        >
+          Cooking
+          <Line />
+        </a>
+      </motion.li>
+      <motion.li variants={isTablet && itemAnimation}>
+        <a>
+          Drop a line
+          <Line />
+        </a>
+        <Contact />
+      </motion.li>      
     </ul>
   )
 }
