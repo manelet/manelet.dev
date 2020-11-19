@@ -60,15 +60,7 @@ module.exports = {
         trackingId: "UA-176053058-1",
         head: false,
         // exclude: ["/preview/**", "/do-not-track/me/too/"],
-      }  
-    },
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /\.inline\.svg$/,
-        },
-      },
-    }   
+      }
+    }
   ]
 }   
