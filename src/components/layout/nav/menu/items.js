@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { navigate, Link } from 'gatsby'
 import cn from 'classnames'
@@ -8,8 +8,10 @@ import useWindow from '../../../../hooks/useWindow'
 import useCategories from '../../../../hooks/useCategories'
 import { useLayout } from '../../../../context/layout'
 import { itemAnimation } from './animations'
+import { ReactComponent as Line } from './line.svg'
 
 const Items = ({ path }) => {
+  const width = useRef(null)
   const [, { toggleMobileMenu }] = useLayout()
   const { isTablet } = useWindow()
   const categories = useCategories()
@@ -29,17 +31,21 @@ const Items = ({ path }) => {
     [isTablet, toggleMobileMenu]
   )
 
+  console.log('render', width);
+
   return (
     <ul>
       <motion.li
         data-slug='/articles'
         onClick={handleOnClick}
         variants={isTablet && itemAnimation}
+        className={cn(path.includes('/articles') && 'active')}
       >
         <Dropdown>
           <DropdownToggle>
-            <Link to='/articles' className={cn(path.includes('/articles') && 'active')}>
+            <Link to='/articles'>
               Articles
+              <Line />
             </Link>
           </DropdownToggle>
           <DropdownMenu style={{ width: '200px' }}>
@@ -59,30 +65,38 @@ const Items = ({ path }) => {
         data-slug='/projects'
         onClick={handleOnClick}
         variants={isTablet && itemAnimation}
+        className={cn(path.includes('/projects') && 'active')}        
       >
-        <Link to='/projects' className={cn(path.includes('/projects') && 'active')}>
+        <Link to='/projects'>
           Projects
+          <Line />
         </Link>
       </motion.li>
       <motion.li
         data-slug='/about'
         onClick={handleOnClick}
         variants={isTablet && itemAnimation}
+        ref={node => {
+          const link = node.querySelector('a')
+          width.current = window.getComputedStyle(link).width
+        }}
+        className={cn(path.includes('/about') && 'active')}        
       >
-        <Link to='/about' className={cn(path.includes('/about') && 'active')}>
+        <Link to='/about'>
           About
+          <Line />
         </Link>
       </motion.li>
         <motion.li variants={isTablet && itemAnimation}>
           <a
             name='Cooking instagram profile @maneleat'
             title='Cooking instagram profile @manelet'
-            rel="noopener"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             href='https://instagram.com/maneleat'
             target='_blank'
           >
             Cooking
+            <Line />
           </a>
         </motion.li>
     </ul>
