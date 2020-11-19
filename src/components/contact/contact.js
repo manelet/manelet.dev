@@ -1,19 +1,8 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 
 import './contact.css'
 
-export const useContact = () => {
-  const [show, toggle] = useState(true)
-
-  return {
-    show,
-    toggle
-  }
-}
-
-const Contact = () => {
-  const { show } = useContact()
-
+const Contact = ({ show, toggle }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     let myForm = document.getElementById('form-test');
@@ -25,6 +14,8 @@ const Contact = () => {
     }).then(() => console.log('Form successfully submitted')).catch((error) =>
       alert(error))
   }
+
+  console.log('render Contact', show);
 
   if (!show) {
     return null

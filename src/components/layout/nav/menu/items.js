@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react'
+import React, { useCallback, useState } from 'react'
 import { motion } from 'framer-motion'
 import { navigate, Link } from 'gatsby'
 import cn from 'classnames'
@@ -12,7 +12,7 @@ import { ReactComponent as Line } from './line.svg'
 import Contact from '../../../contact/contact'
 
 const Items = ({ path }) => {
-  const width = useRef(null)
+  const [show, toggle] = useState(false)
   const [, { toggleMobileMenu }] = useLayout()
   const { isTablet } = useWindow()
   const categories = useCategories()
@@ -31,8 +31,6 @@ const Items = ({ path }) => {
     },
     [isTablet, toggleMobileMenu]
   )
-
-  console.log('render', width);
 
   return (
     <ul>
@@ -77,10 +75,6 @@ const Items = ({ path }) => {
         data-slug='/about'
         onClick={handleOnClick}
         variants={isTablet && itemAnimation}
-        ref={node => {
-          const link = node.querySelector('a')
-          width.current = window.getComputedStyle(link).width
-        }}
         className={cn(path.includes('/about') && 'active')}        
       >
         <Link to='/about'>
@@ -100,12 +94,12 @@ const Items = ({ path }) => {
           <Line />
         </a>
       </motion.li>
-      <motion.li variants={isTablet && itemAnimation}>
-        <a>
+      <motion.li variants={isTablet && itemAnimation} className={cn()}>
+        <span onClick={() => toggle(!show)}>
           Drop a line
           <Line />
-        </a>
-        <Contact />
+        </span>
+        <Contact show={show} toggle={toggle} />
       </motion.li>      
     </ul>
   )
