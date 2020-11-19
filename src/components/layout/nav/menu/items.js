@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react'
+import React, { useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { navigate, Link } from 'gatsby'
 import cn from 'classnames'
@@ -11,7 +11,6 @@ import { itemAnimation } from './animations'
 import { ReactComponent as Line } from './line.svg'
 
 const Items = ({ path }) => {
-  const width = useRef(null)
   const [, { toggleMobileMenu }] = useLayout()
   const { isTablet } = useWindow()
   const categories = useCategories()
@@ -30,8 +29,6 @@ const Items = ({ path }) => {
     },
     [isTablet, toggleMobileMenu]
   )
-
-  console.log('render', width);
 
   return (
     <ul>
@@ -76,10 +73,6 @@ const Items = ({ path }) => {
         data-slug='/about'
         onClick={handleOnClick}
         variants={isTablet && itemAnimation}
-        ref={node => {
-          const link = node.querySelector('a')
-          width.current = window.getComputedStyle(link).width
-        }}
         className={cn(path.includes('/about') && 'active')}        
       >
         <Link to='/about'>

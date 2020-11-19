@@ -55,6 +55,10 @@ nav .icons .github svg {
   stroke-width: 0px;
 }
 
+svg.line_svg__line {
+  display: none;
+}
+
 svg.line_svg__line path {
   stroke: var(--link);
 }
@@ -132,6 +136,7 @@ svg.line_svg__line path {
     bottom: -20px;
     left: -15px;
     z-index: 0;
+    display: block;
   }
 
   svg.line_svg__line path {
