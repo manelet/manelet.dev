@@ -1,16 +1,53 @@
-import React, { useCallback, useState } from 'react'
+import React from 'react'
+import { createPortal } from 'react-dom'
 
 import './contact.css'
+
+const Form = ({ handleSubmit }) => {
+  return (
+    <div className='contact'>
+      <form
+        name="contact-form"
+        method="POST"
+        id='contact-form'
+        data-netlify={true}
+        data-netlify-honeypot="bot-field"
+      >
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>   
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button onClick={handleSubmit} type="submit">Send</button>
+        </p>
+        <input type="hidden" name="form-name" value="contact-form" />
+        <p className='hidden'>
+          <input name="bot-field" />
+        </p>
+      </form>
+    </div>
+  )
+}
 
 const Contact = ({ show, toggle }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
-    let myForm = document.getElementById('form-test');
+    let myForm = document.getElementById('contact-form');
     let formData = new FormData(myForm)
-    fetch('/', {
+    const body = new URLSearchParams(formData).toString()
+    console.log('body', body);
+    fetch(`${process.env.URL}/?no-cache=1`, {
       method: 'POST',
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": 'application/x-www-form-urlencoded;charset=UTF-8',
+      },
+      body
     }).then(() => console.log('Form successfully submitted')).catch((error) =>
       alert(error))
   }
@@ -21,29 +58,15 @@ const Contact = ({ show, toggle }) => {
     return null
   }
 
+  if (window.innerWidth <= 768) {
+    return createPortal(
+      <Form handleSubmit={handleSubmit} />,
+      document.getElementById('contact-wrapper')
+    )
+  }
+
   return (
-    <div className='contact'>
-      <form name="contact-form" method="POST" data-netlify="true" id='form-test'>
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>   
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <label>Your Role: <select name="role[]" multiple>
-            <option value="leader">Leader</option>
-            <option value="follower">Follower</option>
-          </select></label>
-        </p>
-        <p>
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-          <button type="submit" onClick={handleSubmit}>Send</button>
-        </p>
-      </form>
-    </div>
+    <Form handleSubmit={handleSubmit} />
   )
 }
 
