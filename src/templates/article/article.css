@@ -24,7 +24,7 @@ aside.toc a {
 }
 
 .post p, .page p {
-  @apply text-lg;
+  @apply text-lg my-4;
 }
 
 .post figure, .post div.code, .page figure, .page div.code {

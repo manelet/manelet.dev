@@ -7,7 +7,9 @@ import h from '../src/components/articles/h'
 import P from '../src/components/articles/p'
 import Pre from '../src/components/articles/pre'
 import Img from '../src/components/articles/img'
-import Wrapper  from '../src/components/articles/wrapper'
+import Wrapper from '../src/components/articles/wrapper'
+import Ul from '../src/components/articles/ul'
+import Li from '../src/components/articles/li'
 
 const components = {
   pre: Pre,
@@ -18,7 +20,9 @@ const components = {
   h4: h.h4,
   p: P,
   img: Img,
-  wrapper: Wrapper
+  wrapper: Wrapper,
+  ul: Ul,
+  li: Li
 }
 
 export default ({ element }) => (
