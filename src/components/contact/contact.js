@@ -6,7 +6,6 @@ import Form from './form'
 import './contact.css'
 
 const requestOpts = {
-  url: `${process.env.URL}/?no-cache=1`,
   method: 'POST',
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
@@ -22,7 +21,7 @@ const Contact = props => {
     toggleLoading(true)
     e.preventDefault()
     const body = new URLSearchParams(new FormData(document.getElementById('contact-form'))).toString()
-    fetch({ ...requestOpts, body })
+    fetch(`${process.env.URL}/?no-cache=1`, { ...requestOpts, body })
       .then(() => setSuccess(true))
       .catch(setError)
       .finally(() => toggleLoading(false))
