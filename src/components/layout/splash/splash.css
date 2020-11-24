@@ -2,7 +2,6 @@
   @apply
     flex
     w-screen
-    h-screen
     relative
     max-w-full
     items-center
@@ -10,6 +9,8 @@
     overflow-hidden;
   background-color: var(--splash-bg);
   background-image: var(--splash-bg-image);
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);   
 }
 
 /* .splash .cont-inner {
