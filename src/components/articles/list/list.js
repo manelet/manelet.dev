@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react'
 import { navigate, Link } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import h from '../h'
 
@@ -35,9 +34,7 @@ const List = ({ title, posts }) => {
           </Link>
 
           <p className='my-3'>
-            <MDXRenderer onlyExcerpt={true}>
-              {post.body}
-            </MDXRenderer>
+            {post.frontmatter.excerpt || post.excerpt}
           </p>
 
           <div

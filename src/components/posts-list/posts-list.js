@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, navigate } from 'gatsby'
 import { motion } from 'framer-motion'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
@@ -54,9 +53,7 @@ const PostsList = ({ title, posts = [] }) => {
                       </Link>
                     </h3>
 
-                    <MDXRenderer onlyExcerpt={true}>
-                      {post.body}
-                    </MDXRenderer>                
+                    {post.frontmatter.excerpt || post.excerpt}
                   </div>
                 </div>
               </motion.div>

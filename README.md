@@ -1,1 +1,3 @@
 # manelet.dev
+
+- [ ] 404
