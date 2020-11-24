@@ -49,6 +49,14 @@ aside.toc a {
   color: var(--footer-text);
 }
 
+.post article ul {
+  @apply my-6 list-disc w-full mx-auto text-lg pl-4;
+}
+
+.post article ul li:not(:last-child) {
+  @apply mb-6;
+}
+
 .post .share {
   @apply flex flex-row;
 }
