@@ -3,7 +3,6 @@ backend:
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 publish_mode: editorial_workflow
-# local_backend: true
 collections:
   - name: "articles"
     create: true
@@ -15,6 +14,8 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Categories", name: "categories", widget: "list"}
   - name: "projects"
     create: true
     label: "Projects"
@@ -26,7 +27,8 @@ collections:
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Bg color", name: "background", widget: "string"}
+      - {label: "Background", name: "background", widget: "string"}
       - {label: "Url", name: "url", widget: "string"}            
       - {label: "Stack", name: "stack", widget: "list"}  
-      - {label: "Tags", name: "tags", widget: "list"}                                        
+      - {label: "Tags", name: "tags", widget: "list"}      
+      - {label: "Call to action", name: "call_to_action", widget: "string"}                                  
