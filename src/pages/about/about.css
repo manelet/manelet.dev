@@ -55,7 +55,6 @@
 
 .about-header p:nth-child(1):before {
   content: '';
-  border: 1px solid red;
   shape-outside: polygon(
     2% 0%,
     100% 0%,

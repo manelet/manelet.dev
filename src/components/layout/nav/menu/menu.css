@@ -12,13 +12,14 @@ nav .menu {
     absolute
     flex-col
     w-screen
-    h-screen
     top-0
     left-0
     right-0
     pl-10;
   color: var(--color-text-default);
-  background-color: var(--color-bg);  
+  background-color: var(--color-bg); 
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);    
 }
 
 nav .menu .close {
@@ -90,10 +91,12 @@ svg.line_svg__line path {
   }
 
   nav .menu > ul > li > a,
+  nav .menu > ul > li > span,
   nav .menu > ul > li > div.dropdown > div.dropdown-toggle a {
     transition: background 1s linear;
     font-weight: bold;
     position: relative;
+    cursor: pointer;
   }
 
   /* nav .menu > ul > li:hover > a,
@@ -147,6 +150,7 @@ svg.line_svg__line path {
     stroke: #fff ;
   } */
 
+  nav .menu ul li:hover span svg.line_svg__line path,
   nav .menu ul li:hover a svg.line_svg__line path,
   nav .menu ul li.active a svg.line_svg__line path {
     animation: dash .8s linear forwards;

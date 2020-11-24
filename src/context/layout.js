@@ -3,7 +3,7 @@ import React, { createContext, useContext, useReducer, useEffect } from 'react'
 import createAppContext from './ctx'
 import createReducer from './reducer'
 import { ACTIONS } from './actions'
-import { generateCssVariables } from '../lib/dark-theme'
+import { generateCssVariables } from '../lib/ssr-scripts'
 import toggleMenu from '../lib/toggle-menu'
 
 const ctx = createAppContext()

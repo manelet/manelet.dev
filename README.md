@@ -7,4 +7,3 @@
 - [ ] confetti
 - [ ] contact
 - [ ] add projects: knoknok & joho
-- [ ] nav links svg border bottom
