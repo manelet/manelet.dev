@@ -18,7 +18,6 @@ const Contact = props => {
   const [loading, toggleLoading] = useState(false)
   const [error, setError] = useState()
   const [success, setSuccess] = useState(false)
-  const wrapper = document.getElementById('contact-wrapper')
   const handleSubmit = (e) => {
     toggleLoading(true)
     e.preventDefault()
@@ -30,6 +29,8 @@ const Contact = props => {
   }
 
   useEffect(() => {
+    const wrapper = document.getElementById('contact-wrapper')
+
     if (props.show) {
       document.body.classList.add('locked')
       wrapper.classList.add('active')
@@ -37,9 +38,9 @@ const Contact = props => {
       document.body.classList.remove('locked')
       wrapper.classList.remove('active')
     }
-  }, [props.show, wrapper.classList])
+  }, [props.show])
 
-  if (!props.show) {
+  if (!props.show || typeof window === 'undefined') {
     return null
   }
 
@@ -51,7 +52,7 @@ const Contact = props => {
       success={success}
       {...props }
     />,
-    wrapper
+    document.getElementById('contact-wrapper')
   )
 }
 
