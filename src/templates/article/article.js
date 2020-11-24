@@ -50,7 +50,7 @@ export default function Template(props) {
                   dateTime={frontmatter.date}
                   itemProp="datePublished"
                 >
-                  {numberOfDaysSincePublication <= 60 ? dateObj.fromNow() : dateObj.format('dddd, MMMM D YYYY')}
+                  {numberOfDaysSincePublication <= 30 ? dateObj.fromNow() : dateObj.format('dddd, MMMM D YYYY')}
                 </time>                
                 
                 <div className="flex items-center">
