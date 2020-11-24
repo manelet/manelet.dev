@@ -1,19 +1,105 @@
 #contact-wrapper {
-  @apply w-screen h-screen border border-red-500 absolute left-0 top-0;
-  z-index: 1000;
+  @apply
+    hidden
+    w-screen
+    absolute
+    left-0 
+    top-0
+    overflow-hidden;
+  z-index: 9999;
+  color: var(--color-text-default);
+  background-color: var(--bg-post);
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);  
 }
+
+#contact-wrapper.active {
+  @apply block;
+}
+
+#contact-wrapper .contact__close {
+  cursor: pointer;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 1em;
+  left: 1em;
+}
+
+#contact-wrapper .contact__close svg {
+  width: 100%;
+  height: 100%;
+}
+
+#contact-wrapper .contact__close svg line {
+  fill: none;
+  stroke: var(--color-text-default);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+
 .contact {
   @apply
-    bg-gray-200
-    text-gray-700
-    overflow-hidden
     p-2
-    w-full;
+    w-full
+    h-full
+    m-auto
+    flex
+    flex-col
+    items-center
+    justify-center;
+}
+
+.contact input, .contact textarea {
+  @apply w-full px-2 py-3 rounded-lg border;
+  border-color: var(--footer-text);
+}
+
+.contact textarea {
+  @apply h-48;
+}
+
+.contact p {
+  @apply w-full;
+}
+
+.contact p:not(:last-child) {
+  @apply mb-8;
+}
+
+.contact button {
+  @apply flex justify-center items-center bg-green-600 text-white w-full p-2 rounded-full;
+  transition: all .3s ease-in;
+}
+
+.contact button:disabled, .contact button:hover:disabled {
+  @apply bg-green-200 cursor-wait;
+  color: #1a202c;
+}
+
+.contact button:disabled svg, .contact button:hover:disabled svg {
+  fill: #1a202c;
+}
+
+.contact button:hover {
+  @apply bg-green-700;
+}
+
+.contact .noty {
+  @apply w-full p-3 text-center border rounded-lg my-8 text-sm;
+}
+
+.contact .noty.success {
+  @apply bg-green-200 border-green-400 text-green-700;
+}
+
+.contact .noty.error {
+  @apply bg-red-200 border-red-400 text-red-700;
 }
 
 @screen lg {
   .contact {
-    @apply rounded shadow-2xl w-auto h-auto;
-    top: 2em;
+    @apply max-w-lg;
   }
 }

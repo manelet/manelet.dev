@@ -16,6 +16,7 @@ const Items = ({ path }) => {
   const [, { toggleMobileMenu }] = useLayout()
   const { isTablet } = useWindow()
   const categories = useCategories()
+  const autoToggle = useCallback(() => toggle(!show), [toggle, show])
 
   const handleOnClick = useCallback(
     e => {
@@ -99,7 +100,7 @@ const Items = ({ path }) => {
           Drop a line
           <Line />
         </span>
-        <Contact show={show} toggle={toggle} />
+        <Contact show={show} toggle={autoToggle} />
       </motion.li>      
     </ul>
   )
