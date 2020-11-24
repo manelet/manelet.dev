@@ -49,6 +49,8 @@ const query = graphql`
   query {
     latestPosts: allMdx(
       filter: { fileAbsolutePath: { regex : "\/articles/" } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 5
     ) {
       posts: edges {
         post: node {
